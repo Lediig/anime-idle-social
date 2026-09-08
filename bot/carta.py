@@ -65,11 +65,14 @@ def carta_do_dia(data=None, slug=None):
         ciclo = 0
     else:
         fora = pulados()
-        eleg = [c for c in CARDS if c["slug"] not in fora] or CARDS
-        ciclo, idx = divmod(dias, len(eleg))
-        ordem = list(range(len(eleg)))
+        # embaralha as 152 e SO ENTAO tira as puladas: a ordem das outras nao muda quando a lista muda,
+        # quem sai apenas abre a vaga pro seguinte
+        n_eleg = len([c for c in CARDS if c["slug"] not in fora]) or len(CARDS)
+        ciclo, idx = divmod(dias, n_eleg)
+        ordem = list(range(len(CARDS)))
         random.Random(1000 + ciclo).shuffle(ordem)
-        card = eleg[ordem[idx]]
+        eleg = [CARDS[i] for i in ordem if CARDS[i]["slug"] not in fora] or [CARDS[i] for i in ordem]
+        card = eleg[idx]
     return dict(card, data=data.isoformat(), ciclo=ciclo, pose=pose_compacta(card["slug"]),
                 bg=fundo(card["anime"], ciclo), mundo=ANIMES[card["anime"]]["mundo"])
 
