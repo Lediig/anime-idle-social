@@ -1,0 +1,1066 @@
+[
+ {
+  "slug": "ace",
+  "name": "Ace",
+  "anime": "One Piece",
+  "rarity": 4,
+  "lore": "Irmão de criação de Luffy e comandante do Barba Branca. Comeu a Mera Mera no Mi e vira fogo, e morreu protegendo o irmão mais novo."
+ },
+ {
+  "slug": "ainz",
+  "name": "Ainz",
+  "anime": "Overlord",
+  "rarity": 5,
+  "lore": "Jogador que ficou preso no seu MMO e virou o esqueleto Ainz Ooal Gown. Rei da Grande Tumba de Nazarick, finge sempre saber o que faz."
+ },
+ {
+  "slug": "aizen",
+  "name": "Aizen",
+  "anime": "Bleach",
+  "rarity": 5,
+  "lore": "Capitão da 5ª Divisão que enganou toda a Soul Society por décadas. Sua Zanpakuto, Kyoka Suigetsu, controla os sentidos de quem a vê, e ele sabe disso melhor que ninguém."
+ },
+ {
+  "slug": "akaza",
+  "name": "Akaza",
+  "anime": "Demon Slayer",
+  "rarity": 4,
+  "lore": "Terceira Lua Superior, um oni que respeita quem luta bem. Foi um garoto que perdeu tudo e virou demônio para nunca mais ser fraco."
+ },
+ {
+  "slug": "aki",
+  "name": "Aki",
+  "anime": "Chainsaw Man",
+  "rarity": 3,
+  "lore": "Caçador de demônios sério e dedicado, Aki fez contrato com o Demônio Raposa e o Demônio da Maldição. Vira o irmão mais velho que Denji e Power nunca tiveram."
+ },
+ {
+  "slug": "albedo",
+  "name": "Albedo",
+  "anime": "Overlord",
+  "rarity": 4,
+  "lore": "Guardiã de Nazarick, súcubo de asas negras e devoção sem fim a Ainz. Cuida da tumba e de qualquer um que ameace o mestre."
+ },
+ {
+  "slug": "allmight",
+  "name": "All Might",
+  "anime": "My Hero Academia",
+  "rarity": 5,
+  "lore": "O Símbolo da Paz, herói número um que sorri para acalmar o mundo. Passa o One For All para Deku e vai além, Plus Ultra!"
+ },
+ {
+  "slug": "alphonse",
+  "name": "Alphonse",
+  "anime": "Fullmetal Alchemist",
+  "rarity": 4,
+  "lore": "Irmão mais novo de Edward, com a alma presa numa armadura depois da transmutação proibida. Gentil e paciente, é o melhor lutador dos dois."
+ },
+ {
+  "slug": "annie",
+  "name": "Annie",
+  "anime": "Attack on Titan",
+  "rarity": 3,
+  "lore": "Soldado da Tropa de Elite e dona de uma luta corporal impecável, Annie esconde um segredo: é a Titã Fêmea. Fria por fora, carrega a culpa de tudo que fez para voltar pra casa."
+ },
+ {
+  "slug": "anya",
+  "name": "Anya",
+  "anime": "Spy x Family",
+  "rarity": 3,
+  "lore": "Menina de cabelo rosa que lê mentes e foi adotada por um espião. Adora amendoim, desenhos de espião e ajudar a missão sem ninguém saber."
+ },
+ {
+  "slug": "aqua",
+  "name": "Aqua",
+  "anime": "Konosuba",
+  "rarity": 4,
+  "lore": "Deusa da Água que zombou de Kazuma e acabou arrastada com ele para o outro mundo. Chora, se acha, e mesmo assim purifica qualquer mal."
+ },
+ {
+  "slug": "armin",
+  "name": "Armin",
+  "anime": "Attack on Titan",
+  "rarity": 3,
+  "lore": "Amigo de infância de Eren e Mikasa, Armin não é o mais forte, mas é o mais esperto. Seus planos salvam o esquadrão mais de uma vez, e ele sonha em ver o mar."
+ },
+ {
+  "slug": "asta",
+  "name": "Asta",
+  "anime": "Black Clover",
+  "rarity": 4,
+  "lore": "Nasceu sem um pingo de magia num mundo onde todos têm, e mesmo assim jura virar Rei Mago. Compensa com treino brutal e espadas que anulam qualquer feitiço."
+ },
+ {
+  "slug": "asuka",
+  "name": "Asuka",
+  "anime": "Evangelion",
+  "rarity": 4,
+  "lore": "Piloto da Unidade 02, orgulhosa e explosiva, treinada desde criança. Por trás da confiança esconde o medo de não ser reconhecida por ninguém."
+ },
+ {
+  "slug": "asuna",
+  "name": "Asuna",
+  "anime": "Sword Art Online",
+  "rarity": 5,
+  "lore": "A Relâmpago, uma das melhores espadachins de Sword Art Online. Luta ao lado de Kirito até o fim do jogo, e depois também."
+ },
+ {
+  "slug": "bakugo",
+  "name": "Bakugo",
+  "anime": "My Hero Academia",
+  "rarity": 4,
+  "lore": "Amigo de infância de Deku, explosivo em todos os sentidos. Suas mãos produzem suor de nitroglicerina, e o orgulho dele é ainda maior."
+ },
+ {
+  "slug": "bond",
+  "name": "Bond",
+  "anime": "Spy x Family",
+  "rarity": 2,
+  "lore": "Cachorro grande e branco que prevê o futuro, adotado pela família Forger. Protege Anya e late só quando precisa."
+ },
+ {
+  "slug": "bulma",
+  "name": "Bulma",
+  "anime": "Dragon Ball",
+  "rarity": 2,
+  "lore": "Cientista genial e inventora do radar do dragão. Foi a primeira amiga de Goku e mãe de Trunks, e não tem medo de gritar com nenhum Saiyajin."
+ },
+ {
+  "slug": "byakuya",
+  "name": "Byakuya",
+  "anime": "Bleach",
+  "rarity": 4,
+  "lore": "Chefe do nobre clã Kuchiki e capitão da 6ª Divisão. Frio e apegado às regras, sua Senbonzakura se desfaz em mil lâminas que parecem pétalas de cerejeira."
+ },
+ {
+  "slug": "cell",
+  "name": "Cell",
+  "anime": "Dragon Ball",
+  "rarity": 5,
+  "lore": "Bioandroide feito das células dos maiores lutadores. Absorve os androides 17 e 18 até chegar à forma perfeita e organiza seu próprio torneio."
+ },
+ {
+  "slug": "chopper",
+  "name": "Chopper",
+  "anime": "One Piece",
+  "rarity": 3,
+  "lore": "Rena de nariz azul que comeu a Hito Hito no Mi e virou médico. É o mascote da tripulação e se esconde do lado errado da parede quando elogiado."
+ },
+ {
+  "slug": "chrollo",
+  "name": "Chrollo",
+  "anime": "Hunter x Hunter",
+  "rarity": 4,
+  "lore": "Líder da Trupe Fantasma, calmo e elegante. Rouba as habilidades de outros usuários de Nen e guarda todas no seu livro."
+ },
+ {
+  "slug": "dabi",
+  "name": "Dabi",
+  "anime": "My Hero Academia",
+  "rarity": 4,
+  "lore": "Vilão de chamas azuis e pele costurada pelos remendos. Guarda um segredo sobre a família Todoroki que abala o Endeavor."
+ },
+ {
+  "slug": "deku",
+  "name": "Deku",
+  "anime": "My Hero Academia",
+  "rarity": 5,
+  "lore": "Nasceu sem Individualidade, mas nunca deixou de querer ser herói. All Might viu isso e lhe deu o One For All."
+ },
+ {
+  "slug": "denji",
+  "name": "Denji",
+  "anime": "Chainsaw Man",
+  "rarity": 4,
+  "lore": "Garoto pobre que se fundiu com seu cachorro-demônio Pochita e virou o Chainsaw Man. Puxa a corda do peito, vira motosserra e sonha com uma vida simples."
+ },
+ {
+  "slug": "dio",
+  "name": "Dio",
+  "anime": "JoJo",
+  "rarity": 5,
+  "lore": "Vampiro que roubou a vida dos Joestar por gerações. Seu Stand, The World, para o tempo, e ele nunca deixa de lembrar quem é."
+ },
+ {
+  "slug": "edward",
+  "name": "Edward",
+  "anime": "Fullmetal Alchemist",
+  "rarity": 5,
+  "lore": "O Alquimista de Aço, mais jovem alquimista nacional da história. Perdeu o braço e a perna tentando trazer a mãe de volta e busca a Pedra Filosofal."
+ },
+ {
+  "slug": "emilia",
+  "name": "Emilia",
+  "anime": "Re:Zero",
+  "rarity": 4,
+  "lore": "Meia-elfa de cabelo prateado, candidata ao trono do reino de Lugnica. Conhece Subaru no primeiro dia e vira a razão de ele continuar."
+ },
+ {
+  "slug": "endeavor",
+  "name": "Endeavor",
+  "anime": "My Hero Academia",
+  "rarity": 4,
+  "lore": "Herói das Chamas, número dois por anos e obcecado em superar All Might. Tenta consertar os erros que cometeu com a própria família."
+ },
+ {
+  "slug": "eren",
+  "name": "Eren",
+  "anime": "Attack on Titan",
+  "rarity": 5,
+  "lore": "Viu a mãe ser devorada na queda do Muro Maria e jurou exterminar todos os titãs. Descobre que é o Titã de Ataque e que o verdadeiro inimigo está além dos muros."
+ },
+ {
+  "slug": "erwin",
+  "name": "Erwin",
+  "anime": "Attack on Titan",
+  "rarity": 4,
+  "lore": "Comandante da Tropa de Exploração, Erwin sacrifica tudo pela verdade sobre o mundo. Seu grito de avanço leva os soldados a cavalgar mesmo sabendo que não voltam."
+ },
+ {
+  "slug": "escanor",
+  "name": "Escanor",
+  "anime": "Seven Deadly Sins",
+  "rarity": 5,
+  "lore": "O Pecado do Orgulho, o Leão. Fraco à noite, invencível ao meio-dia, quando o sol o faz o homem mais forte do mundo."
+ },
+ {
+  "slug": "fern",
+  "name": "Fern",
+  "anime": "Frieren",
+  "rarity": 3,
+  "lore": "Órfã criada por Heiter e treinada por Frieren desde pequena. Séria e prática, seus disparos de magia são rápidos e certeiros."
+ },
+ {
+  "slug": "freeza",
+  "name": "Freeza",
+  "anime": "Dragon Ball",
+  "rarity": 5,
+  "lore": "Imperador do universo que destruiu o planeta dos Saiyajins. Frio e cruel, foi ele quem fez Goku virar Super Saiyajin pela primeira vez em Namekusei."
+ },
+ {
+  "slug": "frieren",
+  "name": "Frieren",
+  "anime": "Frieren",
+  "rarity": 5,
+  "lore": "Maga elfa que viveu mil anos e só entendeu o valor do tempo depois da morte de Himmel. Refaz a jornada do grupo de heróis para conhecer as pessoas que amou."
+ },
+ {
+  "slug": "fubuki",
+  "name": "Fubuki",
+  "anime": "One-Punch Man",
+  "rarity": 3,
+  "lore": "Líder do grupo Blizzard e irmã mais nova de Tatsumaki. Tem poderes psíquicos e recruta todo herói novo que aparece."
+ },
+ {
+  "slug": "gaara",
+  "name": "Gaara",
+  "anime": "Naruto",
+  "rarity": 4,
+  "lore": "Kazekage da Areia, que nasceu com a Raposa de Uma Cauda selada em si. Sua areia o protege sozinha, e Naruto o ensinou a ter amigos."
+ },
+ {
+  "slug": "garou",
+  "name": "Garou",
+  "anime": "One-Punch Man",
+  "rarity": 4,
+  "lore": "O Caçador de Heróis, ex-aluno de Bang que decidiu ser o monstro. Aprende cada golpe que recebe e devolve melhor."
+ },
+ {
+  "slug": "genos",
+  "name": "Genos",
+  "anime": "One-Punch Man",
+  "rarity": 4,
+  "lore": "Ciborgue que se tornou discípulo de Saitama depois de ser salvo por ele. Lança fogo pelos braços e anota tudo o que o mestre diz."
+ },
+ {
+  "slug": "giyu",
+  "name": "Giyu",
+  "anime": "Demon Slayer",
+  "rarity": 4,
+  "lore": "Hashira da Água, o primeiro caçador que Tanjiro encontra. Poupa Nezuko por ver algo diferente nela, e é ele quem cria a Décima Primeira Forma: Calmaria."
+ },
+ {
+  "slug": "goblinslayer",
+  "name": "Goblin Slayer",
+  "anime": "Goblin Slayer",
+  "rarity": 3,
+  "lore": "Aventureiro de armadura suja que só aceita um tipo de missão: matar goblins. Perdeu a vila para eles e não descansa enquanto houver um vivo."
+ },
+ {
+  "slug": "gohan",
+  "name": "Gohan",
+  "anime": "Dragon Ball",
+  "rarity": 4,
+  "lore": "Filho de Goku, meio Saiyajin, que prefere estudar a lutar. Quando a raiva aperta, seu poder escondido ultrapassa o do pai, como contra Cell."
+ },
+ {
+  "slug": "gojo",
+  "name": "Gojo",
+  "anime": "Jujutsu Kaisen",
+  "rarity": 5,
+  "lore": "Herdeiro dos Seis Olhos e do Ilimitado, Satoru Gojo é o feiticeiro mais forte da era. Professor da Escola Técnica de Jujutsu, protege os alunos com o Vazio Roxo."
+ },
+ {
+  "slug": "goku",
+  "name": "Goku",
+  "anime": "Dragon Ball",
+  "rarity": 5,
+  "lore": "Saiyajin criado na Terra, Goku vive para lutar contra oponentes cada vez mais fortes. Ingênuo fora do combate e implacável dentro dele, foi o primeiro a alcançar a forma de Super Saiyajin em Namekusei."
+ },
+ {
+  "slug": "gon",
+  "name": "Gon",
+  "anime": "Hunter x Hunter",
+  "rarity": 4,
+  "lore": "Garoto criado na Ilha da Baleia que quer virar Hunter para encontrar o pai. Puro e teimoso, seu Jajanken bate mais forte que o seu tamanho sugere."
+ },
+ {
+  "slug": "grimmjow",
+  "name": "Grimmjow",
+  "anime": "Bleach",
+  "rarity": 3,
+  "lore": "O Sexta Espada, uma pantera em forma de Arrancar. Vive pela luta e persegue Ichigo só para provar que é o mais forte do Hueco Mundo."
+ },
+ {
+  "slug": "guts",
+  "name": "Guts",
+  "anime": "Berserk",
+  "rarity": 5,
+  "lore": "O Espadachim Negro, criado no campo de batalha desde bebê. Carrega a Matadora de Dragões, uma espada gigante, e caça os demônios que marcaram seu pescoço."
+ },
+ {
+  "slug": "hange",
+  "name": "Hange",
+  "anime": "Attack on Titan",
+  "rarity": 3,
+  "lore": "Cientista da Tropa de Exploração, Hange adora titãs mais do que teme. Faz experiências com os capturados e vira comandante depois de Erwin."
+ },
+ {
+  "slug": "hiei",
+  "name": "Hiei",
+  "anime": "Yu Yu Hakusho",
+  "rarity": 4,
+  "lore": "Demônio de fogo com o Olho Maligno na testa. Domina a Chama Mortal das Trevas e não gosta de ninguém, mas defende o grupo."
+ },
+ {
+  "slug": "hisoka",
+  "name": "Hisoka",
+  "anime": "Hunter x Hunter",
+  "rarity": 4,
+  "lore": "Mágico e assassino que adora lutar contra quem tem potencial. Seu Bungee Gum tem propriedades de borracha e de chiclete."
+ },
+ {
+  "slug": "ichigo",
+  "name": "Ichigo",
+  "anime": "Bleach",
+  "rarity": 5,
+  "lore": "Estudante que enxerga espíritos e recebe os poderes de Shinigami de Rukia. Com a Zangetsu, atravessa a Soul Society e o Hueco Mundo para salvar quem ama."
+ },
+ {
+  "slug": "ikki",
+  "name": "Ikki",
+  "anime": "Saint Seiya",
+  "rarity": 4,
+  "lore": "Cavaleiro de Fênix, o mais solitário dos cinco de bronze. Sempre chega no fim para salvar Shun, e sempre renasce das cinzas."
+ },
+ {
+  "slug": "inosuke",
+  "name": "Inosuke",
+  "anime": "Demon Slayer",
+  "rarity": 3,
+  "lore": "Criado por javalis na montanha e usa a cabeça de um deles como máscara. Luta com duas espadas serrilhadas e uma Respiração da Fera que inventou sozinho."
+ },
+ {
+  "slug": "inuyasha",
+  "name": "Inuyasha",
+  "anime": "Inuyasha",
+  "rarity": 4,
+  "lore": "Meio-demônio de orelhas de cachorro, preso numa árvore por 50 anos até Kagome libertá-lo. Sua Tessaiga corta cem demônios de uma vez."
+ },
+ {
+  "slug": "itachi",
+  "name": "Itachi",
+  "anime": "Naruto",
+  "rarity": 5,
+  "lore": "Gênio do clã Uchiha que o exterminou numa única noite. Só depois se descobre que fez tudo para proteger Sasuke e a vila."
+ },
+ {
+  "slug": "jiraiya",
+  "name": "Jiraiya",
+  "anime": "Naruto",
+  "rarity": 4,
+  "lore": "Um dos Três Sannin, eremita dos sapos e mestre de Naruto. Escreve livros duvidosos e morre enfrentando Pain."
+ },
+ {
+  "slug": "joey",
+  "name": "Joey",
+  "anime": "Yu-Gi-Oh!",
+  "rarity": 4,
+  "lore": "Amigo de Yugi, duelista de coração grande e sorte de dado. Enfrenta os melhores mesmo sem ser o melhor."
+ },
+ {
+  "slug": "jotaro",
+  "name": "Jotaro",
+  "anime": "JoJo",
+  "rarity": 5,
+  "lore": "Bisneto de Joseph Joestar, alto, sério e de boné. Seu Stand, Star Platinum, tem precisão perfeita e soca mais rápido que a luz."
+ },
+ {
+  "slug": "kaiba",
+  "name": "Kaiba",
+  "anime": "Yu-Gi-Oh!",
+  "rarity": 5,
+  "lore": "Presidente da KaibaCorp e rival eterno de Yugi. Dono dos três Dragões Brancos de Olhos Azuis, ignora o Coração das Cartas."
+ },
+ {
+  "slug": "kakashi",
+  "name": "Kakashi",
+  "anime": "Naruto",
+  "rarity": 4,
+  "lore": "O Ninja Copiador, com o Sharingan no olho esquerdo. Sempre atrasado e sempre lendo, ensina ao Time 7 que quem abandona um amigo é pior que lixo."
+ },
+ {
+  "slug": "kaneki",
+  "name": "Kaneki",
+  "anime": "Tokyo Ghoul",
+  "rarity": 4,
+  "lore": "Estudante que virou meio-ghoul depois de uma cirurgia. Precisa de carne humana para viver e luta para não perder a humanidade."
+ },
+ {
+  "slug": "kazuma",
+  "name": "Kazuma",
+  "anime": "Konosuba",
+  "rarity": 3,
+  "lore": "Garoto que morreu de um jeito ridículo e foi reencarnar como aventureiro. Sortudo, esperto e sem vergonha, lidera o grupo mais inútil da cidade."
+ },
+ {
+  "slug": "kenpachi",
+  "name": "Kenpachi",
+  "anime": "Bleach",
+  "rarity": 4,
+  "lore": "Capitão da 11ª Divisão que nunca aprendeu o nome da própria espada, e nem precisa. Usa tapa-olho para segurar o próprio poder e adora uma luta longa."
+ },
+ {
+  "slug": "kenshin",
+  "name": "Kenshin",
+  "anime": "Samurai X",
+  "rarity": 4,
+  "lore": "Ex-assassino Battousai que jurou nunca mais matar. Anda com uma espada de lâmina invertida e defende quem precisa."
+ },
+ {
+  "slug": "kenshiro",
+  "name": "Kenshiro",
+  "anime": "Hokuto no Ken",
+  "rarity": 5,
+  "lore": "Herdeiro do Hokuto Shinken, a arte de matar por pontos de pressão. Anda pelo deserto pós-apocalíptico e avisa: você já está morto."
+ },
+ {
+  "slug": "killua",
+  "name": "Killua",
+  "anime": "Hunter x Hunter",
+  "rarity": 4,
+  "lore": "Herdeiro de uma família de assassinos que fugiu de casa para ter amigos. Rápido como um raio, literalmente: transforma a aura em eletricidade."
+ },
+ {
+  "slug": "king",
+  "name": "King",
+  "anime": "One-Punch Man",
+  "rarity": 3,
+  "lore": "Chamado de o homem mais forte da Terra, com a Bomba do King batendo no peito. Na verdade é um jogador de videogame que só teve sorte."
+ },
+ {
+  "slug": "kirito",
+  "name": "Kirito",
+  "anime": "Sword Art Online",
+  "rarity": 4,
+  "lore": "O Espadachim Negro, preso em Sword Art Online, onde morrer no jogo é morrer de verdade. Luta com duas espadas para zerar os cem andares."
+ },
+ {
+  "slug": "kurama",
+  "name": "Kurama",
+  "anime": "Yu Yu Hakusho",
+  "rarity": 4,
+  "lore": "Espírito raposa vivendo no corpo de um estudante. Calmo e inteligente, sua Rosa Chicote corta qualquer inimigo."
+ },
+ {
+  "slug": "kurapika",
+  "name": "Kurapika",
+  "anime": "Hunter x Hunter",
+  "rarity": 4,
+  "lore": "Último sobrevivente do clã Kurta, que caça a Trupe Fantasma para recuperar os olhos escarlates do seu povo. Suas correntes prendem qualquer Aranha."
+ },
+ {
+  "slug": "l",
+  "name": "L",
+  "anime": "Death Note",
+  "rarity": 4,
+  "lore": "O maior detetive do mundo, que senta agachado e come só doces. Entra no caso Kira e desconfia de Light desde o primeiro dia."
+ },
+ {
+  "slug": "lelouch",
+  "name": "Lelouch",
+  "anime": "Code Geass",
+  "rarity": 5,
+  "lore": "Príncipe exilado da Britannia que ganha o Geass, o poder de dar uma ordem que ninguém recusa. Vira Zero, líder mascarado da rebelião do Japão."
+ },
+ {
+  "slug": "leorio",
+  "name": "Leorio",
+  "anime": "Hunter x Hunter",
+  "rarity": 2,
+  "lore": "Quer ser médico para tratar de graça quem não pode pagar, e admite que gosta de dinheiro. É o coração do grupo e bate com uma maleta."
+ },
+ {
+  "slug": "levi",
+  "name": "Levi",
+  "anime": "Attack on Titan",
+  "rarity": 5,
+  "lore": "Capitão do Esquadrão de Operações Especiais, tido como o soldado mais forte da humanidade. Crescido no Subterrâneo, luta com uma frieza que esconde a lealdade a Erwin."
+ },
+ {
+  "slug": "light",
+  "name": "Light",
+  "anime": "Death Note",
+  "rarity": 5,
+  "lore": "Aluno exemplar que acha um caderno capaz de matar quem tiver o nome escrito nele. Decide limpar o mundo do crime e vira o assassino chamado Kira."
+ },
+ {
+  "slug": "loid",
+  "name": "Loid",
+  "anime": "Spy x Family",
+  "rarity": 4,
+  "lore": "Espião conhecido como Crepúsculo, que monta uma família falsa para uma missão. Não sabe que a esposa é assassina e a filha lê mentes."
+ },
+ {
+  "slug": "luffy",
+  "name": "Luffy",
+  "anime": "One Piece",
+  "rarity": 5,
+  "lore": "Capitão dos Chapéus de Palha, comeu a Gomu Gomu no Mi e ganhou um corpo de borracha. Quer ser o Rei dos Piratas e encontrar o One Piece, o tesouro de Gol D. Roger."
+ },
+ {
+  "slug": "madara",
+  "name": "Madara",
+  "anime": "Naruto",
+  "rarity": 5,
+  "lore": "Lendário fundador do clã Uchiha, rival de Hashirama. Volta dos mortos para lançar o Tsukuyomi Infinito no mundo."
+ },
+ {
+  "slug": "mahito",
+  "name": "Mahito",
+  "anime": "Jujutsu Kaisen",
+  "rarity": 4,
+  "lore": "Maldição nascida do ódio dos humanos entre si. Toca em alguém e remodela a alma como massa de modelar, e acha isso divertido."
+ },
+ {
+  "slug": "majin_buu",
+  "name": "Majin Buu",
+  "anime": "Dragon Ball",
+  "rarity": 4,
+  "lore": "Criatura rosa feita de magia, capaz de virar qualquer coisa em doce. Tem várias formas: a gorda e infantil, a magra e cruel e a pequena e pura."
+ },
+ {
+  "slug": "maki",
+  "name": "Maki",
+  "anime": "Jujutsu Kaisen",
+  "rarity": 3,
+  "lore": "Da família Zenin, mas nasceu quase sem energia amaldiçoada. Treina o corpo e as armas até superar todos que a desprezaram."
+ },
+ {
+  "slug": "makima",
+  "name": "Makima",
+  "anime": "Chainsaw Man",
+  "rarity": 5,
+  "lore": "Chefe da Divisão 4 de Segurança Pública, calma e sempre sorrindo. Tem o poder de controlar quem considera inferior, e quase todo mundo é."
+ },
+ {
+  "slug": "megumi",
+  "name": "Megumi",
+  "anime": "Jujutsu Kaisen",
+  "rarity": 4,
+  "lore": "Feiticeiro reservado que invoca shikigami de sombra, como os cães divinos. Salva Yuji no primeiro dia e carrega o peso do nome Zenin."
+ },
+ {
+  "slug": "megumin",
+  "name": "Megumin",
+  "anime": "Konosuba",
+  "rarity": 4,
+  "lore": "Arquimaga do clã dos Olhos Carmesins que só sabe uma magia: Explosão. Usa uma vez por dia, desmaia, e acha que valeu a pena."
+ },
+ {
+  "slug": "meliodas",
+  "name": "Meliodas",
+  "anime": "Seven Deadly Sins",
+  "rarity": 5,
+  "lore": "Capitão dos Sete Pecados Capitais, com cara de menino e mais de três mil anos. Devolve qualquer ataque com Contra-golpe."
+ },
+ {
+  "slug": "mikasa",
+  "name": "Mikasa",
+  "anime": "Attack on Titan",
+  "rarity": 4,
+  "lore": "Adotada pela família de Eren depois de perder os pais, Mikasa vive para protegê-lo. Sua habilidade com as lâminas vale por cem soldados."
+ },
+ {
+  "slug": "misa",
+  "name": "Misa",
+  "anime": "Death Note",
+  "rarity": 3,
+  "lore": "Modelo e segunda dona de um Death Note, apaixonada por Kira. Trocou metade da vida pelos Olhos de Shinigami, que mostram o nome de qualquer pessoa."
+ },
+ {
+  "slug": "mob",
+  "name": "Mob",
+  "anime": "Mob Psycho 100",
+  "rarity": 5,
+  "lore": "Estudante tímido com poderes psíquicos enormes que evita usar. Quando a porcentagem chega a 100, tudo ao redor voa."
+ },
+ {
+  "slug": "mustang",
+  "name": "Mustang",
+  "anime": "Fullmetal Alchemist",
+  "rarity": 4,
+  "lore": "O Alquimista das Chamas, coronel ambicioso que estala os dedos e queima tudo. Quer virar Führer para mudar o país por dentro."
+ },
+ {
+  "slug": "muzan",
+  "name": "Muzan",
+  "anime": "Demon Slayer",
+  "rarity": 5,
+  "lore": "O primeiro oni, o Rei dos Demônios, que criou todos os outros com o próprio sangue. Se esconde como humano e só busca uma coisa: vencer a luz do sol."
+ },
+ {
+  "slug": "nami",
+  "name": "Nami",
+  "anime": "One Piece",
+  "rarity": 3,
+  "lore": "Navegadora dos Chapéus de Palha, ladra de piratas por necessidade. Mapeia o mundo e prevê o clima melhor que qualquer instrumento."
+ },
+ {
+  "slug": "nanami",
+  "name": "Nanami",
+  "anime": "Jujutsu Kaisen",
+  "rarity": 4,
+  "lore": "Ex-bancário que voltou a ser feiticeiro por ver que o outro trabalho era pior. Seu Ratio corta o alvo em sete e ele nunca faz hora extra."
+ },
+ {
+  "slug": "naruto",
+  "name": "Naruto",
+  "anime": "Naruto",
+  "rarity": 5,
+  "lore": "Órfão rejeitado pela Vila da Folha por carregar a Raposa de Nove Caudas, Naruto jurou virar Hokage para ser reconhecido. Nunca desistiu de ninguém, nem do Sasuke."
+ },
+ {
+  "slug": "nezuko",
+  "name": "Nezuko",
+  "anime": "Demon Slayer",
+  "rarity": 3,
+  "lore": "Irmã de Tanjiro, transformada em oni no ataque à família. Diferente dos outros demônios, protege humanos e mantém o bambu na boca como promessa."
+ },
+ {
+  "slug": "nobara",
+  "name": "Nobara",
+  "anime": "Jujutsu Kaisen",
+  "rarity": 3,
+  "lore": "Feiticeira do interior que foi para Tóquio por gostar de cidade grande. Luta com martelo, pregos e um boneco de palha."
+ },
+ {
+  "slug": "pain",
+  "name": "Pain",
+  "anime": "Naruto",
+  "rarity": 5,
+  "lore": "Líder da Akatsuki, com os Seis Caminhos e o Rinnegan. Destruiu a Vila da Folha com um só golpe em busca da paz pela dor."
+ },
+ {
+  "slug": "piccolo",
+  "name": "Piccolo",
+  "anime": "Dragon Ball",
+  "rarity": 4,
+  "lore": "Namekuseijin que começou como inimigo de Goku e virou mentor de Gohan. Sério e sábio, regenera o corpo e dispara o Makankosappo."
+ },
+ {
+  "slug": "power",
+  "name": "Power",
+  "anime": "Chainsaw Man",
+  "rarity": 3,
+  "lore": "Demônio do Sangue que virou caçadora, barulhenta e cheia de si. Adora seu gato Nyako e vira a melhor amiga de Denji, mesmo que nunca admita."
+ },
+ {
+  "slug": "priestess",
+  "name": "Priestess",
+  "anime": "Goblin Slayer",
+  "rarity": 5,
+  "lore": "Jovem sacerdotisa que sobreviveu à sua primeira missão graças ao Goblin Slayer. Cura e protege o grupo com os milagres da Deusa Terra."
+ },
+ {
+  "slug": "rei",
+  "name": "Rei",
+  "anime": "Evangelion",
+  "rarity": 3,
+  "lore": "Piloto da Unidade 00, silenciosa e misteriosa. Faz o que mandam sem perguntar até começar a descobrir o que sente."
+ },
+ {
+  "slug": "reigen",
+  "name": "Reigen",
+  "anime": "Mob Psycho 100",
+  "rarity": 3,
+  "lore": "Mestre autoproclamado de Mob, que na verdade não tem poder nenhum. Vive de conversa fiada, mas seus conselhos são os melhores da série."
+ },
+ {
+  "slug": "reiner",
+  "name": "Reiner",
+  "anime": "Attack on Titan",
+  "rarity": 4,
+  "lore": "Guerreiro de Marley enviado para dentro dos muros, Reiner é o Titã Blindado. Dividido entre o soldado que fingiu ser e a missão, quase enlouquece de culpa."
+ },
+ {
+  "slug": "rem",
+  "name": "Rem",
+  "anime": "Re:Zero",
+  "rarity": 4,
+  "lore": "Empregada de cabelo azul da mansão Roswaal, gêmea de Ram. Luta com uma bola de ferro e é a pessoa que mais acredita em Subaru."
+ },
+ {
+  "slug": "rengoku",
+  "name": "Rengoku",
+  "anime": "Demon Slayer",
+  "rarity": 4,
+  "lore": "Hashira das Chamas, de olhos brilhantes e voz sempre alta. Enfrenta Akaza no Trem Infinito e ensina Tanjiro a arder de coração."
+ },
+ {
+  "slug": "renji",
+  "name": "Renji",
+  "anime": "Bleach",
+  "rarity": 3,
+  "lore": "Tenente de Byakuya, com tatuagens e cabelo vermelho preso. Cresceu no Rukongai ao lado de Rukia, e sua Zabimaru se estica como uma serpente de lâminas."
+ },
+ {
+  "slug": "reze",
+  "name": "Reze",
+  "anime": "Chainsaw Man",
+  "rarity": 3,
+  "lore": "Garota doce que trabalha num café e encanta Denji de primeira. Por trás do sorriso é a Demônio Bomba, uma assassina enviada para caçá-lo."
+ },
+ {
+  "slug": "rimuru",
+  "name": "Rimuru",
+  "anime": "Slime Datta Ken",
+  "rarity": 5,
+  "lore": "Homem que morreu e renasceu como slime num mundo de fantasia. Devora e copia qualquer coisa, e funda uma nação de monstros."
+ },
+ {
+  "slug": "robin",
+  "name": "Robin",
+  "anime": "One Piece",
+  "rarity": 3,
+  "lore": "Arqueóloga que lê os Poneglyphs, a última capaz de fazer isso. Brota braços em qualquer lugar com a Hana Hana no Mi."
+ },
+ {
+  "slug": "rukia",
+  "name": "Rukia",
+  "anime": "Bleach",
+  "rarity": 3,
+  "lore": "A Shinigami que deu seus poderes a Ichigo e mudou a vida dele. Pequena, teimosa e forte, sua Sode no Shirayuki é a espada de gelo mais bonita da Soul Society."
+ },
+ {
+  "slug": "ryuk",
+  "name": "Ryuk",
+  "anime": "Death Note",
+  "rarity": 4,
+  "lore": "Shinigami que deixou cair o caderno no mundo humano só por tédio. Adora maçãs e acompanha Light de perto para ver como termina a diversão."
+ },
+ {
+  "slug": "sailormoon",
+  "name": "Serena",
+  "anime": "Sailor Moon",
+  "rarity": 4,
+  "lore": "Serena, a estudante chorona que vira a guerreira Sailor Moon. Com a tiara lunar e o poder da Lua, castiga em nome do amor e da justiça."
+ },
+ {
+  "slug": "saitama",
+  "name": "Saitama",
+  "anime": "One-Punch Man",
+  "rarity": 5,
+  "lore": "Herói por hobby que ficou forte demais depois de três anos de treino e perdeu o cabelo. Derrota tudo com um soco e só quer uma luta que valha a pena."
+ },
+ {
+  "slug": "sakura",
+  "name": "Sakura",
+  "anime": "Naruto",
+  "rarity": 3,
+  "lore": "Aluna de Tsunade que virou a melhor ninja médica da geração. Um soco dela racha o chão."
+ },
+ {
+  "slug": "sanji",
+  "name": "Sanji",
+  "anime": "One Piece",
+  "rarity": 4,
+  "lore": "Cozinheiro dos Chapéus de Palha, que só luta com as pernas para não machucar as mãos. Nunca nega um prato a quem tem fome."
+ },
+ {
+  "slug": "saori",
+  "name": "Saori",
+  "anime": "Saint Seiya",
+  "rarity": 5,
+  "lore": "Reencarnação de Atena, a deusa da guerra e da sabedoria. Protege a Terra com os Cavaleiros de Bronze ao seu lado."
+ },
+ {
+  "slug": "sasuke",
+  "name": "Sasuke",
+  "anime": "Naruto",
+  "rarity": 5,
+  "lore": "Último dos Uchiha, que deixou a vila para se vingar de Itachi. Com o Sharingan e o Chidori, é a sombra que Naruto persegue por toda a história."
+ },
+ {
+  "slug": "scar",
+  "name": "Scar",
+  "anime": "Fullmetal Alchemist",
+  "rarity": 3,
+  "lore": "Homem de Ishval que caça alquimistas nacionais para vingar seu povo. O braço tatuado destrói qualquer coisa que toca."
+ },
+ {
+  "slug": "seiya",
+  "name": "Seiya",
+  "anime": "Saint Seiya",
+  "rarity": 4,
+  "lore": "Cavaleiro de Pégaso, teimoso e leal, que nunca fica no chão. Seu Meteoro de Pégaso já derrubou até deuses."
+ },
+ {
+  "slug": "senku",
+  "name": "Senku",
+  "anime": "Dr. Stone",
+  "rarity": 4,
+  "lore": "Gênio da ciência que acordou depois de 3.700 anos petrificado. Refaz a civilização do zero, um invento por vez, gritando que é dez bilhões por cento empolgante."
+ },
+ {
+  "slug": "sesshomaru",
+  "name": "Sesshomaru",
+  "anime": "Inuyasha",
+  "rarity": 5,
+  "lore": "Irmão mais velho de Inuyasha, um demônio completo, frio e orgulhoso. Despreza humanos até adotar a pequena Rin."
+ },
+ {
+  "slug": "shanks",
+  "name": "Shanks",
+  "anime": "One Piece",
+  "rarity": 5,
+  "lore": "O Ruivo, Imperador do mar que deu o chapéu de palha a Luffy. Perdeu um braço para salvá-lo e continua sendo o pirata mais respeitado do mundo."
+ },
+ {
+  "slug": "shigaraki",
+  "name": "Shigaraki",
+  "anime": "My Hero Academia",
+  "rarity": 4,
+  "lore": "Líder da Liga dos Vilões, com mãos penduradas pelo corpo. Tudo que toca com os cinco dedos vira pó."
+ },
+ {
+  "slug": "shinji",
+  "name": "Shinji",
+  "anime": "Evangelion",
+  "rarity": 3,
+  "lore": "Garoto tímido chamado pelo pai para pilotar a Unidade 01. Não quer entrar no robô, mas entra, porque é a única forma de alguém precisar dele."
+ },
+ {
+  "slug": "shinobu",
+  "name": "Shinobu",
+  "anime": "Demon Slayer",
+  "rarity": 4,
+  "lore": "Hashira do Inseto, a única caçadora que não corta a cabeça dos oni. Pequena e sorridente, envenena os demônios com a glicínia que eles tanto temem."
+ },
+ {
+  "slug": "shun",
+  "name": "Shun",
+  "anime": "Saint Seiya",
+  "rarity": 4,
+  "lore": "Cavaleiro de Andrômeda, irmão de Ikki e o mais gentil de todos. Não gosta de lutar, mas suas correntes defendem qualquer ataque."
+ },
+ {
+  "slug": "sinon",
+  "name": "Sinon",
+  "anime": "Sword Art Online",
+  "rarity": 4,
+  "lore": "Atiradora de elite em Gun Gale Online, calma atrás da mira. Enfrenta um trauma real cada vez que segura uma arma."
+ },
+ {
+  "slug": "sonic",
+  "name": "Sonic",
+  "anime": "One-Punch Man",
+  "rarity": 3,
+  "lore": "Ninja da Velocidade do Som, que se declarou rival de Saitama. Corre tão rápido que deixa cópias no ar, e perde do mesmo jeito."
+ },
+ {
+  "slug": "spike",
+  "name": "Spike",
+  "anime": "Cowboy Bebop",
+  "rarity": 4,
+  "lore": "Caçador de recompensas na nave Bebop, com o cabelo bagunçado e luta de Jeet Kune Do. Fuma, joga o passado nas costas e segue sem pressa pelo sistema solar."
+ },
+ {
+  "slug": "stark",
+  "name": "Stark",
+  "anime": "Frieren",
+  "rarity": 3,
+  "lore": "Guerreiro aprendiz de Eisen, forte como um trator e com medo de tudo. Bate em dragões mesmo tremendo, e é isso que o torna corajoso."
+ },
+ {
+  "slug": "subaru",
+  "name": "Subaru",
+  "anime": "Re:Zero",
+  "rarity": 3,
+  "lore": "Garoto comum jogado num mundo de fantasia. Cada vez que morre, volta no tempo, e ninguém pode saber disso."
+ },
+ {
+  "slug": "sukuna",
+  "name": "Sukuna",
+  "anime": "Jujutsu Kaisen",
+  "rarity": 5,
+  "lore": "O Rei das Maldições, dividido em vinte dedos por mil anos. Renasce dentro de Yuji e corta tudo em dois com suas técnicas de desmantelar."
+ },
+ {
+  "slug": "tanjiro",
+  "name": "Tanjiro",
+  "anime": "Demon Slayer",
+  "rarity": 4,
+  "lore": "Vendedor de carvão que virou caçador depois que um oni matou a família e transformou Nezuko. Usa a Respiração da Água e um olfato capaz de sentir a emoção do inimigo."
+ },
+ {
+  "slug": "tatsumaki",
+  "name": "Tatsumaki",
+  "anime": "One-Punch Man",
+  "rarity": 5,
+  "lore": "O Tornado do Terror, heroína classe S número dois. Pequena e brava, arranca prédios do chão com a mente."
+ },
+ {
+  "slug": "todo",
+  "name": "Todo",
+  "anime": "Jujutsu Kaisen",
+  "rarity": 3,
+  "lore": "Feiticeiro de Kyoto de corpo de gigante e tapas que trocam de lugar. Considera Yuji seu melhor amigo desde a primeira conversa."
+ },
+ {
+  "slug": "todoroki",
+  "name": "Todoroki",
+  "anime": "My Hero Academia",
+  "rarity": 4,
+  "lore": "Filho de Endeavor, com gelo de um lado e fogo do outro. Se recusou a usar o fogo do pai até Deku mostrar que o poder era dele."
+ },
+ {
+  "slug": "toga",
+  "name": "Toga",
+  "anime": "My Hero Academia",
+  "rarity": 3,
+  "lore": "Vilã sorridente que adora sangue e vira quem ela bebe. Acha que amar alguém é se tornar essa pessoa."
+ },
+ {
+  "slug": "toshiro",
+  "name": "Toshiro",
+  "anime": "Bleach",
+  "rarity": 4,
+  "lore": "Capitão mais jovem da história da Soul Society, com cara de criança e gênio de gelo. Sua Hyorinmaru invoca um dragão de gelo e congela o campo inteiro."
+ },
+ {
+  "slug": "totoro",
+  "name": "Totoro",
+  "anime": "Ghibli",
+  "rarity": 3,
+  "lore": "Espírito da floresta, grande e peludo, que só as crianças conseguem ver. Dorme o dia inteiro, viaja no Gatoônibus e faz as plantas crescerem à noite."
+ },
+ {
+  "slug": "trunks",
+  "name": "Trunks",
+  "anime": "Dragon Ball",
+  "rarity": 4,
+  "lore": "Filho de Vegeta e Bulma que veio do futuro para avisar sobre os androides. Usa espada e foi o primeiro a mostrar o Super Saiyajin a Freeza."
+ },
+ {
+  "slug": "ulquiorra",
+  "name": "Ulquiorra",
+  "anime": "Bleach",
+  "rarity": 4,
+  "lore": "O Quarto Espada, calado e sem emoções, com lágrimas verdes marcadas no rosto. Só no fim, de frente para Orihime, entende o que é ter um coração."
+ },
+ {
+  "slug": "umaru",
+  "name": "Umaru",
+  "anime": "Umaru-chan",
+  "rarity": 2,
+  "lore": "Aluna perfeita fora de casa e, dentro, uma criaturinha de capa de hamster. Come, joga e bebe refrigerante o dia inteiro."
+ },
+ {
+  "slug": "uraraka",
+  "name": "Uraraka",
+  "anime": "My Hero Academia",
+  "rarity": 3,
+  "lore": "Colega de Deku que deixa as coisas flutuarem com um toque. Quer virar heroína para dar uma vida melhor aos pais."
+ },
+ {
+  "slug": "usopp",
+  "name": "Usopp",
+  "anime": "One Piece",
+  "rarity": 2,
+  "lore": "Atirador de elite e mentiroso profissional dos Chapéus de Palha. Tem medo de tudo e mesmo assim sempre aparece na hora certa."
+ },
+ {
+  "slug": "vegeta",
+  "name": "Vegeta",
+  "anime": "Dragon Ball",
+  "rarity": 5,
+  "lore": "Príncipe dos Saiyajins, chegou à Terra como invasor e ficou como rival eterno de Goku. O orgulho que o consome é o mesmo que o faz treinar além do limite."
+ },
+ {
+  "slug": "winry",
+  "name": "Winry",
+  "anime": "Fullmetal Alchemist",
+  "rarity": 2,
+  "lore": "Mecânica de automail e amiga de infância dos irmãos Elric. Conserta o braço de Ed a cada luta e briga com ele por quebrá-lo de novo."
+ },
+ {
+  "slug": "yor",
+  "name": "Yor",
+  "anime": "Spy x Family",
+  "rarity": 4,
+  "lore": "Assassina conhecida como Princesa Espinho, que se casa de mentira com Loid. É uma péssima cozinheira e uma mãe adotiva adorável."
+ },
+ {
+  "slug": "yugi",
+  "name": "Yugi",
+  "anime": "Yu-Gi-Oh!",
+  "rarity": 5,
+  "lore": "Garoto que montou o Enigma do Milênio e passou a dividir o corpo com um faraó. Nunca perde um duelo com o Mago Negro na mão."
+ },
+ {
+  "slug": "yuji",
+  "name": "Yuji",
+  "anime": "Jujutsu Kaisen",
+  "rarity": 4,
+  "lore": "Atleta com força fora do normal que engoliu o dedo de Sukuna para salvar amigos. Agora vive como recipiente da maldição e jura morrer da forma certa."
+ },
+ {
+  "slug": "yusuke",
+  "name": "Yusuke",
+  "anime": "Yu Yu Hakusho",
+  "rarity": 4,
+  "lore": "Delinquente que morreu salvando uma criança e voltou como Detetive Espiritual. Seu Leigan, o tiro de energia pelo dedo, é a marca dele."
+ },
+ {
+  "slug": "zeke",
+  "name": "Zeke",
+  "anime": "Attack on Titan",
+  "rarity": 4,
+  "lore": "Meio-irmão de Eren e Titã Bestial, Zeke arremessa pedras como um lançador de beisebol. Acredita que o único jeito de acabar com o sofrimento é impedir novos nascimentos."
+ },
+ {
+  "slug": "zenitsu",
+  "name": "Zenitsu",
+  "anime": "Demon Slayer",
+  "rarity": 3,
+  "lore": "Caçador covarde que chora antes de cada luta. Dormindo, porém, vira um raio: a Primeira Forma da Respiração do Trovão corta antes que se veja."
+ },
+ {
+  "slug": "zoro",
+  "name": "Zoro",
+  "anime": "One Piece",
+  "rarity": 4,
+  "lore": "Espadachim de três espadas e primeiro tripulante de Luffy. Promete ao amigo de infância que será o maior espadachim do mundo, e se perde em qualquer rua reta."
+ }
+]

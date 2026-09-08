@@ -1,0 +1,332 @@
+# -*- coding: utf-8 -*-
+"""Carta do Dia: escolhe a carta, compoe a peca 1080x1080 e publica no Instagram (e no X, se houver chaves).
+
+Sem IA em tempo de execucao: arte real das poses do jogo, texto da Enciclopedia da Colecao,
+fundo dos mundos do PvE. Tudo deterministico a partir da data.
+
+Uso:
+  python bot/carta.py compor  [--data 2026-09-09] [--slug goku] [--saida posts/x.jpg]
+  python bot/carta.py postar  [--data ...] [--slug ...] [--dry-run]
+  python bot/carta.py testar-token
+  python bot/carta.py legenda [--slug ...]
+"""
+import argparse, base64, datetime as dt, hashlib, io, json, os, random, sys, time
+from PIL import Image, ImageDraw, ImageFilter, ImageFont
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+A = lambda *p: os.path.join(ROOT, "assets", *p)
+EPOCH = dt.date(2026, 9, 9)          # dia 0 do ciclo
+TZ = dt.timezone(dt.timedelta(hours=-3))  # Brasilia
+IG_API = "https://graph.instagram.com/v23.0"
+IG_USER_ID = "17841447727327781"      # @animeidle (id da conta profissional no app Anime Idle Social)
+RAW_BASE = "https://raw.githubusercontent.com/Lediig/anime-idle-social/main"
+
+RAR_NOME = {1: "Comum", 2: "Incomum", 3: "Raro", 4: "Épico", 5: "Lendário", 6: "Mítico"}
+RAR_COR = {1: "#b7a6a8", 2: "#63d29a", 3: "#5ca4e0", 4: "#c07bff", 5: "#ffcf5c", 6: "#ff5c6a"}
+
+CARDS = json.load(open(os.path.join(ROOT, "data", "cards.json"), encoding="utf8"))
+BGS = sorted(f for f in os.listdir(A("bg")) if f.endswith(".jpg"))
+
+
+# ---------------------------------------------------------------- escolha
+def hoje():
+    return dt.datetime.now(TZ).date()
+
+
+def carta_do_dia(data=None, slug=None):
+    """Ciclo de 152 dias; cada ciclo embaralha com semente propria. Pose e fundo variam por ciclo."""
+    data = data or hoje()
+    dias = (data - EPOCH).days
+    ciclo, idx = divmod(dias, len(CARDS))
+    ordem = list(range(len(CARDS)))
+    random.Random(1000 + ciclo).shuffle(ordem)
+    card = CARDS[ordem[idx]] if slug is None else next(c for c in CARDS if c["slug"] == slug)
+    h = int(hashlib.sha1(f"{card['slug']}:{ciclo}".encode()).hexdigest(), 16)
+    return dict(card, data=data.isoformat(), ciclo=ciclo, pose=pose_compacta(card["slug"]), bg=BGS[h % len(BGS)])
+
+
+def pose_compacta(slug):
+    """A pose com a menor caixa: e a que o PERSONAGEM domina, nao o efeito (licao do anuncio do Ikki)."""
+    def area(i):
+        bb = Image.open(A("poses", f"{slug}_{i}.png")).convert("RGBA").getbbox()
+        return (bb[2] - bb[0]) * (bb[3] - bb[1]) if bb else 10**9
+    return min(range(3), key=area)
+
+
+# ---------------------------------------------------------------- composicao
+def fonte(tam):
+    return ImageFont.truetype(A("Bangers-Regular.ttf"), tam)
+
+
+def hexrgb(h):
+    return tuple(int(h[i:i + 2], 16) for i in (1, 3, 5))
+
+
+def texto(draw, xy, s, tam, cor, contorno=(0, 0, 0), esp=0, largura_max=None, ancora="mm"):
+    f = fonte(tam)
+    if largura_max:
+        while tam > 24 and draw.textlength(s, font=f) > largura_max:
+            tam -= 2
+            f = fonte(tam)
+    draw.text(xy, s, font=f, fill=cor, anchor=ancora, stroke_width=esp, stroke_fill=contorno)
+    return f
+
+
+def pose_grande(slug, i, alvo_alt):
+    im = Image.open(A("poses", f"{slug}_{i}.png")).convert("RGBA")
+    bb = im.getbbox()
+    im = im.crop(bb)
+    fator = max(1, min(alvo_alt // im.height, 1080 * 0.82 // im.width))
+    return im.resize((im.width * int(fator), im.height * int(fator)), Image.NEAREST)
+
+
+def compor(card):
+    W = H = 1080
+    cor = hexrgb(RAR_COR[card["rarity"]])
+    bg = Image.open(A("bg", card["bg"])).convert("RGB").filter(ImageFilter.GaussianBlur(1.2))
+    bg = Image.blend(bg, Image.new("RGB", (W, H), (8, 6, 16)), 0.45)
+    # brilho radial na cor da raridade atras do personagem
+    glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    g = ImageDraw.Draw(glow)
+    for r in range(420, 0, -12):
+        a = int(150 * (1 - r / 420) ** 1.6)
+        g.ellipse((W // 2 - r, 600 - r * 0.9, W // 2 + r, 600 + r * 0.9), fill=cor + (a,))
+    glow = glow.filter(ImageFilter.GaussianBlur(28))
+    out = Image.alpha_composite(bg.convert("RGBA"), glow)
+    # faixas escuras (finas, pra nao comer o fundo)
+    faixa = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    fd = ImageDraw.Draw(faixa)
+    fd.rectangle((0, 0, W, 290), fill=(6, 4, 14, 150))
+    fd.rectangle((0, 830, W, H), fill=(6, 4, 14, 190))
+    out = Image.alpha_composite(out, faixa.filter(ImageFilter.GaussianBlur(10)))
+    d = ImageDraw.Draw(out)
+    # logo (emblema quadrado, transparente) + titulo
+    logo = Image.open(A("logo.png")).convert("RGBA")
+    logo = logo.resize((int(200 * logo.width / logo.height), 200), Image.LANCZOS)
+    out.alpha_composite(logo, (W // 2 - logo.width // 2, 18))
+    d = ImageDraw.Draw(out)
+    texto(d, (W // 2, 18 + 200 + 36), "CARTA DO DIA", 60, (255, 255, 255), esp=5)
+    # personagem
+    p = pose_grande(card["slug"], card["pose"], 560)
+    sombra = Image.new("RGBA", (W, H), (0, 0, 0, 0))
+    ImageDraw.Draw(sombra).ellipse((W // 2 - p.width // 2 - 10, 800 - 26, W // 2 + p.width // 2 + 10, 800 + 26), fill=(0, 0, 0, 120))
+    out.alpha_composite(sombra.filter(ImageFilter.GaussianBlur(12)))
+    out.alpha_composite(p, (W // 2 - p.width // 2, 812 - p.height))
+    d = ImageDraw.Draw(out)
+    # placa: nome, anime, selo de raridade
+    texto(d, (W // 2, 905), card["name"].upper(), 108, cor, esp=7, largura_max=980)
+    rar = Image.open(A("icons", f"rar_{card['rarity']}.png")).convert("RGBA").resize((44, 44), Image.LANCZOS)
+    linha = f"{card['anime']}  ·  {RAR_NOME[card['rarity']].upper()}"
+    f = fonte(44)
+    lw = d.textlength(linha, font=f) + 56
+    x0 = W // 2 - lw // 2
+    out.alpha_composite(rar, (int(x0), 985 - 22))
+    d = ImageDraw.Draw(out)
+    d.text((x0 + 56, 985), linha, font=f, fill=(255, 255, 255), anchor="lm", stroke_width=4, stroke_fill=(0, 0, 0))
+    texto(d, (W - 28, H - 22), "anime-idle.com", 30, (255, 255, 255, 210), esp=3, ancora="rm")
+    return out.convert("RGB")
+
+
+def hashtag_anime(anime):
+    return "#" + "".join(ch for ch in anime.title() if ch.isalnum())
+
+
+def legenda(card, rede="ig"):
+    nome, anime, rar = card["name"], card["anime"], RAR_NOME[card["rarity"]]
+    tags = f"#AnimeIdle {hashtag_anime(anime)} #anime #idlegame #gacha #jogobrasileiro"
+    if rede == "x":
+        # sem URL: post com link custa 13x mais na API do X. O link fica na bio.
+        cabeca = f"Carta do dia: {nome} ({anime}, {rar})\n\n{card['lore']}"
+        for rabo in (f"\n\nJogue de graça no navegador, link na bio.\n#AnimeIdle {hashtag_anime(anime)}",
+                     f"\n\n#AnimeIdle {hashtag_anime(anime)}", "\n\n#AnimeIdle", ""):
+            if len(cabeca + rabo) <= 280:
+                return cabeca + rabo
+        return cabeca[:277] + "..."
+    return (f"Carta do dia: {nome} ({anime}) · {rar}\n\n{card['lore']}\n\n"
+            f"Colecione {nome} e mais de 150 heróis de anime. Jogue de graça no navegador: anime-idle.com\n"
+            f"Play free in your browser: anime-idle.com\n\n{tags}")
+
+
+# ---------------------------------------------------------------- token do Instagram
+def _fernet():
+    from cryptography.fernet import Fernet
+    semente = os.environ["IG_ACCESS_TOKEN"]  # o token original, nunca muda: serve de chave
+    return Fernet(base64.urlsafe_b64encode(hashlib.sha256(("chave:" + semente).encode()).digest()))
+
+
+def _gh(method, path, **kw):
+    import requests
+    r = requests.request(method, "https://api.github.com" + path, timeout=30,
+                         headers={"Authorization": "Bearer " + os.environ["GITHUB_TOKEN"],
+                                  "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"}, **kw)
+    return r
+
+
+def token_atual():
+    """Token vigente: o renovado (variavel IG_TOKEN_ENC, cifrada) ou o original do secret."""
+    original = os.environ["IG_ACCESS_TOKEN"]
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    if not repo or not os.environ.get("GITHUB_TOKEN"):
+        return original, None
+    r = _gh("GET", f"/repos/{repo}/actions/variables/IG_TOKEN_ENC")
+    if r.status_code != 200:
+        return original, None
+    try:
+        dados = json.loads(_fernet().decrypt(r.json()["value"].encode()).decode())
+        return dados["token"], dt.datetime.fromisoformat(dados["em"])
+    except Exception as e:  # variavel corrompida: volta ao original e avisa
+        print("aviso: IG_TOKEN_ENC ilegivel, usando o original:", e)
+        return original, None
+
+
+def guardar_token(token):
+    repo = os.environ["GITHUB_REPOSITORY"]
+    valor = _fernet().encrypt(json.dumps({"token": token, "em": dt.datetime.now(dt.timezone.utc).isoformat()}).encode()).decode()
+    body = {"name": "IG_TOKEN_ENC", "value": valor}
+    r = _gh("PATCH", f"/repos/{repo}/actions/variables/IG_TOKEN_ENC", json=body)
+    if r.status_code == 404:
+        r = _gh("POST", f"/repos/{repo}/actions/variables", json=body)
+    r.raise_for_status()
+
+
+def renovar_se_preciso(token, em):
+    """Token de longa duracao vale 60 dias; renova a cada 7 (a API exige que tenha ao menos 24h)."""
+    import requests
+    if em is not None and (dt.datetime.now(dt.timezone.utc) - em).days < 7:
+        return token
+    r = requests.get("https://graph.instagram.com/refresh_access_token",
+                     params={"grant_type": "ig_refresh_token", "access_token": token}, timeout=30)
+    if r.status_code != 200:
+        print("aviso: renovacao falhou (segue com o token atual):", r.text[:300])
+        return token
+    novo = r.json()["access_token"]
+    guardar_token(novo)
+    print("token renovado; vale por", r.json().get("expires_in", 0) // 86400, "dias")
+    return novo
+
+
+def testar_token():
+    import requests
+    token, em = token_atual()
+    r = requests.get(f"{IG_API}/me", params={"fields": "user_id,username,account_type", "access_token": token}, timeout=30)
+    print(r.status_code, r.text[:400])
+    r.raise_for_status()
+    assert r.json().get("username") == "animeidle", "token nao e do @animeidle"
+    if os.environ.get("GITHUB_REPOSITORY"):
+        renovar_se_preciso(token, em)
+
+
+# ---------------------------------------------------------------- publicacao
+def esperar_url(url, tent=24):
+    import requests
+    for _ in range(tent):
+        r = requests.get(url, timeout=30)
+        if r.status_code == 200 and r.headers.get("content-type", "").startswith("image/"):
+            return True
+        time.sleep(5)
+    raise SystemExit(f"imagem nao ficou publica: {url}")
+
+
+def postar_instagram(url_img, txt, token):
+    import requests
+    r = requests.post(f"{IG_API}/{IG_USER_ID}/media", data={"image_url": url_img, "caption": txt, "access_token": token}, timeout=60)
+    if r.status_code != 200:
+        raise SystemExit("IG media: " + r.text)
+    cid = r.json()["id"]
+    for _ in range(20):
+        s = requests.get(f"{IG_API}/{cid}", params={"fields": "status_code,status", "access_token": token}, timeout=30).json()
+        if s.get("status_code") == "FINISHED":
+            break
+        if s.get("status_code") == "ERROR":
+            raise SystemExit("IG container: " + json.dumps(s))
+        time.sleep(3)
+    r = requests.post(f"{IG_API}/{IG_USER_ID}/media_publish", data={"creation_id": cid, "access_token": token}, timeout=60)
+    if r.status_code != 200:
+        raise SystemExit("IG publish: " + r.text)
+    return r.json()["id"]
+
+
+def postar_x(caminho_img, txt):
+    """Publica no X por OAuth 1.0a. So roda se as 4 chaves existirem no ambiente."""
+    chaves = [os.environ.get(k) for k in ("X_API_KEY", "X_API_SECRET", "X_ACCESS_TOKEN", "X_ACCESS_SECRET")]
+    if not all(chaves):
+        print("X: sem chaves, pulando")
+        return None
+    from requests_oauthlib import OAuth1Session
+    s = OAuth1Session(*chaves)
+    with open(caminho_img, "rb") as f:
+        r = s.post("https://upload.twitter.com/1.1/media/upload.json", files={"media": f}, timeout=120)
+    if r.status_code not in (200, 201):
+        print("X upload falhou:", r.status_code, r.text[:300])
+        return None
+    mid = r.json()["media_id_string"]
+    r = s.post("https://api.x.com/2/tweets", json={"text": txt, "media": {"media_ids": [mid]}}, timeout=60)
+    if r.status_code not in (200, 201):
+        print("X post falhou:", r.status_code, r.text[:300])
+        return None
+    return r.json()["data"]["id"]
+
+
+def estado():
+    p = os.path.join(ROOT, "state.json")
+    return json.load(open(p, encoding="utf8")) if os.path.exists(p) else {"posts": []}
+
+
+def gravar_estado(e):
+    json.dump(e, open(os.path.join(ROOT, "state.json"), "w", encoding="utf8"), ensure_ascii=False, indent=1)
+
+
+# ---------------------------------------------------------------- cli
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("cmd", choices=["compor", "postar", "testar-token", "legenda", "escolher"])
+    ap.add_argument("--data")
+    ap.add_argument("--slug")
+    ap.add_argument("--saida")
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--fase", choices=["imagem", "publicar"], default=None,
+                    help="postar em duas fases: 'imagem' gera e grava; 'publicar' le a imagem ja no repo e publica")
+    a = ap.parse_args()
+    data = dt.date.fromisoformat(a.data) if a.data else hoje()
+    card = carta_do_dia(data, a.slug)
+
+    if a.cmd == "escolher":
+        print(json.dumps({k: card[k] for k in ("data", "slug", "name", "anime", "rarity", "pose", "bg")}, ensure_ascii=False))
+        return
+    if a.cmd == "legenda":
+        print(legenda(card)); print("\n--- X ---\n"); print(legenda(card, "x"))
+        return
+    if a.cmd == "testar-token":
+        testar_token(); print("token ok"); return
+
+    saida = a.saida or os.path.join(ROOT, "posts", f"{card['data']}.jpg")
+    if a.cmd == "compor" or a.fase in (None, "imagem"):
+        os.makedirs(os.path.dirname(saida), exist_ok=True)
+        compor(card).save(saida, "JPEG", quality=92, optimize=True)
+        print("imagem:", saida, os.path.getsize(saida) // 1024, "KB")
+        if a.cmd == "compor" or a.fase == "imagem":
+            return
+
+    # publicar
+    e = estado()
+    if any(p["data"] == card["data"] and p.get("ig") for p in e["posts"]) and not a.dry_run:
+        print("ja postado hoje, nada a fazer"); return
+    url = f"{RAW_BASE}/posts/{card['data']}.jpg"
+    txt_ig, txt_x = legenda(card), legenda(card, "x")
+    if a.dry_run:
+        print("DRY RUN\n", url, "\n", txt_ig, "\n--- X ---\n", txt_x)
+        testar_token(); return
+    esperar_url(url)
+    token, em = token_atual()
+    token = renovar_se_preciso(token, em)
+    ig_id = postar_instagram(url, txt_ig, token)
+    print("instagram ok:", ig_id)
+    x_id = postar_x(saida, txt_x)
+    if x_id:
+        print("x ok:", x_id)
+    e["posts"].append({"data": card["data"], "slug": card["slug"], "ig": ig_id, "x": x_id})
+    gravar_estado(e)
+
+
+if __name__ == "__main__":
+    main()
