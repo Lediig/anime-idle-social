@@ -25,7 +25,16 @@ RAR_NOME = {1: "Comum", 2: "Incomum", 3: "Raro", 4: "Épico", 5: "Lendário", 6:
 RAR_COR = {1: "#b7a6a8", 2: "#63d29a", 3: "#5ca4e0", 4: "#c07bff", 5: "#ffcf5c", 6: "#ff5c6a"}
 
 CARDS = json.load(open(os.path.join(ROOT, "data", "cards.json"), encoding="utf8"))
-BGS = sorted(f for f in os.listdir(A("bg")) if f.endswith(".jpg"))
+ANIMES = json.load(open(os.path.join(ROOT, "data", "animes.json"), encoding="utf8"))  # anime -> {tema, mundo}
+
+
+def fundo(anime, ciclo):
+    """O mundo do PvE do MESMO anime da carta; alterna o cenario Normal (a) e o Pesadelo (b) a cada ciclo."""
+    tema = ANIMES[anime]["tema"]
+    for letra in ("ab"[ciclo % 2], "a", "b"):
+        if os.path.exists(A("bg", f"{tema}_{letra}.jpg")):
+            return f"{tema}_{letra}.jpg"
+    raise SystemExit(f"sem fundo pro tema {tema}")
 
 
 # ---------------------------------------------------------------- escolha
@@ -61,8 +70,8 @@ def carta_do_dia(data=None, slug=None):
         ordem = list(range(len(eleg)))
         random.Random(1000 + ciclo).shuffle(ordem)
         card = eleg[ordem[idx]]
-    h = int(hashlib.sha1(f"{card['slug']}:{ciclo}".encode()).hexdigest(), 16)
-    return dict(card, data=data.isoformat(), ciclo=ciclo, pose=pose_compacta(card["slug"]), bg=BGS[h % len(BGS)])
+    return dict(card, data=data.isoformat(), ciclo=ciclo, pose=pose_compacta(card["slug"]),
+                bg=fundo(card["anime"], ciclo), mundo=ANIMES[card["anime"]]["mundo"])
 
 
 def calendario(dias=45, data=None):
@@ -73,13 +82,13 @@ def calendario(dias=45, data=None):
               f"Gerado em {dt.datetime.now(TZ):%d/%m/%Y %H:%M} (Brasília). Post diário às 19:00.",
               "Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.", "",
               f"Fora da fila agora: {', '.join(sorted(fora)) if fora else 'ninguém'}.", "",
-              "| Data | Arte | Carta | Anime | Raridade |", "|---|---|---|---|---|"]
+              "| Data | Arte | Carta | Anime (fundo: mundo do PvE) | Raridade |", "|---|---|---|---|---|"]
     for i in range(dias):
         c = carta_do_dia(data + dt.timedelta(days=i))
         d = data + dt.timedelta(days=i)
         linhas.append(f"| {d:%d/%m} ({'seg ter qua qui sex sáb dom'.split()[d.weekday()]}) "
                       f"| <img src=\"assets/poses/{c['slug']}_{c['pose']}.png\" width=\"128\"> "
-                      f"| **{c['name']}** `{c['slug']}` | {c['anime']} | {RAR_NOME[c['rarity']]} |")
+                      f"| **{c['name']}** `{c['slug']}` | {c['anime']} ({c['mundo']}) | {RAR_NOME[c['rarity']]} |")
     open(os.path.join(ROOT, "CALENDARIO.md"), "w", encoding="utf8", newline="\n").write("\n".join(linhas) + "\n")
     return linhas
 
@@ -123,7 +132,7 @@ def compor(card):
     W = H = 1080
     cor = hexrgb(RAR_COR[card["rarity"]])
     bg = Image.open(A("bg", card["bg"])).convert("RGB").filter(ImageFilter.GaussianBlur(1.2))
-    bg = Image.blend(bg, Image.new("RGB", (W, H), (8, 6, 16)), 0.45)
+    bg = Image.blend(bg, Image.new("RGB", (W, H), (8, 6, 16)), 0.30)
     # brilho radial na cor da raridade atras do personagem
     glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     g = ImageDraw.Draw(glow)

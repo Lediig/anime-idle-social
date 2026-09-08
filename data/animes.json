@@ -1,0 +1,162 @@
+{
+ "Attack on Titan": {
+  "tema": "aot",
+  "mundo": "Distrito da Muralha"
+ },
+ "Berserk": {
+  "tema": "berserk",
+  "mundo": "Colina do Eclipse"
+ },
+ "Black Clover": {
+  "tema": "blackclover",
+  "mundo": "Ossada do Demônio Ancestral"
+ },
+ "Bleach": {
+  "tema": "bleach",
+  "mundo": "Deserto de Hueco Mundo"
+ },
+ "Chainsaw Man": {
+  "tema": "chainsawman",
+  "mundo": "Viela dos Demônios"
+ },
+ "Code Geass": {
+  "tema": "codegeass",
+  "mundo": "Metrópole Dividida"
+ },
+ "Cowboy Bebop": {
+  "tema": "cowboybebop",
+  "mundo": "Ruas de Marte"
+ },
+ "Death Note": {
+  "tema": "deathnote",
+  "mundo": "Telhados do Crepúsculo"
+ },
+ "Demon Slayer": {
+  "tema": "demonslayer",
+  "mundo": "Montanha Nevada"
+ },
+ "Dr. Stone": {
+  "tema": "drstone",
+  "mundo": "Selva Petrificada"
+ },
+ "Dragon Ball": {
+  "tema": "dragonball",
+  "mundo": "Ermos do Torneio"
+ },
+ "Evangelion": {
+  "tema": "evangelion",
+  "mundo": "Cidade-Fortaleza"
+ },
+ "Frieren": {
+  "tema": "frieren",
+  "mundo": "Vila do Grande Herói"
+ },
+ "Fullmetal Alchemist": {
+  "tema": "fma",
+  "mundo": "Portal da Verdade"
+ },
+ "Ghibli": {
+  "tema": "ghibli",
+  "mundo": "Estrada da Floresta Encantada"
+ },
+ "Goblin Slayer": {
+  "tema": "goblinslayer",
+  "mundo": "Caverna dos Goblins"
+ },
+ "Hokuto no Ken": {
+  "tema": "hokutonoken",
+  "mundo": "Deserto Sem Lei"
+ },
+ "Hunter x Hunter": {
+  "tema": "hunterxhunter",
+  "mundo": "Portão da Mansão Sombria"
+ },
+ "Inuyasha": {
+  "tema": "inuyasha",
+  "mundo": "Floresta do Poço Sagrado"
+ },
+ "JoJo": {
+  "tema": "jojo",
+  "mundo": "Telhados do Cairo"
+ },
+ "Jujutsu Kaisen": {
+  "tema": "jujutsukaisen",
+  "mundo": "Cruzamento Assombrado"
+ },
+ "Konosuba": {
+  "tema": "konosuba",
+  "mundo": "Praça dos Aventureiros"
+ },
+ "Mob Psycho 100": {
+  "tema": "mobpsycho",
+  "mundo": "Parque do Brócolis Colossal"
+ },
+ "My Hero Academia": {
+  "tema": "mha",
+  "mundo": "Domo de Desastres"
+ },
+ "Naruto": {
+  "tema": "naruto",
+  "mundo": "Vila Oculta da Folha"
+ },
+ "One Piece": {
+  "tema": "onepiece",
+  "mundo": "Porto dos Piratas"
+ },
+ "One-Punch Man": {
+  "tema": "onepunchman",
+  "mundo": "Cidade em Ruínas"
+ },
+ "Overlord": {
+  "tema": "overlord",
+  "mundo": "Grande Tumba de Mármore"
+ },
+ "Re:Zero": {
+  "tema": "rezero",
+  "mundo": "Planície da Névoa"
+ },
+ "Sailor Moon": {
+  "tema": "sailormoon",
+  "mundo": "Torre sob a Lua Cheia"
+ },
+ "Saint Seiya": {
+  "tema": "saintseiya",
+  "mundo": "Santuário dos Doze Templos"
+ },
+ "Samurai X": {
+  "tema": "samuraix",
+  "mundo": "Pátio do Dojo"
+ },
+ "Seven Deadly Sins": {
+  "tema": "sevendeadlysins",
+  "mundo": "Colina da Taverna"
+ },
+ "Slime Datta Ken": {
+  "tema": "tensura",
+  "mundo": "Caverna do Dragão Selado"
+ },
+ "Spy x Family": {
+  "tema": "spyxfamily",
+  "mundo": "Academia de Elite"
+ },
+ "Sword Art Online": {
+  "tema": "sao",
+  "mundo": "Castelo Flutuante"
+ },
+ "Tokyo Ghoul": {
+  "tema": "tokyoghoul",
+  "mundo": "Beco dos Devoradores"
+ },
+ "Umaru-chan": {
+  "tema": "umaruchan",
+  "mundo": "Quarto do Kotatsu"
+ },
+ "Yu Yu Hakusho": {
+  "tema": "yuyuhakusho",
+  "mundo": "Arena das Trevas"
+ },
+ "Yu-Gi-Oh!": {
+  "tema": "yugioh",
+  "mundo": "Arena de Duelos"
+ }
+}
