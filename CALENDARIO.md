@@ -1,6 +1,6 @@
 # Calendário da Carta do Dia
 
-Gerado em 08/09/2026 18:02 (Brasília). Post diário às 19:00.
+Gerado em 08/09/2026 18:19 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: ninguém.

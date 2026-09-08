@@ -90,7 +90,42 @@ def calendario(dias=45, data=None):
                       f"| <img src=\"assets/poses/{c['slug']}_{c['pose']}.png\" width=\"128\"> "
                       f"| **{c['name']}** `{c['slug']}` | {c['anime']} ({c['mundo']}) | {RAR_NOME[c['rarity']]} |")
     open(os.path.join(ROOT, "CALENDARIO.md"), "w", encoding="utf8", newline="\n").write("\n".join(linhas) + "\n")
+    calendario_html(dias, data, fora)
     return linhas
+
+
+def calendario_html(dias, data, fora):
+    """Versao local (CALENDARIO.html): abre no navegador direto da pasta, sem precisar do GitHub."""
+    e = estado()
+    feitos = {p["data"]: p for p in e["posts"]}
+    cel = []
+    for i in range(dias):
+        d = data + dt.timedelta(days=i)
+        c = carta_do_dia(d)
+        semana = "seg ter qua qui sex sáb dom".split()[d.weekday()]
+        ok = feitos.get(d.isoformat())
+        cel.append(f"""<div class="c r{c['rarity']}{' ok' if ok else ''}">
+  <div class="d">{d:%d/%m} <small>{semana}</small>{' <b>✔ postado</b>' if ok else ''}</div>
+  <img src="assets/poses/{c['slug']}_{c['pose']}.png" alt="">
+  <div class="n">{c['name']}</div><div class="a">{c['anime']}</div>
+  <div class="m">{RAR_NOME[c['rarity']]} · fundo: {c['mundo']}</div><div class="s">{c['slug']}</div></div>""")
+    fora_txt = ", ".join(sorted(fora)) if fora else "ninguém"
+    html = f"""<!doctype html><meta charset="utf-8"><title>Agenda da Carta do Dia</title>
+<style>
+body{{font-family:system-ui,Segoe UI,Arial;background:#0f0d1a;color:#eee;margin:0;padding:24px}}
+h1{{margin:0 0 6px}} p{{color:#bbb;margin:4px 0}} code{{background:#222;padding:1px 6px;border-radius:4px}}
+.g{{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;margin-top:18px}}
+.c{{background:#1b1730;border:2px solid #2a2545;border-radius:12px;padding:10px;text-align:center}}
+.c.ok{{opacity:.55}} .c img{{width:160px;height:90px;object-fit:contain;image-rendering:pixelated;margin:6px 0}}
+.d{{font-weight:700;color:#fff}} .d small{{color:#999;font-weight:400}} .d b{{color:#63d29a;font-weight:600;font-size:12px}}
+.n{{font-size:20px;font-weight:800}} .a{{color:#ccc}} .m{{font-size:12px;color:#999;margin-top:4px}} .s{{font-size:11px;color:#666;font-family:monospace}}
+.r2 .n{{color:#63d29a}} .r3 .n{{color:#5ca4e0}} .r4 .n{{color:#c07bff}} .r5 .n{{color:#ffcf5c}} .r6 .n{{color:#ff5c6a}}
+</style>
+<h1>Agenda da Carta do Dia</h1>
+<p>Gerada em {dt.datetime.now(TZ):%d/%m/%Y %H:%M}. Post diário às 19:00 (Brasília). Próximos {dias} dias.</p>
+<p>Pra tirar alguém da fila: escreva o <code>slug</code> (texto cinza de cada cartão) numa linha do <code>pular.txt</code> e clique em "Atualizar agenda e enviar". Fora da fila agora: <b>{fora_txt}</b>.</p>
+<div class="g">{''.join(cel)}</div>"""
+    open(os.path.join(ROOT, "CALENDARIO.html"), "w", encoding="utf8", newline="\n").write(html)
 
 
 def pose_compacta(slug):
