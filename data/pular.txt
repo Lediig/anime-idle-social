@@ -1,0 +1,2 @@
+# Cartas fora da fila da Carta do Dia: um slug por linha (os slugs estao em data/cards.json).
+# Linha com # e comentario. Salvou aqui, o calendario se refaz sozinho.

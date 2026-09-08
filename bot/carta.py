@@ -33,16 +33,55 @@ def hoje():
     return dt.datetime.now(TZ).date()
 
 
+def pulados():
+    """data/pular.txt: um slug por linha (arte em troca, personagem fora de hora...). '#' comenta."""
+    p = os.path.join(ROOT, "data", "pular.txt")
+    if not os.path.exists(p):
+        return set()
+    out = set()
+    for linha in open(p, encoding="utf8"):
+        s = linha.split("#", 1)[0].strip().lower()
+        if s:
+            out.add(s)
+    return out
+
+
 def carta_do_dia(data=None, slug=None):
-    """Ciclo de 152 dias; cada ciclo embaralha com semente propria. Pose e fundo variam por ciclo."""
+    """Ciclo pelas cartas ELEGIVEIS (fora as de pular.txt); cada ciclo embaralha com semente propria.
+    Trocar o pular.txt reordena os dias seguintes, nunca os passados (que ficam em state.json)."""
     data = data or hoje()
     dias = (data - EPOCH).days
-    ciclo, idx = divmod(dias, len(CARDS))
-    ordem = list(range(len(CARDS)))
-    random.Random(1000 + ciclo).shuffle(ordem)
-    card = CARDS[ordem[idx]] if slug is None else next(c for c in CARDS if c["slug"] == slug)
+    if slug is not None:
+        card = next(c for c in CARDS if c["slug"] == slug)
+        ciclo = 0
+    else:
+        fora = pulados()
+        eleg = [c for c in CARDS if c["slug"] not in fora] or CARDS
+        ciclo, idx = divmod(dias, len(eleg))
+        ordem = list(range(len(eleg)))
+        random.Random(1000 + ciclo).shuffle(ordem)
+        card = eleg[ordem[idx]]
     h = int(hashlib.sha1(f"{card['slug']}:{ciclo}".encode()).hexdigest(), 16)
     return dict(card, data=data.isoformat(), ciclo=ciclo, pose=pose_compacta(card["slug"]), bg=BGS[h % len(BGS)])
+
+
+def calendario(dias=45, data=None):
+    """Escreve CALENDARIO.md com os proximos posts (o GitHub renderiza as poses)."""
+    data = data or hoje()
+    fora = pulados()
+    linhas = ["# Calendário da Carta do Dia", "",
+              f"Gerado em {dt.datetime.now(TZ):%d/%m/%Y %H:%M} (Brasília). Post diário às 19:00.",
+              "Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.", "",
+              f"Fora da fila agora: {', '.join(sorted(fora)) if fora else 'ninguém'}.", "",
+              "| Data | Arte | Carta | Anime | Raridade |", "|---|---|---|---|---|"]
+    for i in range(dias):
+        c = carta_do_dia(data + dt.timedelta(days=i))
+        d = data + dt.timedelta(days=i)
+        linhas.append(f"| {d:%d/%m} ({'seg ter qua qui sex sáb dom'.split()[d.weekday()]}) "
+                      f"| <img src=\"assets/poses/{c['slug']}_{c['pose']}.png\" width=\"128\"> "
+                      f"| **{c['name']}** `{c['slug']}` | {c['anime']} | {RAR_NOME[c['rarity']]} |")
+    open(os.path.join(ROOT, "CALENDARIO.md"), "w", encoding="utf8", newline="\n").write("\n".join(linhas) + "\n")
+    return linhas
 
 
 def pose_compacta(slug):
@@ -279,7 +318,7 @@ def gravar_estado(e):
 # ---------------------------------------------------------------- cli
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("cmd", choices=["compor", "postar", "testar-token", "legenda", "escolher"])
+    ap.add_argument("cmd", choices=["compor", "postar", "testar-token", "legenda", "escolher", "calendario"])
     ap.add_argument("--data")
     ap.add_argument("--slug")
     ap.add_argument("--saida")
@@ -290,6 +329,11 @@ def main():
     data = dt.date.fromisoformat(a.data) if a.data else hoje()
     card = carta_do_dia(data, a.slug)
 
+    if a.cmd == "calendario":
+        for l in calendario(data=data)[8:]:
+            cel = l.split("|")
+            print(cel[1].strip(), cel[3].strip(), "|", cel[4].strip(), "|", cel[5].strip())
+        return
     if a.cmd == "escolher":
         print(json.dumps({k: card[k] for k in ("data", "slug", "name", "anime", "rarity", "pose", "bg")}, ensure_ascii=False))
         return
