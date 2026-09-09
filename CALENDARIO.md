@@ -1,6 +1,6 @@
 # Calendário da Carta do Dia
 
-Gerado em 09/09/2026 20:41 (Brasília). Post diário às 19:00.
+Gerado em 09/09/2026 20:51 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, shinji, spike, uraraka.

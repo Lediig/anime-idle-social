@@ -24,8 +24,8 @@ determinístico a partir da data, então o post de qualquer dia pode ser reprodu
 | `IG_ACCESS_TOKEN` | Token de longa duração do app Meta "Anime Idle Social" (API do Instagram com login do Instagram). |
 | `X_API_KEY`, `X_API_SECRET`, `X_ACCESS_TOKEN`, `X_ACCESS_SECRET` | OAuth 1.0a do app no console.x.com. Enquanto não existirem, o X é pulado sem erro. |
 
-O token do Instagram vale 60 dias. O robô renova a cada 7 e guarda o renovado **cifrado** na variável
-`IG_TOKEN_ENC` (chave derivada do token original, que fica só no secret). Se algum dia a Meta recusar o
+O token do Instagram vale 60 dias. O robô renova a cada 7 e guarda o renovado **cifrado** em
+`data/ig_token.enc` (chave derivada do token original, que fica só no secret; o arquivo pode ser público). Se algum dia a Meta recusar o
 token, gere outro em developers.facebook.com → app → Instagram → Generate token e troque o secret.
 
 ## Custos

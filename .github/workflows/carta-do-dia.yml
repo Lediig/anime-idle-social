@@ -23,8 +23,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
-  contents: write   # grava posts/*.jpg e state.json
-  actions: write    # guarda o token renovado (variavel IG_TOKEN_ENC, cifrada)
+  contents: write   # grava posts/*.jpg, state.json e data/ig_token.enc (token renovado, cifrado)
 
 jobs:
   postar:
@@ -67,7 +66,8 @@ jobs:
         if: ${{ !inputs.dry_run }}
         run: |
           python bot/carta.py calendario > /dev/null
-          git add state.json CALENDARIO.md
+          git add state.json CALENDARIO.md CALENDARIO.html
+          [ -f data/ig_token.enc ] && git add data/ig_token.enc
           git diff --cached --quiet || git commit -m "state: post de $(date -u +%F)"
           git pull --rebase -q origin main
           git push -q

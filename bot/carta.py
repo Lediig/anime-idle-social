@@ -240,39 +240,26 @@ def _fernet():
     return Fernet(base64.urlsafe_b64encode(hashlib.sha256(("chave:" + semente).encode()).digest()))
 
 
-def _gh(method, path, **kw):
-    import requests
-    r = requests.request(method, "https://api.github.com" + path, timeout=30,
-                         headers={"Authorization": "Bearer " + os.environ["GITHUB_TOKEN"],
-                                  "Accept": "application/vnd.github+json", "X-GitHub-Api-Version": "2022-11-28"}, **kw)
-    return r
+TOKEN_ENC = os.path.join(ROOT, "data", "ig_token.enc")  # token renovado, cifrado; o workflow commita este arquivo
 
 
 def token_atual():
-    """Token vigente: o renovado (variavel IG_TOKEN_ENC, cifrada) ou o original do secret."""
+    """Token vigente: o renovado (data/ig_token.enc, cifrado com chave derivada do original) ou o original do secret.
+    O arquivo pode ficar num repositorio publico: sem o secret original nao se abre."""
     original = os.environ["IG_ACCESS_TOKEN"]
-    repo = os.environ.get("GITHUB_REPOSITORY")
-    if not repo or not os.environ.get("GITHUB_TOKEN"):
-        return original, None
-    r = _gh("GET", f"/repos/{repo}/actions/variables/IG_TOKEN_ENC")
-    if r.status_code != 200:
+    if not os.path.exists(TOKEN_ENC):
         return original, None
     try:
-        dados = json.loads(_fernet().decrypt(r.json()["value"].encode()).decode())
+        dados = json.loads(_fernet().decrypt(open(TOKEN_ENC, "rb").read()).decode())
         return dados["token"], dt.datetime.fromisoformat(dados["em"])
-    except Exception as e:  # variavel corrompida: volta ao original e avisa
-        print("aviso: IG_TOKEN_ENC ilegivel, usando o original:", e)
+    except Exception as e:  # arquivo de outro secret ou corrompido: volta ao original e avisa
+        print("aviso: ig_token.enc ilegivel, usando o token original:", e)
         return original, None
 
 
 def guardar_token(token):
-    repo = os.environ["GITHUB_REPOSITORY"]
-    valor = _fernet().encrypt(json.dumps({"token": token, "em": dt.datetime.now(dt.timezone.utc).isoformat()}).encode()).decode()
-    body = {"name": "IG_TOKEN_ENC", "value": valor}
-    r = _gh("PATCH", f"/repos/{repo}/actions/variables/IG_TOKEN_ENC", json=body)
-    if r.status_code == 404:
-        r = _gh("POST", f"/repos/{repo}/actions/variables", json=body)
-    r.raise_for_status()
+    dados = json.dumps({"token": token, "em": dt.datetime.now(dt.timezone.utc).isoformat()}).encode()
+    open(TOKEN_ENC, "wb").write(_fernet().encrypt(dados))
 
 
 def renovar_se_preciso(token, em):
@@ -298,8 +285,8 @@ def testar_token():
     print(r.status_code, r.text[:400])
     r.raise_for_status()
     assert r.json().get("username") == "animeidle", "token nao e do @animeidle"
-    if os.environ.get("GITHUB_REPOSITORY"):
-        renovar_se_preciso(token, em)
+    if em:
+        print("token renovado pela ultima vez em", em.date())
 
 
 # ---------------------------------------------------------------- publicacao
