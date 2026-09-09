@@ -1,0 +1,73 @@
+name: Carta do Dia
+
+on:
+  schedule:
+    - cron: "0 22 * * *"   # 19:00 em Brasilia, todo dia
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "So testar (gera a imagem, valida o token, NAO publica)"
+        type: boolean
+        default: true
+      slug:
+        description: "Forcar uma carta (slug, ex.: goku). Vazio = a do dia"
+        type: string
+        default: ""
+      data:
+        description: "Forcar a data (AAAA-MM-DD). Vazio = hoje"
+        type: string
+        default: ""
+
+concurrency:
+  group: carta-do-dia
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # grava posts/*.jpg e state.json
+  actions: write    # guarda o token renovado (variavel IG_TOKEN_ENC, cifrada)
+
+jobs:
+  postar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      X_API_KEY: ${{ secrets.X_API_KEY }}
+      X_API_SECRET: ${{ secrets.X_API_SECRET }}
+      X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+      X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ARGS: >-
+        ${{ inputs.slug != '' && format('--slug {0}', inputs.slug) || '' }}
+        ${{ inputs.data != '' && format('--data {0}', inputs.data) || '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+
+      - name: Gerar a imagem
+        run: python bot/carta.py postar --fase imagem $ARGS
+
+      - name: Publicar a imagem no repositorio (o Instagram busca por URL publica)
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name "anime-idle-bot"
+          git config user.email "support@anime-idle.com"
+          git add posts/
+          git diff --cached --quiet || git commit -m "posts: imagem de $(date -u +%F)"
+          git pull --rebase -q origin main
+          git push -q
+
+      - name: Publicar nas redes
+        run: python bot/carta.py postar --fase publicar $ARGS ${{ inputs.dry_run && '--dry-run' || '' }}
+
+      - name: Registrar o post e refazer o calendario
+        if: ${{ !inputs.dry_run }}
+        run: |
+          python bot/carta.py calendario > /dev/null
+          git add state.json CALENDARIO.md
+          git diff --cached --quiet || git commit -m "state: post de $(date -u +%F)"
+          git pull --rebase -q origin main
+          git push -q

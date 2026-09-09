@@ -1,0 +1,30 @@
+name: Calendario
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/pular.txt
+      - data/cards.json
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refazer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q pillow
+      - run: python bot/carta.py calendario > /dev/null
+      - run: |
+          git config user.name "anime-idle-bot"
+          git config user.email "support@anime-idle.com"
+          git add CALENDARIO.md
+          git diff --cached --quiet || git commit -m "calendario: refeito"
+          git push -q
