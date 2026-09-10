@@ -389,7 +389,7 @@
   "name": "Jiraiya",
   "anime": "Naruto",
   "rarity": 4,
-  "lore": "Um dos Três Sannin, eremita dos sapos e mestre de Naruto. Escreve livros duvidosos e morre enfrentando Pain."
+  "lore": "Um dos Três Sannin e eremita dos sapos. Escreve livros duvidosos e ensinou Rasengan ao Naruto."
  },
  {
   "slug": "joey",
@@ -655,7 +655,7 @@
   "name": "Nezuko",
   "anime": "Demon Slayer",
   "rarity": 3,
-  "lore": "Irmã de Tanjiro, transformada em oni no ataque à família. Diferente dos outros demônios, protege humanos e mantém o bambu na boca como promessa."
+  "lore": "Irmã de Tanjiro, transformada em oni no ataque à família. Diferente dos outros demônios, protege humanos e mantém o bambu na boca para ajudar a controlar seus instintos demoníacos."
  },
  {
   "slug": "nobara",
@@ -704,7 +704,7 @@
   "name": "Reigen",
   "anime": "Mob Psycho 100",
   "rarity": 3,
-  "lore": "Mestre autoproclamado de Mob, que na verdade não tem poder nenhum. Vive de conversa fiada, mas seus conselhos são os melhores da série."
+  "lore": "Mestre autoproclamado de Mob, que na verdade não tem poder nenhum. Vive de conversa fiada, mas seus conselhos de vida são valiosos."
  },
  {
   "slug": "reiner",
