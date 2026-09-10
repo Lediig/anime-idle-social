@@ -58,9 +58,9 @@ for i, (k, _) in enumerate(TEMAS):
         if not os.path.exists(p):
             continue
         im = Image.open(p).convert("RGB")
-        W, H = im.size
-        side = min(W, H)
-        im = im.crop(((W - side) // 2, 0, (W - side) // 2 + side, side)).resize((1080, 1080), Image.LANCZOS)
+        W, H = im.size  # fonte 1344x768: recorte central 4:5 (614x768) esticado pra 1080x1350
+        lw = int(H * 0.8)
+        im = im.crop(((W - lw) // 2, 0, (W - lw) // 2 + lw, H)).resize((1080, 1350), Image.LANCZOS)
         im.save(os.path.join(ROOT, f"assets/bg/{k}_{letra}.jpg"), "JPEG", quality=86)
         n += 1
 print("cartas", len(out), "animes", len(animes), "bgs", n, "lore max", max(len(o["lore"]) for o in out))

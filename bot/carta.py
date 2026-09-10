@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Carta do Dia: escolhe a carta, compoe a peca 1080x1080 e publica no Instagram (e no X, se houver chaves).
+"""Personagem (do dia): escolhe a carta, compoe a peca 1080x1350 (4:5) e publica no Instagram (e no X, se houver chaves).
 
 Sem IA em tempo de execucao: arte real das poses do jogo, texto da Enciclopedia da Colecao,
 fundo dos mundos do PvE. Tudo deterministico a partir da data.
@@ -81,7 +81,7 @@ def calendario(dias=45, data=None):
     """Escreve CALENDARIO.md com os proximos posts (o GitHub renderiza as poses)."""
     data = data or hoje()
     fora = pulados()
-    linhas = ["# Calendário da Carta do Dia", "",
+    linhas = ["# Agenda de Personagens", "",
               f"Gerado em {dt.datetime.now(TZ):%d/%m/%Y %H:%M} (Brasília). Post diário às 19:00.",
               "Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.", "",
               f"Fora da fila agora: {', '.join(sorted(fora)) if fora else 'ninguém'}.", "",
@@ -113,7 +113,7 @@ def calendario_html(dias, data, fora):
   <div class="n">{c['name']}</div><div class="a">{c['anime']}</div>
   <div class="m">{RAR_NOME[c['rarity']]} · fundo: {c['mundo']}</div><div class="s">{c['slug']}</div></div>""")
     fora_txt = ", ".join(sorted(fora)) if fora else "ninguém"
-    html = f"""<!doctype html><meta charset="utf-8"><title>Agenda da Carta do Dia</title>
+    html = f"""<!doctype html><meta charset="utf-8"><title>Agenda de Personagens</title>
 <style>
 body{{font-family:system-ui,Segoe UI,Arial;background:#0f0d1a;color:#eee;margin:0;padding:24px}}
 h1{{margin:0 0 6px}} p{{color:#bbb;margin:4px 0}} code{{background:#222;padding:1px 6px;border-radius:4px}}
@@ -124,7 +124,7 @@ h1{{margin:0 0 6px}} p{{color:#bbb;margin:4px 0}} code{{background:#222;padding:
 .n{{font-size:20px;font-weight:800}} .a{{color:#ccc}} .m{{font-size:12px;color:#999;margin-top:4px}} .s{{font-size:11px;color:#666;font-family:monospace}}
 .r2 .n{{color:#63d29a}} .r3 .n{{color:#5ca4e0}} .r4 .n{{color:#c07bff}} .r5 .n{{color:#ffcf5c}} .r6 .n{{color:#ff5c6a}}
 </style>
-<h1>Agenda da Carta do Dia</h1>
+<h1>Agenda de Personagens</h1>
 <p>Gerada em {dt.datetime.now(TZ):%d/%m/%Y %H:%M}. Post diário às 19:00 (Brasília). Próximos {dias} dias.</p>
 <p>Pra tirar alguém da fila: escreva o <code>slug</code> (texto cinza de cada cartão) numa linha do <code>pular.txt</code> e clique em "Atualizar agenda e enviar". Fora da fila agora: <b>{fora_txt}</b>.</p>
 <div class="g">{''.join(cel)}</div>"""
@@ -166,24 +166,34 @@ def pose_grande(slug, i, alvo_alt):
     return im.resize((im.width * int(fator), im.height * int(fator)), Image.NEAREST)
 
 
+TITULO = "PERSONAGEM"          # titulo da peca (era "CARTA DO DIA" ate 09/09)
+W, H = 1080, 1350              # 4:5, o retrato do feed do Instagram: inteiro no post, quase sem corte na grade
+CHAO = 1050                    # onde o personagem pisa
+
+
 def compor(card):
-    W = H = 1080
     cor = hexrgb(RAR_COR[card["rarity"]])
-    bg = Image.open(A("bg", card["bg"])).convert("RGB").filter(ImageFilter.GaussianBlur(1.2))
+    bg = Image.open(A("bg", card["bg"])).convert("RGB")
+    if bg.size != (W, H):  # fundo antigo quadrado: cobre o quadro cortando as laterais
+        s = max(W / bg.width, H / bg.height)
+        bg = bg.resize((round(bg.width * s), round(bg.height * s)), Image.LANCZOS)
+        bg = bg.crop(((bg.width - W) // 2, (bg.height - H) // 2, (bg.width - W) // 2 + W, (bg.height - H) // 2 + H))
+    bg = bg.filter(ImageFilter.GaussianBlur(1.2))
     bg = Image.blend(bg, Image.new("RGB", (W, H), (8, 6, 16)), 0.30)
     # brilho radial na cor da raridade atras do personagem
     glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     g = ImageDraw.Draw(glow)
-    for r in range(420, 0, -12):
-        a = int(150 * (1 - r / 420) ** 1.6)
-        g.ellipse((W // 2 - r, 600 - r * 0.9, W // 2 + r, 600 + r * 0.9), fill=cor + (a,))
+    cy = CHAO - 270
+    for r in range(480, 0, -12):
+        a = int(150 * (1 - r / 480) ** 1.6)
+        g.ellipse((W // 2 - r, cy - r * 0.9, W // 2 + r, cy + r * 0.9), fill=cor + (a,))
     glow = glow.filter(ImageFilter.GaussianBlur(28))
     out = Image.alpha_composite(bg.convert("RGBA"), glow)
     # faixas escuras (finas, pra nao comer o fundo)
     faixa = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     fd = ImageDraw.Draw(faixa)
     fd.rectangle((0, 0, W, 290), fill=(6, 4, 14, 150))
-    fd.rectangle((0, 830, W, H), fill=(6, 4, 14, 190))
+    fd.rectangle((0, CHAO + 20, W, H), fill=(6, 4, 14, 190))
     out = Image.alpha_composite(out, faixa.filter(ImageFilter.GaussianBlur(10)))
     d = ImageDraw.Draw(out)
     # logo (emblema quadrado, transparente) + titulo
@@ -191,25 +201,26 @@ def compor(card):
     logo = logo.resize((int(200 * logo.width / logo.height), 200), Image.LANCZOS)
     out.alpha_composite(logo, (W // 2 - logo.width // 2, 18))
     d = ImageDraw.Draw(out)
-    texto(d, (W // 2, 18 + 200 + 36), "CARTA DO DIA", 60, (255, 255, 255), esp=5)
+    texto(d, (W // 2, 18 + 200 + 36), TITULO, 60, (255, 255, 255), esp=5)
     # personagem
-    p = pose_grande(card["slug"], card["pose"], 560)
+    p = pose_grande(card["slug"], card["pose"], 700)
     sombra = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    ImageDraw.Draw(sombra).ellipse((W // 2 - p.width // 2 - 10, 800 - 26, W // 2 + p.width // 2 + 10, 800 + 26), fill=(0, 0, 0, 120))
+    ImageDraw.Draw(sombra).ellipse((W // 2 - p.width // 2 - 10, CHAO - 12 - 26, W // 2 + p.width // 2 + 10, CHAO - 12 + 26), fill=(0, 0, 0, 120))
     out.alpha_composite(sombra.filter(ImageFilter.GaussianBlur(12)))
-    out.alpha_composite(p, (W // 2 - p.width // 2, 812 - p.height))
+    out.alpha_composite(p, (W // 2 - p.width // 2, CHAO - p.height))
     d = ImageDraw.Draw(out)
     # placa: nome, anime, selo de raridade
-    texto(d, (W // 2, 905), card["name"].upper(), 108, cor, esp=7, largura_max=980)
+    y_nome, y_linha = CHAO + 100, CHAO + 182
+    texto(d, (W // 2, y_nome), card["name"].upper(), 112, cor, esp=7, largura_max=980)
     rar = Image.open(A("icons", f"rar_{card['rarity']}.png")).convert("RGBA").resize((44, 44), Image.LANCZOS)
     linha = f"{card['anime']}  ·  {RAR_NOME[card['rarity']].upper()}"
     f = fonte(44)
     lw = d.textlength(linha, font=f) + 56
     x0 = W // 2 - lw // 2
-    out.alpha_composite(rar, (int(x0), 985 - 22))
+    out.alpha_composite(rar, (int(x0), y_linha - 22))
     d = ImageDraw.Draw(out)
-    d.text((x0 + 56, 985), linha, font=f, fill=(255, 255, 255), anchor="lm", stroke_width=4, stroke_fill=(0, 0, 0))
-    texto(d, (W - 28, H - 22), "anime-idle.com", 30, (255, 255, 255, 210), esp=3, ancora="rm")
+    d.text((x0 + 56, y_linha), linha, font=f, fill=(255, 255, 255), anchor="lm", stroke_width=4, stroke_fill=(0, 0, 0))
+    texto(d, (W - 28, H - 24), "anime-idle.com", 30, (255, 255, 255, 210), esp=3, ancora="rm")
     return out.convert("RGB")
 
 
@@ -222,13 +233,13 @@ def legenda(card, rede="ig"):
     tags = f"#AnimeIdle {hashtag_anime(anime)} #anime #idlegame #gacha #jogobrasileiro"
     if rede == "x":
         # sem URL: post com link custa 13x mais na API do X. O link fica na bio.
-        cabeca = f"Carta do dia: {nome} ({anime}, {rar})\n\n{card['lore']}"
+        cabeca = f"Personagem: {nome} ({anime}, {rar})\n\n{card['lore']}"
         for rabo in (f"\n\nJogue de graça no navegador, link na bio.\n#AnimeIdle {hashtag_anime(anime)}",
                      f"\n\n#AnimeIdle {hashtag_anime(anime)}", "\n\n#AnimeIdle", ""):
             if len(cabeca + rabo) <= 280:
                 return cabeca + rabo
         return cabeca[:277] + "..."
-    return (f"Carta do dia: {nome} ({anime}) · {rar}\n\n{card['lore']}\n\n"
+    return (f"Personagem: {nome} ({anime}) · {rar}\n\n{card['lore']}\n\n"
             f"Colecione {nome} e mais de 150 heróis de anime. Jogue de graça no navegador: anime-idle.com\n"
             f"Play free in your browser: anime-idle.com\n\n{tags}")
 

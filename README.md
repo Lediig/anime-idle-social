@@ -1,6 +1,6 @@
 # Anime Idle Social
 
-Robô de posts diários do Anime Idle: **Carta do Dia** no Instagram (@animeidle) e no X (@AnimeIdle_).
+Robô de posts diários do Anime Idle: **Personagem** (um por dia) no Instagram (@animeidle) e no X (@AnimeIdle_).
 
 Sem IA em tempo de execução. A peça é montada com a **arte real das poses do jogo**, o texto vem da
 **Enciclopédia da Coleção** (revisada pelo Douglas) e o fundo é um dos mundos do PvE. Tudo é
@@ -10,7 +10,7 @@ determinístico a partir da data, então o post de qualquer dia pode ser reprodu
 
 - `bot/carta.py escolher` diz qual carta cai em qual dia. Ciclo de 152 dias a partir de 2026-09-09;
   cada ciclo embaralha a ordem com semente própria, então em 5 meses nenhuma carta repete.
-- `bot/carta.py compor` monta a peça 1080x1080 (`posts/AAAA-MM-DD.jpg`). Pose: a mais compacta das
+- `bot/carta.py compor` monta a peça 1080x1350 (4:5, retrato do feed) (`posts/AAAA-MM-DD.jpg`). Pose: a mais compacta das
   três, que é a que o personagem domina (lição do anúncio do Ikki). Nome na cor da raridade.
 - `bot/carta.py postar` publica. O Instagram só aceita imagem por URL pública, por isso a imagem é
   commitada antes e servida pelo `raw.githubusercontent.com` deste repositório (que precisa ser público).
