@@ -171,8 +171,8 @@ TITULO = "PERSONAGEM"          # titulo da peca (era "CARTA DO DIA" ate 09/09)
 # story: 9:16; o Instagram cobre ~250px no topo (nome do perfil) e ~250px embaixo (resposta), entao tudo
 # fica dentro da faixa segura e o rodape ganha a chamada pro feed.
 FORMATOS = {
-    "feed":  dict(W=1080, H=1350, topo=18,  chao=1050, pose=700, faixa_topo=290),
-    "story": dict(W=1080, H=1920, topo=290, chao=1330, pose=760, faixa_topo=560),
+    "feed":  dict(W=1080, H=1350, topo=18,  chao=1050, pose=700, faixa_topo=290, logo=200),
+    "story": dict(W=1080, H=1920, topo=270, chao=1330, pose=760, faixa_topo=600, logo=300),
 }
 
 
@@ -205,10 +205,10 @@ def compor(card, formato="feed"):
     d = ImageDraw.Draw(out)
     # logo (emblema quadrado, transparente) + titulo
     logo = Image.open(A("logo.png")).convert("RGBA")
-    logo = logo.resize((int(200 * logo.width / logo.height), 200), Image.LANCZOS)
+    logo = logo.resize((int(F["logo"] * logo.width / logo.height), F["logo"]), Image.LANCZOS)
     out.alpha_composite(logo, (W // 2 - logo.width // 2, F["topo"]))
     d = ImageDraw.Draw(out)
-    texto(d, (W // 2, F["topo"] + 200 + 36), TITULO if formato == "feed" else "PERSONAGEM DE HOJE", 60, (255, 255, 255), esp=5)
+    texto(d, (W // 2, F["topo"] + F["logo"] + 36), TITULO, 60, (255, 255, 255), esp=5)
     # personagem
     p = pose_grande(card["slug"], card["pose"], F["pose"])
     sombra = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -228,9 +228,8 @@ def compor(card, formato="feed"):
     d = ImageDraw.Draw(out)
     d.text((x0 + 56, y_linha), linha, font=f, fill=(255, 255, 255), anchor="lm", stroke_width=4, stroke_fill=(0, 0, 0))
     if formato == "story":
-        # chamada dentro da faixa segura (acima dos ~250px que o Instagram cobre com a caixa de resposta)
-        texto(d, (W // 2, CHAO + 275), "HISTÓRIA COMPLETA NO FEED", 40, (255, 255, 255), esp=4)
-        texto(d, (W // 2, CHAO + 330), "anime-idle.com", 34, cor, esp=4)
+        # so o site, dentro da faixa segura (acima dos ~250px que o Instagram cobre com a caixa de resposta)
+        texto(d, (W // 2, CHAO + 290), "anime-idle.com", 36, cor, esp=4)
     else:
         texto(d, (W - 28, H - 24), "anime-idle.com", 30, (255, 255, 255, 210), esp=3, ancora="rm")
     return out.convert("RGB")
