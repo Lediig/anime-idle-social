@@ -167,14 +167,21 @@ def pose_grande(slug, i, alvo_alt):
 
 
 TITULO = "PERSONAGEM"          # titulo da peca (era "CARTA DO DIA" ate 09/09)
-W, H = 1080, 1350              # 4:5, o retrato do feed do Instagram: inteiro no post, quase sem corte na grade
-CHAO = 1050                    # onde o personagem pisa
+# Dois formatos com a mesma composicao. feed: 4:5, inteiro no post e quase sem corte na grade.
+# story: 9:16; o Instagram cobre ~250px no topo (nome do perfil) e ~250px embaixo (resposta), entao tudo
+# fica dentro da faixa segura e o rodape ganha a chamada pro feed.
+FORMATOS = {
+    "feed":  dict(W=1080, H=1350, topo=18,  chao=1050, pose=700, faixa_topo=290),
+    "story": dict(W=1080, H=1920, topo=290, chao=1330, pose=760, faixa_topo=560),
+}
 
 
-def compor(card):
+def compor(card, formato="feed"):
+    F = FORMATOS[formato]
+    W, H, CHAO = F["W"], F["H"], F["chao"]
     cor = hexrgb(RAR_COR[card["rarity"]])
     bg = Image.open(A("bg", card["bg"])).convert("RGB")
-    if bg.size != (W, H):  # fundo antigo quadrado: cobre o quadro cortando as laterais
+    if bg.size != (W, H):  # cobre o quadro cortando o que sobrar (o fundo e 4:5; no story perde as laterais)
         s = max(W / bg.width, H / bg.height)
         bg = bg.resize((round(bg.width * s), round(bg.height * s)), Image.LANCZOS)
         bg = bg.crop(((bg.width - W) // 2, (bg.height - H) // 2, (bg.width - W) // 2 + W, (bg.height - H) // 2 + H))
@@ -192,18 +199,18 @@ def compor(card):
     # faixas escuras (finas, pra nao comer o fundo)
     faixa = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     fd = ImageDraw.Draw(faixa)
-    fd.rectangle((0, 0, W, 290), fill=(6, 4, 14, 150))
+    fd.rectangle((0, 0, W, F["faixa_topo"]), fill=(6, 4, 14, 150))
     fd.rectangle((0, CHAO + 20, W, H), fill=(6, 4, 14, 190))
     out = Image.alpha_composite(out, faixa.filter(ImageFilter.GaussianBlur(10)))
     d = ImageDraw.Draw(out)
     # logo (emblema quadrado, transparente) + titulo
     logo = Image.open(A("logo.png")).convert("RGBA")
     logo = logo.resize((int(200 * logo.width / logo.height), 200), Image.LANCZOS)
-    out.alpha_composite(logo, (W // 2 - logo.width // 2, 18))
+    out.alpha_composite(logo, (W // 2 - logo.width // 2, F["topo"]))
     d = ImageDraw.Draw(out)
-    texto(d, (W // 2, 18 + 200 + 36), TITULO, 60, (255, 255, 255), esp=5)
+    texto(d, (W // 2, F["topo"] + 200 + 36), TITULO if formato == "feed" else "PERSONAGEM DE HOJE", 60, (255, 255, 255), esp=5)
     # personagem
-    p = pose_grande(card["slug"], card["pose"], 700)
+    p = pose_grande(card["slug"], card["pose"], F["pose"])
     sombra = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     ImageDraw.Draw(sombra).ellipse((W // 2 - p.width // 2 - 10, CHAO - 12 - 26, W // 2 + p.width // 2 + 10, CHAO - 12 + 26), fill=(0, 0, 0, 120))
     out.alpha_composite(sombra.filter(ImageFilter.GaussianBlur(12)))
@@ -220,7 +227,12 @@ def compor(card):
     out.alpha_composite(rar, (int(x0), y_linha - 22))
     d = ImageDraw.Draw(out)
     d.text((x0 + 56, y_linha), linha, font=f, fill=(255, 255, 255), anchor="lm", stroke_width=4, stroke_fill=(0, 0, 0))
-    texto(d, (W - 28, H - 24), "anime-idle.com", 30, (255, 255, 255, 210), esp=3, ancora="rm")
+    if formato == "story":
+        # chamada dentro da faixa segura (acima dos ~250px que o Instagram cobre com a caixa de resposta)
+        texto(d, (W // 2, CHAO + 275), "HISTÓRIA COMPLETA NO FEED", 40, (255, 255, 255), esp=4)
+        texto(d, (W // 2, CHAO + 330), "anime-idle.com", 34, cor, esp=4)
+    else:
+        texto(d, (W - 28, H - 24), "anime-idle.com", 30, (255, 255, 255, 210), esp=3, ancora="rm")
     return out.convert("RGB")
 
 
@@ -311,9 +323,15 @@ def esperar_url(url, tent=24):
     raise SystemExit(f"imagem nao ficou publica: {url}")
 
 
-def postar_instagram(url_img, txt, token):
+def postar_instagram(url_img, txt, token, story=False):
+    """Feed (com legenda) ou Story (media_type=STORIES, sem legenda; a API nao poe figurinha de link)."""
     import requests
-    r = requests.post(f"{IG_API}/{IG_USER_ID}/media", data={"image_url": url_img, "caption": txt, "access_token": token}, timeout=60)
+    dados = {"image_url": url_img, "access_token": token}
+    if story:
+        dados["media_type"] = "STORIES"
+    else:
+        dados["caption"] = txt
+    r = requests.post(f"{IG_API}/{IG_USER_ID}/media", data=dados, timeout=60)
     if r.status_code != 200:
         raise SystemExit("IG media: " + r.text)
     cid = r.json()["id"]
@@ -389,10 +407,12 @@ def main():
         testar_token(); print("token ok"); return
 
     saida = a.saida or os.path.join(ROOT, "posts", f"{card['data']}.jpg")
+    saida_story = os.path.splitext(saida)[0] + "-story.jpg"
     if a.cmd == "compor" or a.fase in (None, "imagem"):
         os.makedirs(os.path.dirname(saida), exist_ok=True)
         compor(card).save(saida, "JPEG", quality=92, optimize=True)
-        print("imagem:", saida, os.path.getsize(saida) // 1024, "KB")
+        compor(card, "story").save(saida_story, "JPEG", quality=92, optimize=True)
+        print("imagem:", saida, os.path.getsize(saida) // 1024, "KB; story:", os.path.getsize(saida_story) // 1024, "KB")
         if a.cmd == "compor" or a.fase == "imagem":
             return
 
@@ -401,19 +421,32 @@ def main():
     reg = next((p for p in e["posts"] if p["data"] == card["data"]), None) or {"data": card["data"], "slug": card["slug"]}
     tem_x = all(os.environ.get(k) for k in ("X_API_KEY", "X_API_SECRET", "X_ACCESS_TOKEN", "X_ACCESS_SECRET"))
     falta_ig, falta_x = not reg.get("ig"), tem_x and not reg.get("x")
-    if not (falta_ig or falta_x) and not a.dry_run:
+    falta_story = not reg.get("story") and "story" not in reg  # story so uma vez; se falhar fica None e nao repete
+    if not (falta_ig or falta_x or falta_story) and not a.dry_run:
         print("ja postado hoje nas redes disponiveis, nada a fazer"); return
     url = f"{RAW_BASE}/posts/{card['data']}.jpg"
+    url_story = f"{RAW_BASE}/posts/{card['data']}-story.jpg"
     txt_ig, txt_x = legenda(card), legenda(card, "x")
     if a.dry_run:
-        print("DRY RUN\n", url, "\n", txt_ig, "\n--- X ---\n", txt_x)
+        print("DRY RUN\n", url, "\n", url_story, "\n", txt_ig, "\n--- X ---\n", txt_x)
         testar_token(); return
-    if falta_ig:
-        esperar_url(url)
+    token = None
+    if falta_ig or falta_story:
         token, em = token_atual()
         token = renovar_se_preciso(token, em)
+    if falta_ig:
+        esperar_url(url)
         reg["ig"] = postar_instagram(url, txt_ig, token)
         print("instagram ok:", reg["ig"])
+    if falta_story and reg.get("ig"):
+        # o story aponta pro feed, entao so sai depois dele; falha no story nao derruba o dia
+        try:
+            esperar_url(url_story)
+            reg["story"] = postar_instagram(url_story, "", token, story=True)
+            print("story ok:", reg["story"])
+        except SystemExit as err:
+            reg["story"] = None
+            print("aviso: story falhou:", err)
     if falta_x:
         reg["x"] = postar_x(saida, txt_x)
         if reg["x"]:

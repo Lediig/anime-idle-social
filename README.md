@@ -12,7 +12,7 @@ determinístico a partir da data, então o post de qualquer dia pode ser reprodu
   cada ciclo embaralha a ordem com semente própria, então em 5 meses nenhuma carta repete.
 - `bot/carta.py compor` monta a peça 1080x1350 (4:5, retrato do feed) (`posts/AAAA-MM-DD.jpg`). Pose: a mais compacta das
   três, que é a que o personagem domina (lição do anúncio do Ikki). Nome na cor da raridade.
-- `bot/carta.py postar` publica. O Instagram só aceita imagem por URL pública, por isso a imagem é
+- `bot/carta.py postar` publica: post no feed (4:5) e, logo depois, um **Story** 9:16 da mesma peça apontando pro feed (o Story só no Instagram; falha no Story não derruba o dia). O Instagram só aceita imagem por URL pública, por isso a imagem é
   commitada antes e servida pelo `raw.githubusercontent.com` deste repositório (que precisa ser público).
 - `.github/workflows/carta-do-dia.yml` roda todo dia às 19:00 de Brasília. Também dá pra rodar na mão em
   **Actions → Carta do Dia → Run workflow**, com `dry_run` (não publica) e `slug` (forçar uma carta).
