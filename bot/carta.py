@@ -385,24 +385,29 @@ def main():
         if a.cmd == "compor" or a.fase == "imagem":
             return
 
-    # publicar
+    # publicar (cada rede so uma vez por dia: um dia pela metade, ex. X sem chaves de manha, completa depois)
     e = estado()
-    if any(p["data"] == card["data"] and p.get("ig") for p in e["posts"]) and not a.dry_run:
-        print("ja postado hoje, nada a fazer"); return
+    reg = next((p for p in e["posts"] if p["data"] == card["data"]), None) or {"data": card["data"], "slug": card["slug"]}
+    tem_x = all(os.environ.get(k) for k in ("X_API_KEY", "X_API_SECRET", "X_ACCESS_TOKEN", "X_ACCESS_SECRET"))
+    falta_ig, falta_x = not reg.get("ig"), tem_x and not reg.get("x")
+    if not (falta_ig or falta_x) and not a.dry_run:
+        print("ja postado hoje nas redes disponiveis, nada a fazer"); return
     url = f"{RAW_BASE}/posts/{card['data']}.jpg"
     txt_ig, txt_x = legenda(card), legenda(card, "x")
     if a.dry_run:
         print("DRY RUN\n", url, "\n", txt_ig, "\n--- X ---\n", txt_x)
         testar_token(); return
-    esperar_url(url)
-    token, em = token_atual()
-    token = renovar_se_preciso(token, em)
-    ig_id = postar_instagram(url, txt_ig, token)
-    print("instagram ok:", ig_id)
-    x_id = postar_x(saida, txt_x)
-    if x_id:
-        print("x ok:", x_id)
-    e["posts"].append({"data": card["data"], "slug": card["slug"], "ig": ig_id, "x": x_id})
+    if falta_ig:
+        esperar_url(url)
+        token, em = token_atual()
+        token = renovar_se_preciso(token, em)
+        reg["ig"] = postar_instagram(url, txt_ig, token)
+        print("instagram ok:", reg["ig"])
+    if falta_x:
+        reg["x"] = postar_x(saida, txt_x)
+        if reg["x"]:
+            print("x ok:", reg["x"])
+    e["posts"] = [p for p in e["posts"] if p["data"] != card["data"]] + [reg]
     gravar_estado(e)
 
 
