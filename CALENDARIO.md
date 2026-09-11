@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 10/09/2026 20:28 (Brasília). Post diário às 19:00.
+Gerado em 11/09/2026 08:20 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) | Raridade |
 |---|---|---|---|---|
-| 10/09 (qui) | <img src="assets/poses/inuyasha_2.png" width="128"> | **Inuyasha** `inuyasha` | Inuyasha (Floresta do Poço Sagrado) | Épico |
 | 11/09 (sex) | <img src="assets/poses/alphonse_1.png" width="128"> | **Alphonse** `alphonse` | Fullmetal Alchemist (Portal da Verdade) | Épico |
 | 12/09 (sáb) | <img src="assets/poses/sakura_1.png" width="128"> | **Sakura** `sakura` | Naruto (Vila Oculta da Folha) | Raro |
 | 13/09 (dom) | <img src="assets/poses/hisoka_2.png" width="128"> | **Hisoka** `hisoka` | Hunter x Hunter (Portão da Mansão Sombria) | Épico |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 22/10 (qui) | <img src="assets/poses/cell_1.png" width="128"> | **Cell** `cell` | Dragon Ball (Ermos do Torneio) | Lendário |
 | 23/10 (sex) | <img src="assets/poses/mikasa_0.png" width="128"> | **Mikasa** `mikasa` | Attack on Titan (Distrito da Muralha) | Épico |
 | 24/10 (sáb) | <img src="assets/poses/asuna_0.png" width="128"> | **Asuna** `asuna` | Sword Art Online (Castelo Flutuante) | Lendário |
+| 25/10 (dom) | <img src="assets/poses/aki_2.png" width="128"> | **Aki** `aki` | Chainsaw Man (Viela dos Demônios) | Raro |
