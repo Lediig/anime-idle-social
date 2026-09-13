@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 12/09/2026 20:29 (Brasília). Post diário às 19:00.
+Gerado em 13/09/2026 20:42 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) | Raridade |
 |---|---|---|---|---|
-| 12/09 (sáb) | <img src="assets/poses/sakura_1.png" width="128"> | **Sakura** `sakura` | Naruto (Vila Oculta da Folha) | Raro |
 | 13/09 (dom) | <img src="assets/poses/hisoka_2.png" width="128"> | **Hisoka** `hisoka` | Hunter x Hunter (Portão da Mansão Sombria) | Épico |
 | 14/09 (seg) | <img src="assets/poses/genos_2.png" width="128"> | **Genos** `genos` | One-Punch Man (Cidade em Ruínas) | Épico |
 | 15/09 (ter) | <img src="assets/poses/itachi_1.png" width="128"> | **Itachi** `itachi` | Naruto (Vila Oculta da Folha) | Lendário |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 24/10 (sáb) | <img src="assets/poses/asuna_0.png" width="128"> | **Asuna** `asuna` | Sword Art Online (Castelo Flutuante) | Lendário |
 | 25/10 (dom) | <img src="assets/poses/aki_2.png" width="128"> | **Aki** `aki` | Chainsaw Man (Viela dos Demônios) | Raro |
 | 26/10 (seg) | <img src="assets/poses/maki_0.png" width="128"> | **Maki** `maki` | Jujutsu Kaisen (Cruzamento Assombrado) | Raro |
+| 27/10 (ter) | <img src="assets/poses/zenitsu_2.png" width="128"> | **Zenitsu** `zenitsu` | Demon Slayer (Montanha Nevada) | Raro |
