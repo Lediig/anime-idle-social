@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 17/09/2026 20:46 (Brasília). Post diário às 19:00.
+Gerado em 18/09/2026 20:41 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) | Raridade |
 |---|---|---|---|---|
-| 17/09 (qui) | <img src="assets/poses/subaru_1.png" width="128"> | **Subaru** `subaru` | Re:Zero (Planície da Névoa) | Raro |
 | 18/09 (sex) | <img src="assets/poses/albedo_2.png" width="128"> | **Albedo** `albedo` | Overlord (Grande Tumba de Mármore) | Épico |
 | 19/09 (sáb) | <img src="assets/poses/zeke_0.png" width="128"> | **Zeke** `zeke` | Attack on Titan (Distrito da Muralha) | Épico |
 | 20/09 (dom) | <img src="assets/poses/umaru_1.png" width="128"> | **Umaru** `umaru` | Umaru-chan (Quarto do Kotatsu) | Incomum |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 29/10 (qui) | <img src="assets/poses/goku_1.png" width="128"> | **Goku** `goku` | Dragon Ball (Ermos do Torneio) | Lendário |
 | 30/10 (sex) | <img src="assets/poses/erwin_2.png" width="128"> | **Erwin** `erwin` | Attack on Titan (Distrito da Muralha) | Épico |
 | 31/10 (sáb) | <img src="assets/poses/gon_0.png" width="128"> | **Gon** `gon` | Hunter x Hunter (Portão da Mansão Sombria) | Épico |
+| 01/11 (dom) | <img src="assets/poses/megumi_1.png" width="128"> | **Megumi** `megumi` | Jujutsu Kaisen (Cruzamento Assombrado) | Épico |
