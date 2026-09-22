@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 20/09/2026 20:38 (Brasília). Post diário às 19:00.
+Gerado em 21/09/2026 21:20 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) | Raridade |
 |---|---|---|---|---|
-| 20/09 (dom) | <img src="assets/poses/umaru_1.png" width="128"> | **Umaru** `umaru` | Umaru-chan (Quarto do Kotatsu) | Incomum |
 | 21/09 (seg) | <img src="assets/poses/annie_1.png" width="128"> | **Annie** `annie` | Attack on Titan (Distrito da Muralha) | Raro |
 | 22/09 (ter) | <img src="assets/poses/kenshiro_2.png" width="128"> | **Kenshiro** `kenshiro` | Hokuto no Ken (Deserto Sem Lei) | Lendário |
 | 23/09 (qua) | <img src="assets/poses/madara_0.png" width="128"> | **Madara** `madara` | Naruto (Vila Oculta da Folha) | Lendário |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 01/11 (dom) | <img src="assets/poses/megumi_1.png" width="128"> | **Megumi** `megumi` | Jujutsu Kaisen (Cruzamento Assombrado) | Épico |
 | 02/11 (seg) | <img src="assets/poses/megumin_0.png" width="128"> | **Megumin** `megumin` | Konosuba (Praça dos Aventureiros) | Épico |
 | 03/11 (ter) | <img src="assets/poses/levi_0.png" width="128"> | **Levi** `levi` | Attack on Titan (Distrito da Muralha) | Lendário |
+| 04/11 (qua) | <img src="assets/poses/chrollo_1.png" width="128"> | **Chrollo** `chrollo` | Hunter x Hunter (Portão da Mansão Sombria) | Épico |
