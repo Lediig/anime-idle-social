@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 22/09/2026 20:53 (Brasília). Post diário às 19:00.
+Gerado em 23/09/2026 21:03 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) | Raridade |
 |---|---|---|---|---|
-| 22/09 (ter) | <img src="assets/poses/kenshiro_2.png" width="128"> | **Kenshiro** `kenshiro` | Hokuto no Ken (Deserto Sem Lei) | Lendário |
 | 23/09 (qua) | <img src="assets/poses/madara_0.png" width="128"> | **Madara** `madara` | Naruto (Vila Oculta da Folha) | Lendário |
 | 24/09 (qui) | <img src="assets/poses/reze_2.png" width="128"> | **Reze** `reze` | Chainsaw Man (Viela dos Demônios) | Raro |
 | 25/09 (sex) | <img src="assets/poses/kenshin_0.png" width="128"> | **Kenshin** `kenshin` | Samurai X (Pátio do Dojo) | Épico |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 03/11 (ter) | <img src="assets/poses/levi_0.png" width="128"> | **Levi** `levi` | Attack on Titan (Distrito da Muralha) | Lendário |
 | 04/11 (qua) | <img src="assets/poses/chrollo_1.png" width="128"> | **Chrollo** `chrollo` | Hunter x Hunter (Portão da Mansão Sombria) | Épico |
 | 05/11 (qui) | <img src="assets/poses/scar_2.png" width="128"> | **Scar** `scar` | Fullmetal Alchemist (Portal da Verdade) | Raro |
+| 06/11 (sex) | <img src="assets/poses/leorio_2.png" width="128"> | **Leorio** `leorio` | Hunter x Hunter (Portão da Mansão Sombria) | Incomum |
