@@ -11,7 +11,7 @@ determinístico a partir da data, então o post de qualquer dia pode ser reprodu
 - `bot/carta.py escolher` diz qual carta cai em qual dia. Ciclo de 152 dias a partir de 2026-09-09;
   cada ciclo embaralha a ordem com semente própria, então em 5 meses nenhuma carta repete.
 - `bot/carta.py compor` monta a peça 1080x1350 (4:5, retrato do feed) (`posts/AAAA-MM-DD.jpg`). Pose: a mais compacta das
-  três, que é a que o personagem domina (lição do anúncio do Ikki). Nome na cor da raridade.
+  três, que é a que o personagem domina (lição do anúncio do Ikki). Nome e brilho na cor da habilidade da pose (a do cut-in do jogo, `data/cores.json`); a peça não fala de raridade (regra de 24/09/2026).
 - `bot/carta.py postar` publica: post no feed (4:5) e, logo depois, um **Story** 9:16 da mesma peça apontando pro feed (o Story só no Instagram; falha no Story não derruba o dia). O Instagram só aceita imagem por URL pública, por isso a imagem é
   commitada antes e servida pelo `raw.githubusercontent.com` deste repositório (que precisa ser público).
 - `.github/workflows/carta-do-dia.yml` roda todo dia às 19:00 de Brasília. Também dá pra rodar na mão em
@@ -44,5 +44,5 @@ python bot/carta.py legenda --slug goku
 
 ## Atualizar cartas
 
-`tools/preparar_dados.py` regenera `data/cards.json` e `assets/bg/` a partir do repositório do jogo e do
+`tools/preparar_cores.py` regenera `data/cores.json` a partir do `anime/data/poses.js` do jogo. `tools/preparar_dados.py` regenera `data/cards.json` e `assets/bg/` a partir do repositório do jogo e do
 `lore.json` da Enciclopédia. Poses novas entram copiando `assets/poses/<slug>_{0,1,2}.png` do jogo.

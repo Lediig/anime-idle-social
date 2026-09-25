@@ -13,9 +13,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 s = open(os.path.join(SRC, "anime/data/cards.js"), encoding="utf8").read()
 cards = json.loads(s[s.index("["):s.rindex("]") + 1])
 lore = json.load(open(LORE, encoding="utf8"))
-out = [{"slug": c["slug"], "name": c["name"], "anime": c["anime"], "rarity": c["rarity"], "lore": lore[c["slug"]]}
+out = [{"slug": c["slug"], "name": c["name"], "anime": c["anime"], "lore": lore[c["slug"]]}
        for c in sorted(cards, key=lambda c: c["slug"])]
 assert len(out) == 152 and all(o["lore"] for o in out)
+# sem "rarity" desde 2026-09-24: a publicacao nao fala de raridade (a cor vem de tools/preparar_cores.py)
 json.dump(out, open(os.path.join(ROOT, "data/cards.json"), "w", encoding="utf8"), ensure_ascii=False, indent=1)
 
 # WORLD_THEMES do jogo (anime/pve_view.js): mundo i+1 e o cenario Normal do tema, mundo i+41 o do Pesadelo.

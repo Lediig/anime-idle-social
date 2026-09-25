@@ -21,11 +21,17 @@ IG_API = "https://graph.instagram.com/v23.0"
 IG_USER_ID = "17841447727327781"      # @animeidle (id da conta profissional no app Anime Idle Social)
 RAW_BASE = "https://raw.githubusercontent.com/Lediig/anime-idle-social/main"
 
-RAR_NOME = {1: "Comum", 2: "Incomum", 3: "Raro", 4: "Épico", 5: "Lendário", 6: "Mítico"}
-RAR_COR = {1: "#b7a6a8", 2: "#63d29a", 3: "#5ca4e0", 4: "#c07bff", 5: "#ffcf5c", 6: "#ff5c6a"}
-
+# SEM RARIDADE (regra do Mateus, 2026-09-24): personagem nao tem raridade propria no jogo
+# (toda carta sai de Comum a Mitica), entao a publicacao nao fala dela -- nem pela palavra,
+# nem pelo icone, nem pela COR. A cor do nome e do brilho e a da habilidade da pose
+# escolhida, a mesma do cut-in do jogo (data/cores.json, tools/preparar_cores.py).
 CARDS = json.load(open(os.path.join(ROOT, "data", "cards.json"), encoding="utf8"))
 ANIMES = json.load(open(os.path.join(ROOT, "data", "animes.json"), encoding="utf8"))  # anime -> {tema, mundo}
+CORES = json.load(open(os.path.join(ROOT, "data", "cores.json"), encoding="utf8"))    # slug -> [cor da pose 0,1,2]
+
+
+def cor_de(card):
+    return CORES[card["slug"]][card["pose"]]
 
 
 def fundo(anime, ciclo):
@@ -85,13 +91,13 @@ def calendario(dias=45, data=None):
               f"Gerado em {dt.datetime.now(TZ):%d/%m/%Y %H:%M} (Brasília). Post diário às 19:00.",
               "Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.", "",
               f"Fora da fila agora: {', '.join(sorted(fora)) if fora else 'ninguém'}.", "",
-              "| Data | Arte | Carta | Anime (fundo: mundo do PvE) | Raridade |", "|---|---|---|---|---|"]
+              "| Data | Arte | Carta | Anime (fundo: mundo do PvE) |", "|---|---|---|---|"]
     for i in range(dias):
         c = carta_do_dia(data + dt.timedelta(days=i))
         d = data + dt.timedelta(days=i)
         linhas.append(f"| {d:%d/%m} ({'seg ter qua qui sex sáb dom'.split()[d.weekday()]}) "
                       f"| <img src=\"assets/poses/{c['slug']}_{c['pose']}.png\" width=\"128\"> "
-                      f"| **{c['name']}** `{c['slug']}` | {c['anime']} ({c['mundo']}) | {RAR_NOME[c['rarity']]} |")
+                      f"| **{c['name']}** `{c['slug']}` | {c['anime']} ({c['mundo']}) |")
     open(os.path.join(ROOT, "CALENDARIO.md"), "w", encoding="utf8", newline="\n").write("\n".join(linhas) + "\n")
     calendario_html(dias, data, fora)
     return linhas
@@ -107,11 +113,11 @@ def calendario_html(dias, data, fora):
         c = carta_do_dia(d)
         semana = "seg ter qua qui sex sáb dom".split()[d.weekday()]
         ok = feitos.get(d.isoformat())
-        cel.append(f"""<div class="c r{c['rarity']}{' ok' if ok else ''}">
+        cel.append(f"""<div class="c{' ok' if ok else ''}">
   <div class="d">{d:%d/%m} <small>{semana}</small>{' <b>✔ postado</b>' if ok else ''}</div>
   <img src="assets/poses/{c['slug']}_{c['pose']}.png" alt="">
-  <div class="n">{c['name']}</div><div class="a">{c['anime']}</div>
-  <div class="m">{RAR_NOME[c['rarity']]} · fundo: {c['mundo']}</div><div class="s">{c['slug']}</div></div>""")
+  <div class="n" style="color:{cor_de(c)}">{c['name']}</div><div class="a">{c['anime']}</div>
+  <div class="m">fundo: {c['mundo']}</div><div class="s">{c['slug']}</div></div>""")
     fora_txt = ", ".join(sorted(fora)) if fora else "ninguém"
     html = f"""<!doctype html><meta charset="utf-8"><title>Agenda de Personagens</title>
 <style>
@@ -122,7 +128,6 @@ h1{{margin:0 0 6px}} p{{color:#bbb;margin:4px 0}} code{{background:#222;padding:
 .c.ok{{opacity:.55}} .c img{{width:160px;height:90px;object-fit:contain;image-rendering:pixelated;margin:6px 0}}
 .d{{font-weight:700;color:#fff}} .d small{{color:#999;font-weight:400}} .d b{{color:#63d29a;font-weight:600;font-size:12px}}
 .n{{font-size:20px;font-weight:800}} .a{{color:#ccc}} .m{{font-size:12px;color:#999;margin-top:4px}} .s{{font-size:11px;color:#666;font-family:monospace}}
-.r2 .n{{color:#63d29a}} .r3 .n{{color:#5ca4e0}} .r4 .n{{color:#c07bff}} .r5 .n{{color:#ffcf5c}} .r6 .n{{color:#ff5c6a}}
 </style>
 <h1>Agenda de Personagens</h1>
 <p>Gerada em {dt.datetime.now(TZ):%d/%m/%Y %H:%M}. Post diário às 19:00 (Brasília). Próximos {dias} dias.</p>
@@ -179,7 +184,7 @@ FORMATOS = {
 def compor(card, formato="feed"):
     F = FORMATOS[formato]
     W, H, CHAO = F["W"], F["H"], F["chao"]
-    cor = hexrgb(RAR_COR[card["rarity"]])
+    cor = hexrgb(cor_de(card))
     bg = Image.open(A("bg", card["bg"])).convert("RGB")
     if bg.size != (W, H):  # cobre o quadro cortando o que sobrar (o fundo e 4:5; no story perde as laterais)
         s = max(W / bg.width, H / bg.height)
@@ -187,7 +192,7 @@ def compor(card, formato="feed"):
         bg = bg.crop(((bg.width - W) // 2, (bg.height - H) // 2, (bg.width - W) // 2 + W, (bg.height - H) // 2 + H))
     bg = bg.filter(ImageFilter.GaussianBlur(1.2))
     bg = Image.blend(bg, Image.new("RGB", (W, H), (8, 6, 16)), 0.30)
-    # brilho radial na cor da raridade atras do personagem
+    # brilho radial na cor da habilidade (a do cut-in do jogo) atras do personagem
     glow = Image.new("RGBA", (W, H), (0, 0, 0, 0))
     g = ImageDraw.Draw(glow)
     cy = CHAO - 270
@@ -216,17 +221,10 @@ def compor(card, formato="feed"):
     out.alpha_composite(sombra.filter(ImageFilter.GaussianBlur(12)))
     out.alpha_composite(p, (W // 2 - p.width // 2, CHAO - p.height))
     d = ImageDraw.Draw(out)
-    # placa: nome, anime, selo de raridade
+    # placa: nome e anime (sem selo de raridade desde 2026-09-24)
     y_nome, y_linha = CHAO + 100, CHAO + 182
     texto(d, (W // 2, y_nome), card["name"].upper(), 112, cor, esp=7, largura_max=980)
-    rar = Image.open(A("icons", f"rar_{card['rarity']}.png")).convert("RGBA").resize((44, 44), Image.LANCZOS)
-    linha = f"{card['anime']}  ·  {RAR_NOME[card['rarity']].upper()}"
-    f = fonte(44)
-    lw = d.textlength(linha, font=f) + 56
-    x0 = W // 2 - lw // 2
-    out.alpha_composite(rar, (int(x0), y_linha - 22))
-    d = ImageDraw.Draw(out)
-    d.text((x0 + 56, y_linha), linha, font=f, fill=(255, 255, 255), anchor="lm", stroke_width=4, stroke_fill=(0, 0, 0))
+    texto(d, (W // 2, y_linha), card["anime"].upper(), 44, (255, 255, 255), esp=4, largura_max=980)
     if formato == "story":
         # so o site, dentro da faixa segura (acima dos ~250px que o Instagram cobre com a caixa de resposta)
         texto(d, (W // 2, CHAO + 290), "anime-idle.com", 36, cor, esp=4)
@@ -240,17 +238,17 @@ def hashtag_anime(anime):
 
 
 def legenda(card, rede="ig"):
-    nome, anime, rar = card["name"], card["anime"], RAR_NOME[card["rarity"]]
+    nome, anime = card["name"], card["anime"]
     tags = f"#AnimeIdle {hashtag_anime(anime)} #anime #idlegame #gacha #jogobrasileiro"
     if rede == "x":
         # sem URL: post com link custa 13x mais na API do X. O link fica na bio.
-        cabeca = f"Personagem: {nome} ({anime}, {rar})\n\n{card['lore']}"
+        cabeca = f"Personagem: {nome} ({anime})\n\n{card['lore']}"
         for rabo in (f"\n\nJogue de graça no navegador, link na bio.\n#AnimeIdle {hashtag_anime(anime)}",
                      f"\n\n#AnimeIdle {hashtag_anime(anime)}", "\n\n#AnimeIdle", ""):
             if len(cabeca + rabo) <= 280:
                 return cabeca + rabo
         return cabeca[:277] + "..."
-    return (f"Personagem: {nome} ({anime}) · {rar}\n\n{card['lore']}\n\n"
+    return (f"Personagem: {nome} ({anime})\n\n{card['lore']}\n\n"
             f"Colecione {nome} e mais de 150 heróis de anime. Jogue de graça no navegador: anime-idle.com\n"
             f"Play free in your browser: anime-idle.com\n\n{tags}")
 
@@ -397,7 +395,7 @@ def main():
             print(cel[1].strip(), cel[3].strip(), "|", cel[4].strip(), "|", cel[5].strip())
         return
     if a.cmd == "escolher":
-        print(json.dumps({k: card[k] for k in ("data", "slug", "name", "anime", "rarity", "pose", "bg")}, ensure_ascii=False))
+        print(json.dumps({k: card[k] for k in ("data", "slug", "name", "anime", "pose", "bg")}, ensure_ascii=False))
         return
     if a.cmd == "legenda":
         print(legenda(card)); print("\n--- X ---\n"); print(legenda(card, "x"))

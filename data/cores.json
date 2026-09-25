@@ -1,0 +1,762 @@
+{
+ "ace": [
+  "#ed9a87",
+  "#fdd699",
+  "#fdd699"
+ ],
+ "ainz": [
+  "#ae90c3",
+  "#79d1ad",
+  "#6ae3fd"
+ ],
+ "aizen": [
+  "#c9e4f8",
+  "#b27adf",
+  "#c584f0"
+ ],
+ "akaza": [
+  "#e69ab3",
+  "#e99eb7",
+  "#ea93b7"
+ ],
+ "aki": [
+  "#c36784",
+  "#e7bcb0",
+  "#bcdfce"
+ ],
+ "albedo": [
+  "#dcbffb",
+  "#ba84f6",
+  "#fdb9cc"
+ ],
+ "allmight": [
+  "#fee8a0",
+  "#fee8a0",
+  "#feeeac"
+ ],
+ "alphonse": [
+  "#a2e3f1",
+  "#fde6b4",
+  "#fde6b4"
+ ],
+ "annie": [
+  "#f6edb9",
+  "#abc3cf",
+  "#f6e0ce"
+ ],
+ "anya": [
+  "#f9e5d6",
+  "#fcbfd2",
+  "#f9e5d6"
+ ],
+ "aqua": [
+  "#debe9c",
+  "#b5d9eb",
+  "#859ac3"
+ ],
+ "armin": [
+  "#f7e09d",
+  "#f7e09d",
+  "#a7cced"
+ ],
+ "asta": [
+  "#e8cec2",
+  "#f0cec2",
+  "#c3a09f"
+ ],
+ "asuka": [
+  "#f89a94",
+  "#fbaba8",
+  "#c77987"
+ ],
+ "asuna": [
+  "#c7918c",
+  "#f8afcc",
+  "#b7d6fa"
+ ],
+ "bakugo": [
+  "#f6a87c",
+  "#eca87c",
+  "#fde6cd"
+ ],
+ "bond": [
+  "#96aec2",
+  "#96aec2",
+  "#e4b3aa"
+ ],
+ "bulma": [
+  "#f6dfcd",
+  "#f6dfcd",
+  "#92cacc"
+ ],
+ "byakuya": [
+  "#fbb2d4",
+  "#fba5cb",
+  "#fba5cb"
+ ],
+ "cell": [
+  "#73d3fd",
+  "#80f69e",
+  "#73d3fd"
+ ],
+ "chopper": [
+  "#abf8fb",
+  "#d18e6f",
+  "#bffec9"
+ ],
+ "chrollo": [
+  "#ca8def",
+  "#d9b3ad",
+  "#fddf9d"
+ ],
+ "dabi": [
+  "#62a6fe",
+  "#62a6fd",
+  "#627fd4"
+ ],
+ "deku": [
+  "#abe8cf",
+  "#96eac6",
+  "#c38c8b"
+ ],
+ "denji": [
+  "#ed9683",
+  "#c37179",
+  "#f693a3"
+ ],
+ "dio": [
+  "#dec589",
+  "#dec289",
+  "#dec58a"
+ ],
+ "edward": [
+  "#d27c82",
+  "#d27c82",
+  "#d27c82"
+ ],
+ "emilia": [
+  "#bbd8e6",
+  "#aceeca",
+  "#bbd8e6"
+ ],
+ "endeavor": [
+  "#fca578",
+  "#fdeda0",
+  "#d58c7a"
+ ],
+ "eren": [
+  "#ebc999",
+  "#cfac9c",
+  "#c38a8a"
+ ],
+ "erwin": [
+  "#f8dcaf",
+  "#c3a391",
+  "#edd9b3"
+ ],
+ "escanor": [
+  "#fddc96",
+  "#fef7bc",
+  "#fef0a3"
+ ],
+ "fern": [
+  "#9dbdd8",
+  "#cd84fa",
+  "#a8e3f9"
+ ],
+ "freeza": [
+  "#e17d9e",
+  "#ce7998",
+  "#fef0a5"
+ ],
+ "frieren": [
+  "#afdcfc",
+  "#c565f8",
+  "#b3f5fd"
+ ],
+ "fubuki": [
+  "#6fd781",
+  "#c4efc2",
+  "#6ad27b"
+ ],
+ "gaara": [
+  "#d9c4ac",
+  "#d9c4ac",
+  "#d9c4ac"
+ ],
+ "garou": [
+  "#aac1ce",
+  "#d69498",
+  "#cea3a5"
+ ],
+ "genos": [
+  "#fdbd8d",
+  "#f8bb94",
+  "#b4e2fb"
+ ],
+ "giyu": [
+  "#9ddefd",
+  "#9ddefc",
+  "#8bd1fc"
+ ],
+ "goblinslayer": [
+  "#fbba79",
+  "#93cef0",
+  "#fe9b62"
+ ],
+ "gohan": [
+  "#fdf29b",
+  "#f8dbc1",
+  "#6cc2fb"
+ ],
+ "gojo": [
+  "#a0c4f0",
+  "#e692ed",
+  "#969ec3"
+ ],
+ "goku": [
+  "#ace0fd",
+  "#ec8496",
+  "#b3eefe"
+ ],
+ "gon": [
+  "#fcca6b",
+  "#fdcc68",
+  "#fdc568"
+ ],
+ "grimmjow": [
+  "#8ce9fb",
+  "#fb898d",
+  "#96f3fd"
+ ],
+ "guts": [
+  "#ffe89a",
+  "#fdca77",
+  "#ca687c"
+ ],
+ "hange": [
+  "#d8876c",
+  "#eed5c4",
+  "#c2edfb"
+ ],
+ "hiei": [
+  "#ebcfbe",
+  "#ceb0a3",
+  "#db9df0"
+ ],
+ "hisoka": [
+  "#fb97e4",
+  "#fb7af3",
+  "#98e0f7"
+ ],
+ "ichigo": [
+  "#eeba83",
+  "#eeba83",
+  "#c6e6fa"
+ ],
+ "ikki": [
+  "#fed484",
+  "#ce7a65",
+  "#ce7a65"
+ ],
+ "inosuke": [
+  "#f5e0cf",
+  "#ee988d",
+  "#f5e0cf"
+ ],
+ "inuyasha": [
+  "#fbf1b8",
+  "#83cec5",
+  "#c37190"
+ ],
+ "itachi": [
+  "#cd6178",
+  "#ed647f",
+  "#ed647f"
+ ],
+ "jiraiya": [
+  "#8cd4f7",
+  "#aff1fb",
+  "#c38d7e"
+ ],
+ "joey": [
+  "#f0d68d",
+  "#f0d68d",
+  "#f0d68d"
+ ],
+ "jotaro": [
+  "#c9ade4",
+  "#c9ade4",
+  "#deaffd"
+ ],
+ "kaiba": [
+  "#adc1d6",
+  "#81eadf",
+  "#c7b281"
+ ],
+ "kakashi": [
+  "#cefafd",
+  "#dd6d84",
+  "#91ccf3"
+ ],
+ "kaneki": [
+  "#c67684",
+  "#dd8393",
+  "#cf7a87"
+ ],
+ "kazuma": [
+  "#86fab3",
+  "#a2cfe8",
+  "#9dfac4"
+ ],
+ "kenpachi": [
+  "#e1bf8d",
+  "#fdf4b5",
+  "#fdeea8"
+ ],
+ "kenshin": [
+  "#6cafeb",
+  "#64b7eb",
+  "#6ac4f5"
+ ],
+ "kenshiro": [
+  "#c7eafb",
+  "#a6bddd",
+  "#cee2f3"
+ ],
+ "killua": [
+  "#8190c8",
+  "#c8e9fa",
+  "#c8e9fa"
+ ],
+ "king": [
+  "#95acc4",
+  "#a3d4ad",
+  "#ea859d"
+ ],
+ "kirito": [
+  "#9badde",
+  "#c37891",
+  "#9f8ce7"
+ ],
+ "kurama": [
+  "#abc599",
+  "#d78191",
+  "#d78191"
+ ],
+ "kurapika": [
+  "#8592c5",
+  "#f78b90",
+  "#f78b90"
+ ],
+ "l": [
+  "#98cdeb",
+  "#a2c3d9",
+  "#c36b73"
+ ],
+ "lelouch": [
+  "#fa7f94",
+  "#f9e5d6",
+  "#cc86eb"
+ ],
+ "leorio": [
+  "#b3f5d2",
+  "#a8edd2",
+  "#a0d8c0"
+ ],
+ "levi": [
+  "#c0daec",
+  "#a1bacc",
+  "#d6aaa0"
+ ],
+ "light": [
+  "#e3caa8",
+  "#e3caa8",
+  "#e3caa8"
+ ],
+ "loid": [
+  "#eddead",
+  "#f3d2c2",
+  "#fdedd9"
+ ],
+ "luffy": [
+  "#fb9186",
+  "#fdd9c2",
+  "#e38184"
+ ],
+ "madara": [
+  "#94cffd",
+  "#febd73",
+  "#febd73"
+ ],
+ "mahito": [
+  "#c4a675",
+  "#a2b8c6",
+  "#dfbba8"
+ ],
+ "majin_buu": [
+  "#f991dc",
+  "#fde38e",
+  "#feead9"
+ ],
+ "maki": [
+  "#dafdfd",
+  "#f5e0cf",
+  "#bff6f3"
+ ],
+ "makima": [
+  "#d09193",
+  "#cf7689",
+  "#d08f93"
+ ],
+ "megumi": [
+  "#ade3fa",
+  "#cc8c7f",
+  "#c3a886"
+ ],
+ "megumin": [
+  "#e86c6c",
+  "#e86f68",
+  "#e86f6c"
+ ],
+ "meliodas": [
+  "#bafbd2",
+  "#e89dfe",
+  "#bc73db"
+ ],
+ "mikasa": [
+  "#9cb6cc",
+  "#9cb6cc",
+  "#9dfdfe"
+ ],
+ "misa": [
+  "#f2d8cb",
+  "#f2d8cb",
+  "#d9c896"
+ ],
+ "mob": [
+  "#bdf3fe",
+  "#a8f2fd",
+  "#f9e5d6"
+ ],
+ "mustang": [
+  "#7f9ac3",
+  "#fddc92",
+  "#fdcf89"
+ ],
+ "muzan": [
+  "#ca7882",
+  "#d69b9d",
+  "#ca7587"
+ ],
+ "nami": [
+  "#89b2d6",
+  "#fce594",
+  "#96cfd5"
+ ],
+ "nanami": [
+  "#b4cade",
+  "#c3b38c",
+  "#fce3d0"
+ ],
+ "naruto": [
+  "#d79180",
+  "#bae1f9",
+  "#fb848c"
+ ],
+ "nezuko": [
+  "#ee7793",
+  "#db8393",
+  "#ee7793"
+ ],
+ "nobara": [
+  "#6284cf",
+  "#6284cf",
+  "#cf636c"
+ ],
+ "pain": [
+  "#f3a66a",
+  "#d1c4fb",
+  "#bdbcfb"
+ ],
+ "piccolo": [
+  "#bf85ed",
+  "#fcfb85",
+  "#7afaab"
+ ],
+ "power": [
+  "#c3697a",
+  "#c97780",
+  "#c97f80"
+ ],
+ "priestess": [
+  "#f0d4a9",
+  "#f0dbac",
+  "#d6b094"
+ ],
+ "rei": [
+  "#aaf1fb",
+  "#fac49b",
+  "#bfe8f3"
+ ],
+ "reigen": [
+  "#fbe0ce",
+  "#fbe0ce",
+  "#fcf0b0"
+ ],
+ "reiner": [
+  "#f6e0ce",
+  "#ebe0b3",
+  "#f0e8b7"
+ ],
+ "rem": [
+  "#aad1ef",
+  "#b3d6f0",
+  "#95d1ef"
+ ],
+ "rengoku": [
+  "#c27d84",
+  "#fbf6bf",
+  "#d17e88"
+ ],
+ "renji": [
+  "#eed5c4",
+  "#ca848a",
+  "#e57b95"
+ ],
+ "reze": [
+  "#f4c2b8",
+  "#f4d6cf",
+  "#eecbc5"
+ ],
+ "rimuru": [
+  "#97c2db",
+  "#9b8dd8",
+  "#9ae5fc"
+ ],
+ "robin": [
+  "#94c7f7",
+  "#94c7f7",
+  "#a091e6"
+ ],
+ "rukia": [
+  "#c6dcf0",
+  "#bdd6ea",
+  "#bdd6ea"
+ ],
+ "ryuk": [
+  "#ad8cc2",
+  "#ede0b1",
+  "#ede0b1"
+ ],
+ "sailormoon": [
+  "#fce79b",
+  "#d09cb7",
+  "#f6df7f"
+ ],
+ "saitama": [
+  "#f8da95",
+  "#f8daa8",
+  "#f8da95"
+ ],
+ "sakura": [
+  "#e9b7b8",
+  "#91b2d0",
+  "#a2dbf6"
+ ],
+ "sanji": [
+  "#f5af84",
+  "#fbcecb",
+  "#a3cce6"
+ ],
+ "saori": [
+  "#fee8da",
+  "#e4c472",
+  "#fee8da"
+ ],
+ "sasuke": [
+  "#cde8f7",
+  "#f4837a",
+  "#fbb7b3"
+ ],
+ "scar": [
+  "#eb868b",
+  "#e08f90",
+  "#f38b93"
+ ],
+ "seiya": [
+  "#769adb",
+  "#749adb",
+  "#76a5db"
+ ],
+ "senku": [
+  "#8bf1e9",
+  "#6ac7fa",
+  "#8bf1e9"
+ ],
+ "sesshomaru": [
+  "#bd6ac7",
+  "#c7f398",
+  "#f8db8c"
+ ],
+ "shanks": [
+  "#e97c87",
+  "#e97c87",
+  "#e97c87"
+ ],
+ "shigaraki": [
+  "#c6b6a3",
+  "#e58191",
+  "#cabc98"
+ ],
+ "shinji": [
+  "#fdd9af",
+  "#7299c6",
+  "#cf778f"
+ ],
+ "shinobu": [
+  "#e1c3fd",
+  "#c9a2f9",
+  "#e9d1fd"
+ ],
+ "shun": [
+  "#e18db0",
+  "#f796bd",
+  "#d6be9f"
+ ],
+ "sinon": [
+  "#cefbf7",
+  "#63c6df",
+  "#afc29c"
+ ],
+ "sonic": [
+  "#b19ac3",
+  "#b297c3",
+  "#b297c3"
+ ],
+ "spike": [
+  "#8a9ec3",
+  "#8a9ec3",
+  "#8a9ec3"
+ ],
+ "stark": [
+  "#c39082",
+  "#c39793",
+  "#fbf27a"
+ ],
+ "subaru": [
+  "#9889d9",
+  "#c496fa",
+  "#f8decb"
+ ],
+ "sukuna": [
+  "#f98383",
+  "#de9095",
+  "#ca7185"
+ ],
+ "tanjiro": [
+  "#89caf2",
+  "#fdcc80",
+  "#c38490"
+ ],
+ "tatsumaki": [
+  "#69ebaf",
+  "#69ebaf",
+  "#6ff6b3"
+ ],
+ "todo": [
+  "#d9a89f",
+  "#d5a899",
+  "#d9a899"
+ ],
+ "todoroki": [
+  "#bad4df",
+  "#fb877b",
+  "#94f9eb"
+ ],
+ "toga": [
+  "#c4717e",
+  "#c67582",
+  "#d6717e"
+ ],
+ "toshiro": [
+  "#a1bcd4",
+  "#bfe5fa",
+  "#b4d9f2"
+ ],
+ "totoro": [
+  "#ffd76b",
+  "#dbb0b7",
+  "#ffd76b"
+ ],
+ "trunks": [
+  "#71c9fb",
+  "#71c9fb",
+  "#8e98c7"
+ ],
+ "ulquiorra": [
+  "#75f7b0",
+  "#8cf7bc",
+  "#8cfbbc"
+ ],
+ "umaru": [
+  "#f1b08b",
+  "#f1b08b",
+  "#f1b08b"
+ ],
+ "uraraka": [
+  "#f4ddca",
+  "#d7a6b6",
+  "#f4ddca"
+ ],
+ "usopp": [
+  "#f7b26e",
+  "#a1cc7f",
+  "#f6d1b1"
+ ],
+ "vegeta": [
+  "#c074fc",
+  "#fbd38b",
+  "#7fcef6"
+ ],
+ "winry": [
+  "#f3decc",
+  "#f0b3ab",
+  "#8ea4c3"
+ ],
+ "yor": [
+  "#eb8c93",
+  "#fef2cc",
+  "#cb7c87"
+ ],
+ "yugi": [
+  "#b095c9",
+  "#ad8cc9",
+  "#fadaa2"
+ ],
+ "yuji": [
+  "#a6d6ed",
+  "#edc5c4",
+  "#d97687"
+ ],
+ "yusuke": [
+  "#72d1fd",
+  "#61c7fd",
+  "#9ce0fd"
+ ],
+ "zeke": [
+  "#eed5c4",
+  "#eed5c4",
+  "#eed5c4"
+ ],
+ "zenitsu": [
+  "#fdf4c9",
+  "#f5c38a",
+  "#f5c38a"
+ ],
+ "zoro": [
+  "#a2d5ab",
+  "#9dc5a5",
+  "#f6ceb3"
+ ]
+}
