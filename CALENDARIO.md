@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 24/09/2026 21:51 (Brasília). Post diário às 19:00.
+Gerado em 25/09/2026 21:13 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 24/09 (qui) | <img src="assets/poses/reze_2.png" width="128"> | **Reze** `reze` | Chainsaw Man (Viela dos Demônios) |
 | 25/09 (sex) | <img src="assets/poses/kenshin_0.png" width="128"> | **Kenshin** `kenshin` | Samurai X (Pátio do Dojo) |
 | 26/09 (sáb) | <img src="assets/poses/ichigo_2.png" width="128"> | **Ichigo** `ichigo` | Bleach (Deserto de Hueco Mundo) |
 | 27/09 (dom) | <img src="assets/poses/frieren_0.png" width="128"> | **Frieren** `frieren` | Frieren (Vila do Grande Herói) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 05/11 (qui) | <img src="assets/poses/scar_2.png" width="128"> | **Scar** `scar` | Fullmetal Alchemist (Portal da Verdade) |
 | 06/11 (sex) | <img src="assets/poses/leorio_2.png" width="128"> | **Leorio** `leorio` | Hunter x Hunter (Portão da Mansão Sombria) |
 | 07/11 (sáb) | <img src="assets/poses/mob_0.png" width="128"> | **Mob** `mob` | Mob Psycho 100 (Parque do Brócolis Colossal) |
+| 08/11 (dom) | <img src="assets/poses/bulma_1.png" width="128"> | **Bulma** `bulma` | Dragon Ball (Ermos do Torneio) |
