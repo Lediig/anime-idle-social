@@ -238,13 +238,21 @@ def ler_instagram(estado=None, get=None, token=None):
     if token is None:
         from carta import token_atual  # mesmo token/renovacao do robo Carta do Dia
         token, _ = token_atual()
-    media = get(f"{IG_API}/{IG_USER_ID}/media",
-                {"fields": "id,permalink,timestamp,comments_count", "limit": 12, "access_token": token}).get("data", [])
+    resp = get(f"{IG_API}/{IG_USER_ID}/media",
+               {"fields": "id,permalink,timestamp,comments_count", "limit": 12, "access_token": token})
+    media = resp.get("data", [])
+    debug = bool(os.environ.get("VIGIA_DEBUG"))
+    if debug:
+        print("IG /media:", json.dumps({k: v for k, v in resp.items() if k != "data"}, ensure_ascii=True)[:300])
+        for m in media:
+            print("IG media:", m.get("id"), m.get("timestamp"), "comments_count=", m.get("comments_count"), m.get("permalink"))
     campos = "id,text,username,timestamp,replies.limit(20){id,text,username,timestamp}"
     for m in media:
         if int(m.get("comments_count") or 0) <= 0:
             continue
         m["comments"] = get(f"{IG_API}/{m['id']}/comments", {"fields": campos, "limit": 50, "access_token": token})
+        if debug:
+            print("IG comments de", m["id"], ":", json.dumps(m["comments"], ensure_ascii=True)[:600])
     return itens_do_instagram(media)
 
 
