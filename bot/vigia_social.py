@@ -153,7 +153,9 @@ def gravar_estado(arq, estado):
 
 # ---------------------------------------------------------------- passada
 def varrer(leitores, avisar_fn, arq_estado, regras, dry_run=False, agora=None):
-    """leitores: {rede: fn() -> [item]}; item = {rede,id,autor,texto,link,quando}.
+    """leitores: {rede: fn(estado) -> [item]}; item = {rede,id,autor,texto,link,quando}.
+    O leitor recebe o MESMO dicionario de estado que sera gravado no fim (e onde
+    o X guarda o user_id e le o since_id).
     Primeira passada de uma rede so marca o que existe (nao acorda a equipe com o
     historico inteiro). Rede que falha e pulada e reportada em `falhas`."""
     estado = ler_estado(arq_estado)
@@ -163,7 +165,7 @@ def varrer(leitores, avisar_fn, arq_estado, regras, dry_run=False, agora=None):
     for rede, ler in leitores.items():
         r["redes"] += 1
         try:
-            itens = ler()
+            itens = ler(estado)
         except Exception as e:  # noqa: BLE001 - uma rede fora do ar nao pode calar a outra
             print(f"vigia-social: {rede} falhou: {e}", file=sys.stderr)
             r["falhas"].append(rede)
@@ -222,16 +224,28 @@ def itens_do_x(resp):
 
 
 # ---------------------------------------------------------------- leitores (com rede)
-def ler_instagram():
-    import requests
-    from carta import token_atual  # mesmo token/renovacao do robo Carta do Dia
-    token, _ = token_atual()
-    campos = ("id,permalink,timestamp,comments.limit(50){id,text,username,timestamp,"
-              "replies.limit(20){id,text,username,timestamp}}")
-    r = requests.get(f"{IG_API}/{IG_USER_ID}/media",
-                     params={"fields": campos, "limit": 12, "access_token": token}, timeout=60)
-    r.raise_for_status()
-    return itens_do_instagram(r.json().get("data", []))
+def ler_instagram(estado=None, get=None, token=None):
+    """Comentarios (+respostas) dos ultimos 12 posts. A API com login do Instagram nao
+    traz `comments` expandido no /media (medido em 28/09/2026: veio 0 itens), entao
+    pede `comments_count` e busca /{media}/comments so nos posts que tem algum."""
+    if get is None:
+        import requests
+
+        def get(url, params):
+            r = requests.get(url, params=params, timeout=60)
+            r.raise_for_status()
+            return r.json()
+    if token is None:
+        from carta import token_atual  # mesmo token/renovacao do robo Carta do Dia
+        token, _ = token_atual()
+    media = get(f"{IG_API}/{IG_USER_ID}/media",
+                {"fields": "id,permalink,timestamp,comments_count", "limit": 12, "access_token": token}).get("data", [])
+    campos = "id,text,username,timestamp,replies.limit(20){id,text,username,timestamp}"
+    for m in media:
+        if int(m.get("comments_count") or 0) <= 0:
+            continue
+        m["comments"] = get(f"{IG_API}/{m['id']}/comments", {"fields": campos, "limit": 50, "access_token": token})
+    return itens_do_instagram(media)
 
 
 def _x_sessao():
@@ -242,18 +256,17 @@ def _x_sessao():
     return OAuth1Session(*chaves)
 
 
-def ler_x(estado_arq=ESTADO):
+def ler_x(estado, sessao=None):
     """Mencoes a @AnimeIdle_ desde a ultima vista. Custo (pay-per-use, 09/2026):
-    US$ 0,01 por mencao devolvida; passada sem mencao nova nao devolve nada."""
-    s = _x_sessao()
-    estado = ler_estado(estado_arq)
+    US$ 0,01 por mencao devolvida; passada sem mencao nova nao devolve nada.
+    O user_id fica em `estado` (gravado pelo varrer) pra nao pagar users/me toda passada."""
+    s = sessao or _x_sessao()
     uid = estado.get("x_user_id")
     if not uid:
         r = s.get("https://api.x.com/2/users/me", timeout=30)
         r.raise_for_status()
         uid = r.json()["data"]["id"]
         estado["x_user_id"] = uid
-        gravar_estado(estado_arq, estado)
     params = {"max_results": 20, "tweet.fields": "created_at,author_id", "expansions": "author_id", "user.fields": "username"}
     vistos = estado.get("vistos", {}).get("x") or []
     if vistos:

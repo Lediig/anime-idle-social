@@ -81,7 +81,7 @@ class Varredura(unittest.TestCase):
                 for i, a, t in pares]
 
     def test_primeira_passada_so_marca_o_que_ja_existe_sem_alertar(self):
-        leitores = {"instagram": lambda: self.itens(("1", "x", "advogado antigo"))}
+        leitores = {"instagram": lambda estado: self.itens(("1", "x", "advogado antigo"))}
         r = v.varrer(leitores, self.avisar, self.arq, REGRAS)
         self.assertEqual(self.avisos, [])
         self.assertEqual(r["alertas"], 0)
@@ -90,7 +90,7 @@ class Varredura(unittest.TestCase):
 
     def test_segunda_passada_alerta_so_o_novo(self):
         v.gravar_estado(self.arq, {"vistos": {"instagram": ["1"]}})
-        leitores = {"instagram": lambda: self.itens(("1", "x", "advogado antigo"), ("2", "y", "chamei a advogada"), ("3", "z", "nada"))}
+        leitores = {"instagram": lambda estado: self.itens(("1", "x", "advogado antigo"), ("2", "y", "chamei a advogada"), ("3", "z", "nada"))}
         r = v.varrer(leitores, self.avisar, self.arq, REGRAS)
         self.assertEqual(len(self.avisos), 1)
         self.assertIn("advogada", self.avisos[0]["embeds"][0]["title"])
@@ -99,17 +99,17 @@ class Varredura(unittest.TestCase):
         self.assertEqual(sorted(estado["vistos"]["instagram"]), ["1", "2", "3"])
 
     def test_rede_que_falha_nao_derruba_a_outra(self):
-        def quebrado():
+        def quebrado(estado):
             raise RuntimeError("401")
         v.gravar_estado(self.arq, {"vistos": {"instagram": [], "x": []}})
-        leitores = {"x": quebrado, "instagram": lambda: self.itens(("9", "y", "meu advogado"))}
+        leitores = {"x": quebrado, "instagram": lambda estado: self.itens(("9", "y", "meu advogado"))}
         r = v.varrer(leitores, self.avisar, self.arq, REGRAS)
         self.assertEqual(len(self.avisos), 1)
         self.assertEqual(r["falhas"], ["x"])
 
     def test_dry_run_nao_avisa_nem_grava(self):
         v.gravar_estado(self.arq, {"vistos": {"instagram": []}})
-        leitores = {"instagram": lambda: self.itens(("9", "y", "meu advogado"))}
+        leitores = {"instagram": lambda estado: self.itens(("9", "y", "meu advogado"))}
         r = v.varrer(leitores, self.avisar, self.arq, REGRAS, dry_run=True)
         self.assertEqual(self.avisos, [])
         self.assertEqual(r["alertas"], 1)
@@ -117,11 +117,41 @@ class Varredura(unittest.TestCase):
 
     def test_vistos_nao_crescem_para_sempre(self):
         v.gravar_estado(self.arq, {"vistos": {"instagram": [str(i) for i in range(3000)]}})
-        leitores = {"instagram": lambda: self.itens(("novo", "y", "oi"))}
+        leitores = {"instagram": lambda estado: self.itens(("novo", "y", "oi"))}
         v.varrer(leitores, self.avisar, self.arq, REGRAS)
         vistos = json.load(open(self.arq, encoding="utf8"))["vistos"]["instagram"]
         self.assertLessEqual(len(vistos), v.MAX_VISTOS)
         self.assertIn("novo", vistos)
+
+
+    def test_leitor_pode_guardar_coisas_no_estado_compartilhado(self):
+        """ler_x guarda o x_user_id: se o varrer sobrescrever o arquivo sem isso, paga users/me toda passada."""
+        def leitor(estado):
+            estado["x_user_id"] = "u1"
+            return []
+        v.varrer({"x": leitor}, self.avisar, self.arq, REGRAS)
+        self.assertEqual(json.load(open(self.arq, encoding="utf8"))["x_user_id"], "u1")
+
+
+class LeitorInstagram(unittest.TestCase):
+    def test_busca_comentarios_por_post_quando_o_media_nao_os_traz(self):
+        chamadas = []
+
+        def get(url, params):
+            chamadas.append(url)
+            if url.endswith("/media"):
+                return {"data": [{"id": "m1", "permalink": "https://www.instagram.com/p/abc/", "comments_count": 2},
+                                 {"id": "m2", "permalink": "https://www.instagram.com/p/def/", "comments_count": 0}]}
+            if url.endswith("/m1/comments"):
+                return {"data": [{"id": "c1", "text": "lindo", "username": "ana", "timestamp": "2026-09-28T12:00:00+0000"},
+                                 {"id": "c2", "text": "advogado", "username": "bia", "timestamp": "2026-09-28T12:01:00+0000"}]}
+            raise AssertionError("url inesperada " + url)
+
+        itens = v.ler_instagram({}, get=get, token="t")
+        self.assertEqual([i["id"] for i in itens], ["c1", "c2"])
+        self.assertEqual(itens[0]["link"], "https://www.instagram.com/p/abc/")
+        self.assertTrue(any(u.endswith("/m1/comments") for u in chamadas))
+        self.assertFalse(any(u.endswith("/m2/comments") for u in chamadas), "post sem comentario nao gasta chamada")
 
 
 class Tradutores(unittest.TestCase):
