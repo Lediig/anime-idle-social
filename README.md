@@ -28,6 +28,32 @@ O token do Instagram vale 60 dias. O robô renova a cada 7 e guarda o renovado *
 `data/ig_token.enc` (chave derivada do token original, que fica só no secret; o arquivo pode ser público). Se algum dia a Meta recusar o
 token, gere outro em developers.facebook.com → app → Instagram → Generate token e troque o secret.
 
+## Vigia social (2026-09-28)
+
+Segundo robô, `bot/vigia_social.py`, agendado a cada 15 min em
+`.github/workflows/vigia-social.yml`. Lê os comentários dos últimos 12 posts do
+Instagram (com respostas) e as menções a @AnimeIdle_ no X e avisa a equipe no
+Discord, em `#chat-staff-2`, por webhook, quando:
+
+1. um perfil de `VIGIA["usuarios"]` escreve qualquer coisa; ou
+2. qualquer pessoa usa uma palavra-chave jurídica de `VIGIA["palavras"]`
+   (advogado, processo, CDC, judicial, direitos, copyright, licença, Procon,
+   estorno, pirataria, denúncia...). Sem acento, palavra inteira, ignora
+   "com licença", "processo de" e "em processo". **A lista é a mesma do vigia do
+   bot de tickets** (`anime-idle-tickets/src/config.js`): mudou uma, mude a outra.
+
+O que já foi visto fica em `data/vigia_social.json` (commitado pelo workflow).
+A primeira passada de cada rede só marca o que existe, sem alertar o histórico.
+Nada é respondido, curtido ou apagado: para quem escreveu, não muda nada.
+
+- Segredo a mais: `DISCORD_WEBHOOK_VIGIA` — URL de um webhook criado em
+  `#chat-staff-2` (Editar canal → Integrações → Webhooks → Novo webhook → Copiar
+  URL). Sem ele o workflow lê as redes mas falha na hora de avisar.
+- Ensaiar sem avisar nem gravar: Actions → Vigia social → Run workflow, com
+  `dry_run` marcado. O log mostra as linhas `ALERTA:`.
+- Custo: Instagram é grátis. No X (pay-per-use) a menção lida custa US$ 0,01 e a
+  passada sem menção nova não devolve nada; `users/me` é lido uma vez e guardado.
+
 ## Custos
 
 - Instagram: grátis.

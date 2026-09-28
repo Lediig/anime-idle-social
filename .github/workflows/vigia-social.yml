@@ -1,0 +1,55 @@
+name: Vigia social
+
+# Le comentarios do Instagram (@animeidle) e mencoes do X (@AnimeIdle_) e avisa
+# a equipe no Discord (#chat-staff-2, webhook) quando um perfil vigiado escreve
+# ou quando alguem usa palavra-chave juridica. Detalhes em bot/vigia_social.py.
+on:
+  schedule:
+    - cron: "*/15 * * * *"   # o Actions costuma atrasar alguns minutos; nao importa aqui
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "So testar (le as redes e imprime o que avisaria; NAO avisa, NAO grava)"
+        type: boolean
+        default: true
+
+concurrency:
+  group: vigia-social
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # grava data/vigia_social.json (o que ja foi visto)
+
+jobs:
+  vigiar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      X_API_KEY: ${{ secrets.X_API_KEY }}
+      X_API_SECRET: ${{ secrets.X_API_SECRET }}
+      X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+      X_ACCESS_SECRET: ${{ secrets.X_ACCESS_SECRET }}
+      DISCORD_WEBHOOK_VIGIA: ${{ secrets.DISCORD_WEBHOOK_VIGIA }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -q -r requirements.txt
+
+      - name: Testes
+        run: python -m unittest discover -s test
+
+      - name: Vigiar
+        run: python bot/vigia_social.py ${{ inputs.dry_run && '--dry-run' || '' }}
+
+      - name: Guardar o que ja foi visto
+        if: ${{ !inputs.dry_run }}
+        run: |
+          git config user.name "anime-idle-bot"
+          git config user.email "support@anime-idle.com"
+          git add data/vigia_social.json
+          git diff --cached --quiet || git commit -m "vigia: visto ate $(date -u +%FT%H:%M)"
+          git pull --rebase -q origin main
+          git push -q
