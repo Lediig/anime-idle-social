@@ -243,6 +243,17 @@ def ler_instagram(estado=None, get=None, token=None):
     media = resp.get("data", [])
     debug = bool(os.environ.get("VIGIA_DEBUG"))
     if debug:
+        try:  # escopos do token (nunca imprime o token em si)
+            dbg = get(f"{IG_API}/debug_token", {"input_token": token, "access_token": token}).get("data", {})
+            print("IG token: app_id=", dbg.get("app_id"), "type=", dbg.get("type"), "expires_at=", dbg.get("expires_at"),
+                  "scopes=", dbg.get("scopes") or dbg.get("granular_scopes"))
+        except Exception as e:  # noqa: BLE001
+            print("IG debug_token falhou:", str(e)[:200])
+        try:
+            me = get(f"{IG_API}/me", {"fields": "user_id,username,account_type", "access_token": token})
+            print("IG me:", me)
+        except Exception as e:  # noqa: BLE001
+            print("IG me falhou:", str(e)[:200])
         print("IG /media:", json.dumps({k: v for k, v in resp.items() if k != "data"}, ensure_ascii=True)[:300])
         for m in media:
             print("IG media:", m.get("id"), m.get("timestamp"), "comments_count=", m.get("comments_count"), m.get("permalink"))
