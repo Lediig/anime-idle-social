@@ -49,12 +49,18 @@ Nada é respondido, curtido ou apagado: para quem escreveu, não muda nada.
 - Segredo a mais: `DISCORD_WEBHOOK_VIGIA` — URL de um webhook criado em
   `#chat-staff-2` (Editar canal → Integrações → Webhooks → Novo webhook → Copiar
   URL). Sem ele o workflow lê as redes mas falha na hora de avisar. Criado em 28/09.
-- **O token do Instagram precisa da permissão `instagram_business_manage_comments`.**
-  Sem ela, `/{media}/comments` responde `data: []` com cursores de paginação (foi o
-  que aconteceu em 28/09: 13 comentários visíveis, zero devolvidos). Gere o token de
-  novo em developers.facebook.com → app → Instagram → Generate token marcando
-  também essa permissão, troque o secret `IG_ACCESS_TOKEN`; o `ig_token.enc` antigo
-  fica ilegível e o robô volta sozinho ao token novo (aviso no log, sem erro).
+- **Comentários só vêm com o app PUBLICADO (modo Live) e com a permissão
+  `instagram_business_manage_comments` adicionada ao caso de uso.** Medido em
+  29/09/2026: em modo de desenvolvimento a Meta esconde tudo que foi escrito por quem
+  não tem papel no app — `/{media}/comments` responde `data: []` com cursores de
+  paginação, mesmo com o escopo no token. O que destravou, nesta ordem: (1) Use cases →
+  Permissions → "Add" em `instagram_business_manage_comments`; (2) Generate token de
+  novo e trocar o secret `IG_ACCESS_TOKEN` (o `ig_token.enc` antigo fica ilegível e o
+  robô volta sozinho ao token novo); (3) App settings → Basic: Privacy policy URL
+  `https://anime-idle.com/privacidade`, Terms `https://anime-idle.com/termos`,
+  categoria Games / Card Battle (a Meta recusou `anime-idle.com` no campo de exclusão
+  de dados; ficou o valor antigo); (4) Publish. O autor do comentário vem em
+  `from{username}`, não em `username`.
 - Ensaiar sem avisar nem gravar: Actions → Vigia social → Run workflow, com
   `dry_run` marcado. O log mostra as linhas `ALERTA:`.
 - Custo: Instagram é grátis. No X (pay-per-use) a menção lida custa US$ 0,01 e a
