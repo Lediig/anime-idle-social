@@ -199,15 +199,20 @@ def varrer(leitores, avisar_fn, arq_estado, regras, dry_run=False, agora=None):
 
 
 # ---------------------------------------------------------------- tradutores (sem rede)
+def _autor_ig(c):
+    """`username` so vem em alguns casos; no app publicado o autor chega em `from`."""
+    return c.get("username") or (c.get("from") or {}).get("username") or ""
+
+
 def itens_do_instagram(media):
     itens = []
     for m in media or []:
         link = m.get("permalink") or ""
         for c in (m.get("comments") or {}).get("data", []):
-            itens.append({"rede": "instagram", "id": str(c["id"]), "autor": c.get("username") or "",
+            itens.append({"rede": "instagram", "id": str(c["id"]), "autor": _autor_ig(c),
                           "texto": c.get("text") or "", "link": link, "quando": c.get("timestamp") or ""})
             for rp in (c.get("replies") or {}).get("data", []):
-                itens.append({"rede": "instagram", "id": str(rp["id"]), "autor": rp.get("username") or "",
+                itens.append({"rede": "instagram", "id": str(rp["id"]), "autor": _autor_ig(rp),
                               "texto": rp.get("text") or "", "link": link, "quando": rp.get("timestamp") or ""})
     return itens
 
@@ -255,7 +260,7 @@ def ler_instagram(estado=None, get=None, token=None):
         print("IG /media:", json.dumps({k: v for k, v in resp.items() if k != "data"}, ensure_ascii=True)[:300])
         for m in media:
             print("IG media:", m.get("id"), m.get("timestamp"), "comments_count=", m.get("comments_count"), m.get("permalink"))
-    campos = "id,text,username,timestamp,replies.limit(20){id,text,username,timestamp}"
+    campos = "id,text,username,from{id,username},timestamp,replies.limit(20){id,text,username,from{id,username},timestamp}"
     for m in media:
         if int(m.get("comments_count") or 0) <= 0:
             continue

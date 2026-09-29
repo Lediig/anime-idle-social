@@ -166,6 +166,17 @@ class Tradutores(unittest.TestCase):
         self.assertEqual(itens[0]["link"], "https://www.instagram.com/p/abc/")
         self.assertEqual(itens[1]["rede"], "instagram")
 
+    def test_instagram_autor_vem_de_from_quando_username_falta(self):
+        """Medido em 29/09/2026 no app publicado: o comentario vem sem `username`, so com `from`."""
+        media = [{"id": "m1", "permalink": "https://www.instagram.com/p/abc/", "comments": {"data": [
+            {"id": "c1", "text": "Jogasso", "from": {"id": "u9", "username": "lunardi.doug"}, "timestamp": "2026-09-26T23:23:17+0000"},
+            {"id": "c2", "timestamp": "2026-09-22T21:25:07+0000"},
+        ]}}]
+        itens = v.itens_do_instagram(media)
+        self.assertEqual(itens[0]["autor"], "lunardi.doug")
+        self.assertEqual(itens[1]["autor"], "")
+        self.assertEqual(itens[1]["texto"], "")
+
     def test_x_mencoes_viram_itens_com_nome_do_autor(self):
         resp = {"data": [{"id": "10", "text": "@AnimeIdle_ vou processar", "author_id": "u1", "created_at": "2026-09-28T12:00:00.000Z"}],
                 "includes": {"users": [{"id": "u1", "username": "fulano"}]}}
