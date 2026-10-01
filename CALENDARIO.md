@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 29/09/2026 21:49 (Brasília). Post diário às 19:00.
+Gerado em 30/09/2026 21:53 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 29/09 (ter) | <img src="assets/poses/shinobu_1.png" width="128"> | **Shinobu** `shinobu` | Demon Slayer (Montanha Nevada) |
 | 30/09 (qua) | <img src="assets/poses/gohan_1.png" width="128"> | **Gohan** `gohan` | Dragon Ball (Ermos do Torneio) |
 | 01/10 (qui) | <img src="assets/poses/giyu_1.png" width="128"> | **Giyu** `giyu` | Demon Slayer (Montanha Nevada) |
 | 02/10 (sex) | <img src="assets/poses/zoro_2.png" width="128"> | **Zoro** `zoro` | One Piece (Porto dos Piratas) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 10/11 (ter) | <img src="assets/poses/yuji_2.png" width="128"> | **Yuji** `yuji` | Jujutsu Kaisen (Cruzamento Assombrado) |
 | 11/11 (qua) | <img src="assets/poses/hange_2.png" width="128"> | **Hange** `hange` | Attack on Titan (Distrito da Muralha) |
 | 12/11 (qui) | <img src="assets/poses/akaza_1.png" width="128"> | **Akaza** `akaza` | Demon Slayer (Montanha Nevada) |
+| 13/11 (sex) | <img src="assets/poses/shigaraki_0.png" width="128"> | **Shigaraki** `shigaraki` | My Hero Academia (Domo de Desastres) |
