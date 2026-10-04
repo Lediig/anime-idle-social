@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 02/10/2026 21:47 (Brasília). Post diário às 19:00.
+Gerado em 03/10/2026 21:10 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 02/10 (sex) | <img src="assets/poses/zoro_2.png" width="128"> | **Zoro** `zoro` | One Piece (Porto dos Piratas) |
 | 03/10 (sáb) | <img src="assets/poses/rem_2.png" width="128"> | **Rem** `rem` | Re:Zero (Planície da Névoa) |
 | 04/10 (dom) | <img src="assets/poses/endeavor_2.png" width="128"> | **Endeavor** `endeavor` | My Hero Academia (Domo de Desastres) |
 | 05/10 (seg) | <img src="assets/poses/jiraiya_0.png" width="128"> | **Jiraiya** `jiraiya` | Naruto (Vila Oculta da Folha) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 13/11 (sex) | <img src="assets/poses/shigaraki_0.png" width="128"> | **Shigaraki** `shigaraki` | My Hero Academia (Domo de Desastres) |
 | 14/11 (sáb) | <img src="assets/poses/saori_1.png" width="128"> | **Saori** `saori` | Saint Seiya (Santuário dos Doze Templos) |
 | 15/11 (dom) | <img src="assets/poses/anya_2.png" width="128"> | **Anya** `anya` | Spy x Family (Academia de Elite) |
+| 16/11 (seg) | <img src="assets/poses/jotaro_0.png" width="128"> | **Jotaro** `jotaro` | JoJo (Telhados do Cairo) |
