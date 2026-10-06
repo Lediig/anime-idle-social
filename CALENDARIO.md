@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 04/10/2026 21:16 (Brasília). Post diário às 19:00.
+Gerado em 05/10/2026 22:57 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 04/10 (dom) | <img src="assets/poses/endeavor_2.png" width="128"> | **Endeavor** `endeavor` | My Hero Academia (Domo de Desastres) |
 | 05/10 (seg) | <img src="assets/poses/jiraiya_0.png" width="128"> | **Jiraiya** `jiraiya` | Naruto (Vila Oculta da Folha) |
 | 06/10 (ter) | <img src="assets/poses/shanks_0.png" width="128"> | **Shanks** `shanks` | One Piece (Porto dos Piratas) |
 | 07/10 (qua) | <img src="assets/poses/loid_0.png" width="128"> | **Loid** `loid` | Spy x Family (Academia de Elite) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 15/11 (dom) | <img src="assets/poses/anya_2.png" width="128"> | **Anya** `anya` | Spy x Family (Academia de Elite) |
 | 16/11 (seg) | <img src="assets/poses/jotaro_0.png" width="128"> | **Jotaro** `jotaro` | JoJo (Telhados do Cairo) |
 | 17/11 (ter) | <img src="assets/poses/byakuya_1.png" width="128"> | **Byakuya** `byakuya` | Bleach (Deserto de Hueco Mundo) |
+| 18/11 (qua) | <img src="assets/poses/allmight_2.png" width="128"> | **All Might** `allmight` | My Hero Academia (Domo de Desastres) |
