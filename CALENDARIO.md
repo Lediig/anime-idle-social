@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 08/10/2026 22:31 (Brasília). Post diário às 19:00.
+Gerado em 09/10/2026 22:21 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 08/10 (qui) | <img src="assets/poses/usopp_2.png" width="128"> | **Usopp** `usopp` | One Piece (Porto dos Piratas) |
 | 09/10 (sex) | <img src="assets/poses/inosuke_2.png" width="128"> | **Inosuke** `inosuke` | Demon Slayer (Montanha Nevada) |
 | 10/10 (sáb) | <img src="assets/poses/pain_2.png" width="128"> | **Pain** `pain` | Naruto (Vila Oculta da Folha) |
 | 11/10 (dom) | <img src="assets/poses/trunks_2.png" width="128"> | **Trunks** `trunks` | Dragon Ball (Ermos do Torneio) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 19/11 (qui) | <img src="assets/poses/ainz_1.png" width="128"> | **Ainz** `ainz` | Overlord (Grande Tumba de Mármore) |
 | 20/11 (sex) | <img src="assets/poses/yor_1.png" width="128"> | **Yor** `yor` | Spy x Family (Academia de Elite) |
 | 21/11 (sáb) | <img src="assets/poses/kaneki_1.png" width="128"> | **Kaneki** `kaneki` | Tokyo Ghoul (Beco dos Devoradores) |
+| 22/11 (dom) | <img src="assets/poses/fubuki_1.png" width="128"> | **Fubuki** `fubuki` | One-Punch Man (Cidade em Ruínas) |
