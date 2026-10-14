@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 12/10/2026 23:45 (Brasília). Post diário às 19:00.
+Gerado em 13/10/2026 21:41 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 12/10 (seg) | <img src="assets/poses/mustang_0.png" width="128"> | **Mustang** `mustang` | Fullmetal Alchemist (Portal da Verdade) |
 | 13/10 (ter) | <img src="assets/poses/escanor_0.png" width="128"> | **Escanor** `escanor` | Seven Deadly Sins (Colina da Taverna) |
 | 14/10 (qua) | <img src="assets/poses/light_2.png" width="128"> | **Light** `light` | Death Note (Telhados do Crepúsculo) |
 | 15/10 (qui) | <img src="assets/poses/tatsumaki_0.png" width="128"> | **Tatsumaki** `tatsumaki` | One-Punch Man (Cidade em Ruínas) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 23/11 (seg) | <img src="assets/poses/luffy_1.png" width="128"> | **Luffy** `luffy` | One Piece (Porto dos Piratas) |
 | 24/11 (ter) | <img src="assets/poses/misa_2.png" width="128"> | **Misa** `misa` | Death Note (Telhados do Crepúsculo) |
 | 25/11 (qua) | <img src="assets/poses/todo_2.png" width="128"> | **Todo** `todo` | Jujutsu Kaisen (Cruzamento Assombrado) |
+| 26/11 (qui) | <img src="assets/poses/toga_2.png" width="128"> | **Toga** `toga` | My Hero Academia (Domo de Desastres) |
