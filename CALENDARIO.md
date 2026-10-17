@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 15/10/2026 20:57 (Brasília). Post diário às 19:00.
+Gerado em 16/10/2026 21:00 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 15/10 (qui) | <img src="assets/poses/tatsumaki_0.png" width="128"> | **Tatsumaki** `tatsumaki` | One-Punch Man (Cidade em Ruínas) |
 | 16/10 (sex) | <img src="assets/poses/todoroki_2.png" width="128"> | **Todoroki** `todoroki` | My Hero Academia (Domo de Desastres) |
 | 17/10 (sáb) | <img src="assets/poses/mahito_2.png" width="128"> | **Mahito** `mahito` | Jujutsu Kaisen (Cruzamento Assombrado) |
 | 18/10 (dom) | <img src="assets/poses/robin_0.png" width="128"> | **Robin** `robin` | One Piece (Porto dos Piratas) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 26/11 (qui) | <img src="assets/poses/toga_2.png" width="128"> | **Toga** `toga` | My Hero Academia (Domo de Desastres) |
 | 27/11 (sex) | <img src="assets/poses/winry_2.png" width="128"> | **Winry** `winry` | Fullmetal Alchemist (Portal da Verdade) |
 | 28/11 (sáb) | <img src="assets/poses/nobara_2.png" width="128"> | **Nobara** `nobara` | Jujutsu Kaisen (Cruzamento Assombrado) |
+| 29/11 (dom) | <img src="assets/poses/piccolo_2.png" width="128"> | **Piccolo** `piccolo` | Dragon Ball (Ermos do Torneio) |
