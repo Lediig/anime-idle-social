@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 18/10/2026 20:45 (Brasília). Post diário às 19:00.
+Gerado em 19/10/2026 21:46 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 18/10 (dom) | <img src="assets/poses/robin_0.png" width="128"> | **Robin** `robin` | One Piece (Porto dos Piratas) |
 | 19/10 (seg) | <img src="assets/poses/sailormoon_2.png" width="128"> | **Serena** `sailormoon` | Sailor Moon (Torre sob a Lua Cheia) |
 | 20/10 (ter) | <img src="assets/poses/killua_0.png" width="128"> | **Killua** `killua` | Hunter x Hunter (Portão da Mansão Sombria) |
 | 21/10 (qua) | <img src="assets/poses/kirito_0.png" width="128"> | **Kirito** `kirito` | Sword Art Online (Castelo Flutuante) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 29/11 (dom) | <img src="assets/poses/piccolo_2.png" width="128"> | **Piccolo** `piccolo` | Dragon Ball (Ermos do Torneio) |
 | 30/11 (seg) | <img src="assets/poses/kenpachi_1.png" width="128"> | **Kenpachi** `kenpachi` | Bleach (Deserto de Hueco Mundo) |
 | 01/12 (ter) | <img src="assets/poses/majin_buu_2.png" width="128"> | **Majin Buu** `majin_buu` | Dragon Ball (Ermos do Torneio) |
+| 02/12 (qua) | <img src="assets/poses/grimmjow_2.png" width="128"> | **Grimmjow** `grimmjow` | Bleach (Deserto de Hueco Mundo) |
