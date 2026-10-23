@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 21/10/2026 21:17 (Brasília). Post diário às 19:00.
+Gerado em 22/10/2026 21:14 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 21/10 (qua) | <img src="assets/poses/kirito_0.png" width="128"> | **Kirito** `kirito` | Sword Art Online (Castelo Flutuante) |
 | 22/10 (qui) | <img src="assets/poses/cell_1.png" width="128"> | **Cell** `cell` | Dragon Ball (Ermos do Torneio) |
 | 23/10 (sex) | <img src="assets/poses/mikasa_0.png" width="128"> | **Mikasa** `mikasa` | Attack on Titan (Distrito da Muralha) |
 | 24/10 (sáb) | <img src="assets/poses/asuna_0.png" width="128"> | **Asuna** `asuna` | Sword Art Online (Castelo Flutuante) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 02/12 (qua) | <img src="assets/poses/grimmjow_2.png" width="128"> | **Grimmjow** `grimmjow` | Bleach (Deserto de Hueco Mundo) |
 | 03/12 (qui) | <img src="assets/poses/sanji_1.png" width="128"> | **Sanji** `sanji` | One Piece (Porto dos Piratas) |
 | 04/12 (sex) | <img src="assets/poses/eren_2.png" width="128"> | **Eren** `eren` | Attack on Titan (Distrito da Muralha) |
+| 05/12 (sáb) | <img src="assets/poses/meliodas_1.png" width="128"> | **Meliodas** `meliodas` | Seven Deadly Sins (Colina da Taverna) |
