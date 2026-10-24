@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 23/10/2026 21:06 (Brasília). Post diário às 19:00.
+Gerado em 24/10/2026 20:50 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 23/10 (sex) | <img src="assets/poses/mikasa_0.png" width="128"> | **Mikasa** `mikasa` | Attack on Titan (Distrito da Muralha) |
 | 24/10 (sáb) | <img src="assets/poses/asuna_0.png" width="128"> | **Asuna** `asuna` | Sword Art Online (Castelo Flutuante) |
 | 25/10 (dom) | <img src="assets/poses/aki_2.png" width="128"> | **Aki** `aki` | Chainsaw Man (Viela dos Demônios) |
 | 26/10 (seg) | <img src="assets/poses/maki_0.png" width="128"> | **Maki** `maki` | Jujutsu Kaisen (Cruzamento Assombrado) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 04/12 (sex) | <img src="assets/poses/eren_2.png" width="128"> | **Eren** `eren` | Attack on Titan (Distrito da Muralha) |
 | 05/12 (sáb) | <img src="assets/poses/meliodas_1.png" width="128"> | **Meliodas** `meliodas` | Seven Deadly Sins (Colina da Taverna) |
 | 06/12 (dom) | <img src="assets/poses/tanjiro_2.png" width="128"> | **Tanjiro** `tanjiro` | Demon Slayer (Montanha Nevada) |
+| 07/12 (seg) | <img src="assets/poses/hiei_2.png" width="128"> | **Hiei** `hiei` | Yu Yu Hakusho (Arena das Trevas) |
