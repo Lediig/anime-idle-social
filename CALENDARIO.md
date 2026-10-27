@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 25/10/2026 20:39 (Brasília). Post diário às 19:00.
+Gerado em 26/10/2026 21:58 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 25/10 (dom) | <img src="assets/poses/aki_2.png" width="128"> | **Aki** `aki` | Chainsaw Man (Viela dos Demônios) |
 | 26/10 (seg) | <img src="assets/poses/maki_0.png" width="128"> | **Maki** `maki` | Jujutsu Kaisen (Cruzamento Assombrado) |
 | 27/10 (ter) | <img src="assets/poses/zenitsu_2.png" width="128"> | **Zenitsu** `zenitsu` | Demon Slayer (Montanha Nevada) |
 | 28/10 (qua) | <img src="assets/poses/asta_1.png" width="128"> | **Asta** `asta` | Black Clover (Ossada do Demônio Ancestral) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 06/12 (dom) | <img src="assets/poses/tanjiro_2.png" width="128"> | **Tanjiro** `tanjiro` | Demon Slayer (Montanha Nevada) |
 | 07/12 (seg) | <img src="assets/poses/hiei_2.png" width="128"> | **Hiei** `hiei` | Yu Yu Hakusho (Arena das Trevas) |
 | 08/12 (ter) | <img src="assets/poses/reiner_1.png" width="128"> | **Reiner** `reiner` | Attack on Titan (Distrito da Muralha) |
+| 09/12 (qua) | <img src="assets/poses/denji_2.png" width="128"> | **Denji** `denji` | Chainsaw Man (Viela dos Demônios) |
