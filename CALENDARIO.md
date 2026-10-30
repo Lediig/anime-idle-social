@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 28/10/2026 22:20 (Brasília). Post diário às 19:00.
+Gerado em 29/10/2026 22:24 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 28/10 (qua) | <img src="assets/poses/asta_1.png" width="128"> | **Asta** `asta` | Black Clover (Ossada do Demônio Ancestral) |
 | 29/10 (qui) | <img src="assets/poses/goku_1.png" width="128"> | **Goku** `goku` | Dragon Ball (Ermos do Torneio) |
 | 30/10 (sex) | <img src="assets/poses/erwin_2.png" width="128"> | **Erwin** `erwin` | Attack on Titan (Distrito da Muralha) |
 | 31/10 (sáb) | <img src="assets/poses/gon_0.png" width="128"> | **Gon** `gon` | Hunter x Hunter (Portão da Mansão Sombria) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 09/12 (qua) | <img src="assets/poses/denji_2.png" width="128"> | **Denji** `denji` | Chainsaw Man (Viela dos Demônios) |
 | 10/12 (qui) | <img src="assets/poses/bakugo_2.png" width="128"> | **Bakugo** `bakugo` | My Hero Academia (Domo de Desastres) |
 | 11/12 (sex) | <img src="assets/poses/l_2.png" width="128"> | **L** `l` | Death Note (Telhados do Crepúsculo) |
+| 12/12 (sáb) | <img src="assets/poses/yugi_2.png" width="128"> | **Yugi** `yugi` | Yu-Gi-Oh! (Arena de Duelos) |
