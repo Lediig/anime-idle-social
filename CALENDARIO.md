@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 31/10/2026 21:30 (Brasília). Post diário às 19:00.
+Gerado em 01/11/2026 22:05 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 31/10 (sáb) | <img src="assets/poses/gon_0.png" width="128"> | **Gon** `gon` | Hunter x Hunter (Portão da Mansão Sombria) |
 | 01/11 (dom) | <img src="assets/poses/megumi_1.png" width="128"> | **Megumi** `megumi` | Jujutsu Kaisen (Cruzamento Assombrado) |
 | 02/11 (seg) | <img src="assets/poses/megumin_0.png" width="128"> | **Megumin** `megumin` | Konosuba (Praça dos Aventureiros) |
 | 03/11 (ter) | <img src="assets/poses/levi_0.png" width="128"> | **Levi** `levi` | Attack on Titan (Distrito da Muralha) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 12/12 (sáb) | <img src="assets/poses/yugi_2.png" width="128"> | **Yugi** `yugi` | Yu-Gi-Oh! (Arena de Duelos) |
 | 13/12 (dom) | <img src="assets/poses/rei_1.png" width="128"> | **Rei** `rei` | Evangelion (Cidade-Fortaleza) |
 | 14/12 (seg) | <img src="assets/poses/king_1.png" width="128"> | **King** `king` | One-Punch Man (Cidade em Ruínas) |
+| 15/12 (ter) | <img src="assets/poses/garou_2.png" width="128"> | **Garou** `garou` | One-Punch Man (Cidade em Ruínas) |
