@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 03/11/2026 22:44 (Brasília). Post diário às 19:00.
+Gerado em 04/11/2026 22:53 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 03/11 (ter) | <img src="assets/poses/levi_0.png" width="128"> | **Levi** `levi` | Attack on Titan (Distrito da Muralha) |
 | 04/11 (qua) | <img src="assets/poses/chrollo_1.png" width="128"> | **Chrollo** `chrollo` | Hunter x Hunter (Portão da Mansão Sombria) |
 | 05/11 (qui) | <img src="assets/poses/scar_2.png" width="128"> | **Scar** `scar` | Fullmetal Alchemist (Portal da Verdade) |
 | 06/11 (sex) | <img src="assets/poses/leorio_2.png" width="128"> | **Leorio** `leorio` | Hunter x Hunter (Portão da Mansão Sombria) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 15/12 (ter) | <img src="assets/poses/garou_2.png" width="128"> | **Garou** `garou` | One-Punch Man (Cidade em Ruínas) |
 | 16/12 (qua) | <img src="assets/poses/vegeta_2.png" width="128"> | **Vegeta** `vegeta` | Dragon Ball (Ermos do Torneio) |
 | 17/12 (qui) | <img src="assets/poses/makima_2.png" width="128"> | **Makima** `makima` | Chainsaw Man (Viela dos Demônios) |
+| 18/12 (sex) | <img src="assets/poses/sonic_2.png" width="128"> | **Sonic** `sonic` | One-Punch Man (Cidade em Ruínas) |
