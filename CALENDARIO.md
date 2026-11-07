@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 05/11/2026 22:51 (Brasília). Post diário às 19:00.
+Gerado em 06/11/2026 22:21 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 05/11 (qui) | <img src="assets/poses/scar_2.png" width="128"> | **Scar** `scar` | Fullmetal Alchemist (Portal da Verdade) |
 | 06/11 (sex) | <img src="assets/poses/leorio_2.png" width="128"> | **Leorio** `leorio` | Hunter x Hunter (Portão da Mansão Sombria) |
 | 07/11 (sáb) | <img src="assets/poses/mob_0.png" width="128"> | **Mob** `mob` | Mob Psycho 100 (Parque do Brócolis Colossal) |
 | 08/11 (dom) | <img src="assets/poses/bulma_1.png" width="128"> | **Bulma** `bulma` | Dragon Ball (Ermos do Torneio) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 17/12 (qui) | <img src="assets/poses/makima_2.png" width="128"> | **Makima** `makima` | Chainsaw Man (Viela dos Demônios) |
 | 18/12 (sex) | <img src="assets/poses/sonic_2.png" width="128"> | **Sonic** `sonic` | One-Punch Man (Cidade em Ruínas) |
 | 19/12 (sáb) | <img src="assets/poses/renji_2.png" width="128"> | **Renji** `renji` | Bleach (Deserto de Hueco Mundo) |
+| 20/12 (dom) | <img src="assets/poses/goblinslayer_0.png" width="128"> | **Goblin Slayer** `goblinslayer` | Goblin Slayer (Caverna dos Goblins) |
