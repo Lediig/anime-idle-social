@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 07/11/2026 21:57 (Brasília). Post diário às 19:00.
+Gerado em 08/11/2026 22:16 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 07/11 (sáb) | <img src="assets/poses/mob_0.png" width="128"> | **Mob** `mob` | Mob Psycho 100 (Parque do Brócolis Colossal) |
 | 08/11 (dom) | <img src="assets/poses/bulma_1.png" width="128"> | **Bulma** `bulma` | Dragon Ball (Ermos do Torneio) |
 | 09/11 (seg) | <img src="assets/poses/edward_2.png" width="128"> | **Edward** `edward` | Fullmetal Alchemist (Portal da Verdade) |
 | 10/11 (ter) | <img src="assets/poses/yuji_2.png" width="128"> | **Yuji** `yuji` | Jujutsu Kaisen (Cruzamento Assombrado) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 19/12 (sáb) | <img src="assets/poses/renji_2.png" width="128"> | **Renji** `renji` | Bleach (Deserto de Hueco Mundo) |
 | 20/12 (dom) | <img src="assets/poses/goblinslayer_0.png" width="128"> | **Goblin Slayer** `goblinslayer` | Goblin Slayer (Caverna dos Goblins) |
 | 21/12 (seg) | <img src="assets/poses/ace_1.png" width="128"> | **Ace** `ace` | One Piece (Porto dos Piratas) |
+| 22/12 (ter) | <img src="assets/poses/armin_0.png" width="128"> | **Armin** `armin` | Attack on Titan (Distrito da Muralha) |
