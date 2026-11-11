@@ -1,6 +1,6 @@
 # Agenda de Personagens
 
-Gerado em 10/11/2026 00:52 (Brasília). Post diário às 19:00.
+Gerado em 10/11/2026 22:31 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
