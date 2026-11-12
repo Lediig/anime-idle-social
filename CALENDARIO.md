@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 10/11/2026 22:31 (Brasília). Post diário às 19:00.
+Gerado em 11/11/2026 23:34 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 10/11 (ter) | <img src="assets/poses/yuji_2.png" width="128"> | **Yuji** `yuji` | Jujutsu Kaisen (Cruzamento Assombrado) |
 | 11/11 (qua) | <img src="assets/poses/hange_2.png" width="128"> | **Hange** `hange` | Attack on Titan (Distrito da Muralha) |
 | 12/11 (qui) | <img src="assets/poses/akaza_1.png" width="128"> | **Akaza** `akaza` | Demon Slayer (Montanha Nevada) |
 | 13/11 (sex) | <img src="assets/poses/shigaraki_0.png" width="128"> | **Shigaraki** `shigaraki` | My Hero Academia (Domo de Desastres) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 22/12 (ter) | <img src="assets/poses/armin_0.png" width="128"> | **Armin** `armin` | Attack on Titan (Distrito da Muralha) |
 | 23/12 (qua) | <img src="assets/poses/sukuna_1.png" width="128"> | **Sukuna** `sukuna` | Jujutsu Kaisen (Cruzamento Assombrado) |
 | 24/12 (qui) | <img src="assets/poses/fern_0.png" width="128"> | **Fern** `fern` | Frieren (Vila do Grande Herói) |
+| 25/12 (sex) | <img src="assets/poses/asuka_0.png" width="128"> | **Asuka** `asuka` | Evangelion (Cidade-Fortaleza) |
