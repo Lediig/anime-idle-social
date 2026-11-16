@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 14/11/2026 22:23 (Brasília). Post diário às 19:00.
+Gerado em 15/11/2026 22:27 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 14/11 (sáb) | <img src="assets/poses/saori_1.png" width="128"> | **Saori** `saori` | Saint Seiya (Santuário dos Doze Templos) |
 | 15/11 (dom) | <img src="assets/poses/anya_2.png" width="128"> | **Anya** `anya` | Spy x Family (Academia de Elite) |
 | 16/11 (seg) | <img src="assets/poses/jotaro_0.png" width="128"> | **Jotaro** `jotaro` | JoJo (Telhados do Cairo) |
 | 17/11 (ter) | <img src="assets/poses/byakuya_1.png" width="128"> | **Byakuya** `byakuya` | Bleach (Deserto de Hueco Mundo) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 26/12 (sáb) | <img src="assets/poses/yusuke_2.png" width="128"> | **Yusuke** `yusuke` | Yu Yu Hakusho (Arena das Trevas) |
 | 27/12 (dom) | <img src="assets/poses/muzan_1.png" width="128"> | **Muzan** `muzan` | Demon Slayer (Montanha Nevada) |
 | 28/12 (seg) | <img src="assets/poses/sasuke_2.png" width="128"> | **Sasuke** `sasuke` | Naruto (Vila Oculta da Folha) |
+| 29/12 (ter) | <img src="assets/poses/dabi_2.png" width="128"> | **Dabi** `dabi` | My Hero Academia (Domo de Desastres) |
