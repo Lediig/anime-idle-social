@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 17/11/2026 01:14 (Brasília). Post diário às 19:00.
+Gerado em 18/11/2026 00:11 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 17/11 (ter) | <img src="assets/poses/byakuya_1.png" width="128"> | **Byakuya** `byakuya` | Bleach (Deserto de Hueco Mundo) |
 | 18/11 (qua) | <img src="assets/poses/allmight_2.png" width="128"> | **All Might** `allmight` | My Hero Academia (Domo de Desastres) |
 | 19/11 (qui) | <img src="assets/poses/ainz_1.png" width="128"> | **Ainz** `ainz` | Overlord (Grande Tumba de Mármore) |
 | 20/11 (sex) | <img src="assets/poses/yor_1.png" width="128"> | **Yor** `yor` | Spy x Family (Academia de Elite) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 29/12 (ter) | <img src="assets/poses/dabi_2.png" width="128"> | **Dabi** `dabi` | My Hero Academia (Domo de Desastres) |
 | 30/12 (qua) | <img src="assets/poses/kurapika_0.png" width="128"> | **Kurapika** `kurapika` | Hunter x Hunter (Portão da Mansão Sombria) |
 | 31/12 (qui) | <img src="assets/poses/emilia_1.png" width="128"> | **Emilia** `emilia` | Re:Zero (Planície da Névoa) |
+| 01/01 (sex) | <img src="assets/poses/priestess_2.png" width="128"> | **Priestess** `priestess` | Goblin Slayer (Caverna dos Goblins) |
