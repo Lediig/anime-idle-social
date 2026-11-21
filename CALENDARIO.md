@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 19/11/2026 23:42 (Brasília). Post diário às 19:00.
+Gerado em 20/11/2026 23:54 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 19/11 (qui) | <img src="assets/poses/ainz_1.png" width="128"> | **Ainz** `ainz` | Overlord (Grande Tumba de Mármore) |
 | 20/11 (sex) | <img src="assets/poses/yor_1.png" width="128"> | **Yor** `yor` | Spy x Family (Academia de Elite) |
 | 21/11 (sáb) | <img src="assets/poses/kaneki_1.png" width="128"> | **Kaneki** `kaneki` | Tokyo Ghoul (Beco dos Devoradores) |
 | 22/11 (dom) | <img src="assets/poses/fubuki_1.png" width="128"> | **Fubuki** `fubuki` | One-Punch Man (Cidade em Ruínas) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 31/12 (qui) | <img src="assets/poses/emilia_1.png" width="128"> | **Emilia** `emilia` | Re:Zero (Planície da Névoa) |
 | 01/01 (sex) | <img src="assets/poses/priestess_2.png" width="128"> | **Priestess** `priestess` | Goblin Slayer (Caverna dos Goblins) |
 | 02/01 (sáb) | <img src="assets/poses/rengoku_0.png" width="128"> | **Rengoku** `rengoku` | Demon Slayer (Montanha Nevada) |
+| 03/01 (dom) | <img src="assets/poses/nanami_2.png" width="128"> | **Nanami** `nanami` | Jujutsu Kaisen (Cruzamento Assombrado) |
