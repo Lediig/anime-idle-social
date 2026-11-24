@@ -1,14 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 22/11/2026 23:02 (Brasília). Post diário às 19:00.
+Gerado em 24/11/2026 02:38 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 22/11 (dom) | <img src="assets/poses/fubuki_1.png" width="128"> | **Fubuki** `fubuki` | One-Punch Man (Cidade em Ruínas) |
-| 23/11 (seg) | <img src="assets/poses/luffy_1.png" width="128"> | **Luffy** `luffy` | One Piece (Porto dos Piratas) |
 | 24/11 (ter) | <img src="assets/poses/misa_2.png" width="128"> | **Misa** `misa` | Death Note (Telhados do Crepúsculo) |
 | 25/11 (qua) | <img src="assets/poses/todo_2.png" width="128"> | **Todo** `todo` | Jujutsu Kaisen (Cruzamento Assombrado) |
 | 26/11 (qui) | <img src="assets/poses/toga_2.png" width="128"> | **Toga** `toga` | My Hero Academia (Domo de Desastres) |
@@ -52,3 +50,5 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 03/01 (dom) | <img src="assets/poses/nanami_2.png" width="128"> | **Nanami** `nanami` | Jujutsu Kaisen (Cruzamento Assombrado) |
 | 04/01 (seg) | <img src="assets/poses/kakashi_1.png" width="128"> | **Kakashi** `kakashi` | Naruto (Vila Oculta da Folha) |
 | 05/01 (ter) | <img src="assets/poses/kurama_0.png" width="128"> | **Kurama** `kurama` | Yu Yu Hakusho (Arena das Trevas) |
+| 06/01 (qua) | <img src="assets/poses/stark_1.png" width="128"> | **Stark** `stark` | Frieren (Vila do Grande Herói) |
+| 07/01 (qui) | <img src="assets/poses/power_2.png" width="128"> | **Power** `power` | Chainsaw Man (Viela dos Demônios) |
