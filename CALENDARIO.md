@@ -1,13 +1,12 @@
 # Agenda de Personagens
 
-Gerado em 24/11/2026 02:38 (Brasília). Post diário às 19:00.
+Gerado em 25/11/2026 01:39 (Brasília). Post diário às 19:00.
 Pra tirar alguém da fila, edite `data/pular.txt` (um slug por linha) e o calendário se refaz.
 
 Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 
 | Data | Arte | Carta | Anime (fundo: mundo do PvE) |
 |---|---|---|---|
-| 24/11 (ter) | <img src="assets/poses/misa_2.png" width="128"> | **Misa** `misa` | Death Note (Telhados do Crepúsculo) |
 | 25/11 (qua) | <img src="assets/poses/todo_2.png" width="128"> | **Todo** `todo` | Jujutsu Kaisen (Cruzamento Assombrado) |
 | 26/11 (qui) | <img src="assets/poses/toga_2.png" width="128"> | **Toga** `toga` | My Hero Academia (Domo de Desastres) |
 | 27/11 (sex) | <img src="assets/poses/winry_2.png" width="128"> | **Winry** `winry` | Fullmetal Alchemist (Portal da Verdade) |
@@ -52,3 +51,4 @@ Fora da fila agora: chopper, lelouch, shinji, spike, uraraka.
 | 05/01 (ter) | <img src="assets/poses/kurama_0.png" width="128"> | **Kurama** `kurama` | Yu Yu Hakusho (Arena das Trevas) |
 | 06/01 (qua) | <img src="assets/poses/stark_1.png" width="128"> | **Stark** `stark` | Frieren (Vila do Grande Herói) |
 | 07/01 (qui) | <img src="assets/poses/power_2.png" width="128"> | **Power** `power` | Chainsaw Man (Viela dos Demônios) |
+| 08/01 (sex) | <img src="assets/poses/aizen_1.png" width="128"> | **Aizen** `aizen` | Bleach (Deserto de Hueco Mundo) |
